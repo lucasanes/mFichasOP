@@ -10,6 +10,5 @@ export const Container = styled('div', {
   backgroundSize: "cover",
   overflowX: "hidden",
   overflowY: 'auto',
-  marginTop: '6rem'
 
 });

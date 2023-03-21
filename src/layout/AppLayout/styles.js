@@ -6,5 +6,6 @@ export const Container = styled('div', {
 })
 
 export const ContentWrapper = styled('main', {
-  width: '100%'
+  width: '100%',
+  marginTop: '6rem',
 })
