@@ -90,7 +90,7 @@ export function Menu() {
           {(token != null && token != undefined) ? 
           
           <Li acerto={true}>
-            <Button onClick={() => {abrirMenu()}}> <FiUser color='#fff000' size={22} />Conta</Button>
+            <Button onClick={() => {setModalCadastrarIsOpen(true); abrirMenu()}}> <FiUser color='#fff000' size={22} />Conta</Button>
           </Li>
 
           :<>
