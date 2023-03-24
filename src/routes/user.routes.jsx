@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { AppLayout } from '../layout/AppLayout';
 import { Home } from '../pages/Home';
 
-export function AuthRoutes() {
+export function UserRoutes() {
   return (
     <Routes>
       <Route path='/' element={<AppLayout/>}>

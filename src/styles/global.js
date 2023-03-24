@@ -56,7 +56,7 @@ export const GlobalStyles = globalCss({
   },
 
   'input:-webkit-autofill': {
-    '-webkit-box-shadow': '0 0 0 30px rgb(27,27,27) inset'
+    '-webkit-box-shadow': '0 0 0 30px rgb(20,20,20) inset'
   },
 
 });

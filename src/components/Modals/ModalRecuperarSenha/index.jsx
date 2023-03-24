@@ -1,38 +1,61 @@
 import React, { useState } from "react";
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { Body, Container, Footer, Header } from "./styles";
 import {Input} from '../../Input'
 import { Toggle } from "../../Toggle";
+import { api } from "../../../services/api";
 
 export function ModalRecuperarSenha({setModalClose}) {
 
-  const [email, setEmail] = useState(null)
+  const [email, setEmail] = useState('')
+
+  async function handleRecover(e) {
+
+    e.preventDefault()
+
+    const response = await api.post('/', {query: 'account_recovery', email})
+
+    if (response.data.success) {
+
+    } else {
+      toast.error(response.data.msg)
+    }
+
+    console.log(response)
+
+  }
 
   return (
     <Container>
 
-      <Header>
+      <form onSubmit={handleRecover}>
 
-        <h1>Recuperar Senha</h1>
-        <button onClick={setModalClose}>x</button>
+        <Header>
 
-      </Header>
+          <h1>Recuperar Senha</h1>
+          <button type="button" onClick={setModalClose}>x</button>
 
-      <hr />
+        </Header>
 
-      <Body>
+        <hr />
 
-        <Input label={'Email'} valor={email} setValor={setEmail}/>
+        <Body>
 
-      </Body>
+          <Input label={'Email'} valor={email} setValor={setEmail}/>
 
-      <hr />
+        </Body>
 
-      <Footer>
+        <hr />
 
-        <button>Recuperar</button>
+        <Footer>
 
-      </Footer>
+          <button type="submit">Recuperar</button>
+
+        </Footer>
+
+      </form>
+
+      <ToastContainer/>
 
     </Container>
   );

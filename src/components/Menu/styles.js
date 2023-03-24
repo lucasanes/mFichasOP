@@ -156,7 +156,7 @@ export const Line1 = styled('div', {
     variants: {
         active: {
             aberto: {
-                transform: 'rotate(47deg) translate(7px, 7px)',
+                transform: 'rotate(45deg) translate(7px, 7px)',
             }
         }
     }
@@ -186,7 +186,7 @@ export const Line3 = styled('div', {
     variants: {
         active: {
             aberto: {
-                transform: 'rotate(-47deg) translate(6px, -7px)',
+                transform: 'rotate(-45deg) translate(5px, -7px)',
             }
         }
     }
@@ -200,6 +200,9 @@ export const Li = styled('li', {
         acerto: {
             true: {
                 marginLeft: '-0.2rem'
+            },
+            true2: {
+                marginLeft: '0.3rem'
             }
         }
     }

@@ -1,4 +1,6 @@
+import axios from "axios";
 import { React, createContext, useContext, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { api } from "../services/api.js";
@@ -9,57 +11,72 @@ function AuthProvider({ children }) {
 
   const [data, setData] = useState({});
 
-  async function signIn({ username, senha, manterAtivo }) {
-    try {
-      const response = await api.post('/', { query: 'login', login: username, senha });
+  async function signIn({username, senha, manterAtivo }) {
+
+    const response = await api.post('/', { query: 'account_get', login: username, senha });
+
+    if (response.data.success) {
+
       console.log(response)
-      const { user, token } = response.data;
 
-      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-      setData({ user, token });
+      const { conta, id } = response.data;
 
-      localStorage.setItem("@fichasop:user", JSON.stringify(user));
+      api.defaults.headers.common["Authorization"] = `Bearer ${id}`;
+      setData({ user: 'JSON.parse(conta)', token: id });
+
       localStorage.setItem("@fichasop:manterAtivo", manterAtivo)
-      localStorage.setItem("@fichasop:token", token);
+      localStorage.setItem("@fichasop:token", id);
 
-    } catch (error) {
-      toast.error(error)
-      console.log(error)
+    } else {
+
+      console.log(response.data)
+      toast.error(response.data.msg)
+
     }
+
+    return response.data.success
+    
   }
 
-  function signOut() {
+  function signOut({location}) {
 
     localStorage.removeItem("@fichasop:token");
-    localStorage.removeItem("@fichasop:user");
     localStorage.removeItem("@fichasop:manterAtivo");
 
-    window.location.href = "/"
+    if (location.pathname != '/') {
+
+      window.location.href = "/"
+
+    }
 
     setData({});
+    
   }
 
   useEffect(() => {
+
     const token = localStorage.getItem("@fichasop:token");
-    const user = localStorage.getItem("@fichasop:user");
     const manterAtivo = localStorage.getItem("@fichasop:manterAtivo")
 
-    if (token && user && manterAtivo) {
+    if (token && manterAtivo) {
 
       async function fetchData() {
-        const response = await api.post({query: 'check_session', sessid: token })
-        console.log(response)
-        const tokenIsValid = response.data.tokenIsValid
 
         if (manterAtivo == 'false') {
           signOut()
-        }
-
-        if (!tokenIsValid) {
-          signOut()
         } else {
-          api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-          setData({ user: JSON.parse(user), token });
+
+          const response = await api.post('/', { query: 'check_session', sessid: token});
+
+          const tokenIsValid = response.data.success
+          const user = response.data.conta
+
+          if (!tokenIsValid) {
+            signOut()
+          } else {
+            api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+            setData({ user: 'JSON.parse(user)', token });
+          }
         }
       }
 
@@ -72,7 +89,8 @@ function AuthProvider({ children }) {
       value={{
         signIn,
         signOut,
-        user: data.user
+        user: data.user,
+        token: data.token
       }}
     >
       {children}

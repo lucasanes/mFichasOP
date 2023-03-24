@@ -26,6 +26,7 @@ export const Button = styled('button', {
   position: 'absolute',
   padding: '1rem',
   right: 0,
+  bottom: 2,
   zIndex: 10
 
 });

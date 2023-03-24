@@ -7,17 +7,20 @@ import { useAuth } from "../../../hooks/auth";
 
 export function ModalEntrar({setModalClose, modalRecuperarSenha}) {
 
-  const [user, setUser] = useState(null)
-  const [senha, setSenha] = useState(null)
-  const [manterAtivo, setManterAtivo] = useState(false)
+  const [user, setUser] = useState('')
+  const [senha, setSenha] = useState('')
+  const [manterAtivo, setManterAtivo] = useState(true)
 
   const { signIn } = useAuth()
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
 
     e.preventDefault()
-
-    signIn({username: user, senha, manterLogin: manterAtivo})
+    const response = await signIn({username: user, senha, manterAtivo})
+    
+    if (response) {
+      setModalClose()
+    }
 
   }
 
@@ -37,7 +40,7 @@ export function ModalEntrar({setModalClose, modalRecuperarSenha}) {
         <Header>
 
           <h1>Entrar</h1>
-          <button onClick={setModalClose}>x</button>
+          <button type="button" onClick={setModalClose}>x</button>
 
         </Header>
 
@@ -49,8 +52,8 @@ export function ModalEntrar({setModalClose, modalRecuperarSenha}) {
           <Input isSenha={true} label={'Senha'} valor={senha} setValor={setSenha}/>
 
           <div className="div">
-            <Toggle classNumber={1} span={'Manter Ativo'} onChange={switchManterAtivo}/>
-            <button onClick={() => {setModalClose(); modalRecuperarSenha()}}>Recuperar Senha</button>
+            <Toggle defaultChecked={true} classNumber={1} span={'Manter Ativo'} onChange={switchManterAtivo}/>
+            <button type="button" onClick={() => {setModalClose(); modalRecuperarSenha()}}>Recuperar Senha</button>
           </div>
 
         </Body>
