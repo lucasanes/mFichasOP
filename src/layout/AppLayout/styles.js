@@ -12,7 +12,7 @@ export const ContentWrapper = styled('main', {
   variants: {
     auth: {
       true: {
-        height: 'calc(100% - 160px)',
+        height: 'calc(100% - 140px)',
       },
       false: {
         height: '100%'

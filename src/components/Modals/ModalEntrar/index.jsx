@@ -17,7 +17,7 @@ export function ModalEntrar({setModalClose, modalRecuperarSenha}) {
 
     e.preventDefault()
     const response = await signIn({username: user, senha, manterAtivo})
-    
+
     if (response) {
       setModalClose()
     }
