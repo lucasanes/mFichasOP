@@ -125,7 +125,7 @@ export function Menu() {
 
           {(token != null && token != undefined) &&
           <Li acerto={'true2'}>
-            <Button onClick={() => {signOut({location}); abrirMenu()}}> <FiUserX color='#ff4525' size={22} />Conta</Button>
+            <Button onClick={() => {signOut({location}); abrirMenu()}}> <FiUserX color='#ff4525' size={22} />Sair</Button>
           </Li>
           }
 

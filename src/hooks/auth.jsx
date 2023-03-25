@@ -17,19 +17,16 @@ function AuthProvider({ children }) {
 
     if (response.data.success) {
 
-      console.log(response)
+      const { conta } = response.data;
 
-      const { conta, id } = response.data;
-
-      api.defaults.headers.common["Authorization"] = `Bearer ${id}`;
-      setData({ user: 'JSON.parse(conta)', token: id });
+      api.defaults.headers.common["Authorization"] = `Bearer ${conta.token}`;
+      setData({ user: conta, token: conta.token });
 
       localStorage.setItem("@fichasop:manterAtivo", manterAtivo)
-      localStorage.setItem("@fichasop:token", id);
+      localStorage.setItem("@fichasop:token", conta.token);
 
     } else {
 
-      console.log(response.data)
       toast.error(response.data.msg)
 
     }
@@ -43,12 +40,16 @@ function AuthProvider({ children }) {
     localStorage.removeItem("@fichasop:token");
     localStorage.removeItem("@fichasop:manterAtivo");
 
-    if (location.pathname != '/') {
+    if (location != null) {
 
+      if (location.pathname != '/') {
+        window.location.href = "/"
+      }
+
+    } else {
       window.location.href = "/"
-
     }
-
+    
     setData({});
     
   }
@@ -58,24 +59,24 @@ function AuthProvider({ children }) {
     const token = localStorage.getItem("@fichasop:token");
     const manterAtivo = localStorage.getItem("@fichasop:manterAtivo")
 
-    if (token && manterAtivo) {
+    if (token != null && manterAtivo != null) {
 
       async function fetchData() {
 
         if (manterAtivo == 'false') {
-          signOut()
+          signOut({location: null})
         } else {
 
-          const response = await api.post('/', { query: 'check_session', sessid: token});
+          const response = await api.post('/', { query: 'account_check', sessid: token});
 
           const tokenIsValid = response.data.success
           const user = response.data.conta
 
           if (!tokenIsValid) {
-            signOut()
+            signOut({location: null})
           } else {
             api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-            setData({ user: 'JSON.parse(user)', token });
+            setData({ user, token });
           }
         }
       }

@@ -16,12 +16,10 @@ export function ModalRecuperarSenha({setModalClose}) {
     const response = await api.post('/', {query: 'account_recovery', email})
 
     if (response.data.success) {
-
+      toast.success(response.data.msg)
     } else {
       toast.error(response.data.msg)
-    }
-
-    console.log(response)
+    } 
 
   }
 

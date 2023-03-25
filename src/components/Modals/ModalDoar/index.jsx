@@ -23,7 +23,7 @@ export function ModalDoar({setModalClose}) {
         Lucas Daniel de Freitas Pinheiro <br />
         <u>d14f80f4-1567-4268-80d6-0abf7e572454</u>  <br /> <br />
         <strong>APOIA.se</strong>  <br /> <br />
-        Caso queira ajudar o site a evoluir, <a href="https://apoia.se/fichasop">clique aqui.</a> </p> 
+        Caso queira ajudar o projeto a evoluir, <a href="https://apoia.se/fichasop">clique aqui.</a> </p> 
 
       </Body>
 
