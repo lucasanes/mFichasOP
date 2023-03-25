@@ -6,7 +6,7 @@ export const Container = styled('div', {
   width: '100%',
   height: '80px',
   background: 'rgb(15,15,15)',
-  position: 'absolute',
+  position: 'fixed',
   bottom: 0,
   display: 'flex',
   alignItems: 'center',
