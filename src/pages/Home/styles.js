@@ -10,5 +10,50 @@ export const Container = styled('div', {
   backgroundSize: "cover",
   overflowX: "hidden",
   overflowY: 'auto',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  padding: '2rem',
+
+});
+
+export const DivTitle = styled('div', {
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'relative'
+
+});
+
+export const Title = styled('h1', {
+
+  letterSpacing: '5px',
+  marginBottom: '6rem',
+  color: 'white',
+  fontSize: '6rem',
+  fontFamily: 'Special Elite',
+
+});
+
+export const BgTitle = styled('h1', {
+
+  marginBottom: '7rem',
+  color: '#ffffff20',
+  fontSize: '5rem',
+  fontFamily: 'sinais',
+  textShadow: '#ffffff90 0px 0px 20px, white 0px 0px 30px',
+  position: 'fixed'
+
+});
+
+export const SubTitles = styled('span', {
+
+  color: 'white',
+  marginTop: '-3rem',
+  marginBottom: '4rem',
+  fontFamily: 'El Messiri',
+  fontSize: '2rem'
 
 });

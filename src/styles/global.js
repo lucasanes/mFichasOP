@@ -59,4 +59,9 @@ export const GlobalStyles = globalCss({
     '-webkit-box-shadow': '0 0 0 30px rgb(20,20,20) inset'
   },
 
+  '@font-face': {
+    fontFamily: 'sinais',
+    src: "url('./src/assets/fonts/SinaisEstrangeiro.ttf')"
+  },
+
 });

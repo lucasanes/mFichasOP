@@ -9,9 +9,9 @@ export function MenuBottom() {
   return (
     <Container>
       <Button color={'yellow'} to={'/'}><BsHouse color='#ffff50' size={30}/>Início</Button>
-      <Button color={'red'} to={'/fichas'}><AiOutlineUser color='#ff3b3b' size={30}/>Fichas</Button>
+      <Button color={'blue'} to={'/fichas'}><AiOutlineUser color='#004edf' size={30}/>Fichas</Button>
 
-      <Button disabled={true} onClick={() => {toast.error('Recurso em desenvolvimento!')}} color={'blue'}><BiLockAlt className='lock' color='grey' size={50}/><TiBusinessCard color='#004edf50' size={30}/>Sessões</Button> 
+      <Button disabled={true} onClick={() => {toast.error('Recurso em desenvolvimento!')}} color={'red'}><BiLockAlt className='lock' color='grey' size={50}/><TiBusinessCard color='#ff3b3b50' size={30}/>Sessões</Button> 
 
       <ToastContainer/>
     </Container>

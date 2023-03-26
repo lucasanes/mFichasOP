@@ -46,10 +46,10 @@ export const Button = styled(Link, {
         color: '#ffff50'
       },
       red: {
-        color: '#ff3b3b'
+        color: '#ff3b3b50'
       },
       blue: {
-        color: '#004edf50'
+        color: '#004edf'
       }
     },
 
