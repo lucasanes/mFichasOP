@@ -15,7 +15,7 @@ export const ContentWrapper = styled('main', {
         height: 'calc(100% - 140px)',
       },
       false: {
-        height: '100%'
+        height: 'calc(100% - 60px)'
       }
     }
   }
