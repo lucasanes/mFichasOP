@@ -12,9 +12,8 @@ export const Container = styled('div', {
   overflowY: 'auto',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
   flexDirection: 'column',
-  padding: '0 2rem',
+  padding: '4rem 2rem',
 
 });
 
