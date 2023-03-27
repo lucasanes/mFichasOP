@@ -21,6 +21,11 @@ export const GlobalStyles = globalCss({
     // }
   },
 
+  '@font-face': {
+    fontFamily: 'sinais',
+    src: "url('https://fichasop.com/assets/css/SinaisEstrangeiro.ttf')"
+  },
+
   "*": {
     margin: 0,
     padding: 0,
@@ -57,11 +62,6 @@ export const GlobalStyles = globalCss({
 
   'input:-webkit-autofill': {
     '-webkit-box-shadow': '0 0 0 30px rgb(20,20,20) inset'
-  },
-
-  '@font-face': {
-    fontFamily: 'sinais',
-    src: "url('./src/assets/fonts/SinaisEstrangeiro.ttf')"
   },
 
 });

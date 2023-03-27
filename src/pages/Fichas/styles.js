@@ -21,7 +21,7 @@ export const Body = styled('div', {
     isLoading: {
       true: {
         backgroundImage: `url(${Loading})`,
-        backgroundSize: '30%',
+        backgroundSize: '20rem',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'
       }

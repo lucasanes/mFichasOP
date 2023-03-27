@@ -14,7 +14,7 @@ export const Container = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
-  padding: '2rem',
+  padding: '0 2rem',
 
 });
 
@@ -34,6 +34,7 @@ export const Title = styled('h1', {
   color: 'white',
   fontSize: '6rem',
   fontFamily: 'Special Elite',
+  zIndex: 1
 
 });
 
@@ -54,6 +55,7 @@ export const SubTitles = styled('span', {
   marginTop: '-3rem',
   marginBottom: '4rem',
   fontFamily: 'El Messiri',
-  fontSize: '2rem'
+  fontSize: '2rem',
+  textAlign: 'center'
 
 });

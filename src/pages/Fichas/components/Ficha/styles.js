@@ -16,7 +16,7 @@ export const Header = styled('div', {
 
   h1: {
     color: '#0050a6',
-    fontSize: '1.8rem'
+    fontSize: '2rem'
   }
 
 });
@@ -27,11 +27,32 @@ export const HeaderButtons = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
 
+  a: {
+    background: 'none',
+    border: '1px solid transparent',
+    padding: '.5rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '5px',
+    transition: '.3s'
+  },
+
+  'a:hover': {
+    border: '1px solid cyan'
+  }
+
 });
 
 export const Body = styled('div', {
 
+  padding: '1rem',
 
+  img: {
+    width: '80px',
+    border: '1px solid white',
+    borderRadius: '100%'
+  }
 
 });
 
