@@ -64,6 +64,16 @@ export const Header = styled("div", {
         transition: '.3s'
     },
 
+    h1: {
+        color: 'Purple',
+        fontFamily: 'Fredoka One',
+        letterSpacing: '.2rem',
+
+        whiteSpace: 'nowrap',
+        fontSize: '3.3rem',
+        textShadow: "4px 3px 2px black",
+    },
+
 });
 
 export const Body = styled("div", {
@@ -77,7 +87,7 @@ export const Body = styled("div", {
     ul: {
         display: 'flex',
         gap: '1.5rem',
-        padding: '1.8rem 3rem',
+        padding: '2rem 3rem',
         flexDirection: "column",
         marginLeft: '-1rem',
     },
@@ -114,8 +124,7 @@ export const Button = styled('button', {
     justifyContent: "center",
     fontSize: "1.8rem",
     gap: "1rem",
-    fontFamily: 'Nerko One',
-    letterSpacing: '1px',
+    fontFamily: 'Neko One',
 
     transition: '.3s',
 
@@ -134,9 +143,8 @@ export const ButtonLink = styled(Link, {
     alignContent: "center",
     justifyContent: "center",
     fontSize: "1.8rem",
-    letterSpacing: '1px',
     gap: "1rem",
-    fontFamily: 'Nerko One',
+    fontFamily: 'Neko One',
 });
 
 export const Line1 = styled('div', {

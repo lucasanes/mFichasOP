@@ -31,6 +31,7 @@ export const Title = styled('h1', {
 
   letterSpacing: '5px',
   marginBottom: '6rem',
+  paddingTop: '1rem',
   color: 'white',
   fontSize: '6rem',
   fontFamily: 'Special Elite',
@@ -41,6 +42,7 @@ export const Title = styled('h1', {
 export const BgTitle = styled('h1', {
 
   marginBottom: '7rem',
+  paddingTop: '1rem',
   color: '#ffffff20',
   fontSize: '5rem',
   fontFamily: 'sinais',

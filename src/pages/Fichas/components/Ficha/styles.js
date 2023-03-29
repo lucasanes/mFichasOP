@@ -2,7 +2,8 @@ import {styled} from '../../../../stitches.config';
 
 export const Container = styled('div', {
 
-  border: '2px solid #0050a6'
+  border: '2px solid #0050a6',
+  borderRadius: '5px'
 
 });
 
@@ -47,15 +48,54 @@ export const HeaderButtons = styled('div', {
 export const Body = styled('div', {
 
   padding: '1rem',
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  gap: '1rem',
+
+  '@md': {
+    flexDirection: 'row'
+  },
+
+  '.grid': {
+    width: '100%',
+    display: 'grid',
+    gap: '.5rem',
+
+    '@sm': {
+      gridTemplateColumns: '1fr 1fr'
+    }
+  },
 
   img: {
-    width: '80px',
+    width: '100px',
     border: '1px solid white',
-    borderRadius: '100%'
+    borderRadius: '2rem'
   }
 
 });
 
 export const Card = styled('div', {
+
+  width: '100%',
+  display: 'flex',
+  alignItems: 'left',
+  justifyContent: 'center',
+  color: 'grey',
+  fontFamily: 'El Messiri',
+  border: '2px solid white',
+  padding: '0.5rem 1rem 0.2rem 1rem',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+
+  label: {
+    fontWeight: 700
+  },
+
+  span: {
+    paddingLeft: '.5rem',
+    whiteSpace: 'nowrap',
+  }
+
 
 });

@@ -14,7 +14,6 @@ import { ModalEntrar } from '../Modals/ModalEntrar';
 import { ModalRecuperarSenha } from '../Modals/ModalRecuperarSenha';
 import { useAuth } from '../../hooks/auth';
 import { ModalCadastrar } from '../Modals/ModalCadastrar';
-import { ModalConta } from '../Modals/ModalConta';
 
 export function Menu() {
 
@@ -27,7 +26,6 @@ export function Menu() {
   const [modalCreditosIsOpen, setModalCreditosIsOpen] = useState(false)
   const [modalEntrarIsOpen, setModalEntrarIsOpen] = useState(false)
   const [modalCadastrarIsOpen, setModalCadastrarIsOpen] = useState(false)
-  const [modalContaIsOpen, setModalContaIsOpen] = useState(false)
   const [modalRecuperarSenhaIsOpen, setModalRecuperarSenhaIsOpen] = useState(false)
 
   function abrirMenu() {
@@ -69,10 +67,6 @@ export function Menu() {
         <ModalCadastrar setModalClose={() => setModalCadastrarIsOpen(false)} modalRecuperarSenha={() => setModalRecuperarSenhaIsOpen(true)}/>
       </Modal>
 
-      <Modal isOpen={modalContaIsOpen} setClose={() => setModalContaIsOpen(false)}>
-        <ModalConta setModalClose={() => setModalContaIsOpen(false)} modalRecuperarSenha={() => setModalRecuperarSenhaIsOpen(true)}/>
-      </Modal>
-
       <Modal isOpen={modalRecuperarSenhaIsOpen} setClose={() => setModalRecuperarSenhaIsOpen(false)}>
         <ModalRecuperarSenha setModalClose={() => setModalRecuperarSenhaIsOpen(false)}/>
       </Modal>
@@ -96,7 +90,7 @@ export function Menu() {
           {(token != null && token != undefined) ? 
           
           <Li acerto={true}>
-            <Button onClick={() => {setModalContaIsOpen(true); abrirMenu()}}> <FiUser color='#fff000' size={22} />Conta</Button>
+            <Button onClick={() => {setModalCadastrarIsOpen(true); abrirMenu()}}> <FiUser color='#fff000' size={22} />Conta</Button>
           </Li>
 
           :<>

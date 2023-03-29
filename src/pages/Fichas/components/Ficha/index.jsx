@@ -8,12 +8,10 @@ export function Ficha({data}) {
     <Container>
 
       <Header>
-        <h1>{data.nome}</h1>
+        <h1>{data.nome} {data.sessao && ' - ' + data.sessao}</h1>
         
         <HeaderButtons>
-          <Link onClick={() => toast.error('Sua senha precisa ter no mínimo 8 dígitos, um caractere maiúsculo e um minúsculo, e um número.'
-)}
-          // to={`/ficha/${data.token}`}
+          <Link to={`/ficha/${data.token}`}
           ><BsBoxArrowUpRight color={'cyan'}/></Link>
         </HeaderButtons>
       </Header>
@@ -21,25 +19,32 @@ export function Ficha({data}) {
       <Body>
         <img src={data.foto}/>
 
-        <div>
+        <div className='grid'>
           <Card>
-            <label></label>
-            <span></span>
+            <label>Origem:</label>
+            <span>{data.origem}</span>
           </Card>
 
           <Card>
-            <label></label>
-            <span></span>
+            <label>Classe:</label>
+            <span>{data.classe} - {data.nex}%</span>
           </Card>
 
+          {data.trilha != 'Nenhuma' ? 
           <Card>
-            <label></label>
-            <span></span>
+            <label>Trilha:</label>
+            <span>{data.trilha}</span>
           </Card>
+          :
+          <Card>
+            <label>Idade:</label>
+            <span>{data.idade}</span>
+          </Card>
+          }
 
           <Card>
-            <label></label>
-            <span></span>
+            <label>Nacionalidade:</label>
+            <span>{data.local}</span>
           </Card>
         </div>
       </Body>

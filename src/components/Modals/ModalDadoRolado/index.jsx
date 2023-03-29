@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Container, Header, Main, Footer, CloseButton } from './styles';
-import pericias from '../mappers/pericias/pericias';
+import pericias from '../../mappers/pericias/pericias';
 
 export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
 

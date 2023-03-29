@@ -2,21 +2,20 @@ import { styled } from "../../../stitches.config";
 
 export const Container = styled('div', {
 
-  width: '33rem',
-  borderRadius: '1.2rem',
-  position: 'relative',
+  width: '100vw',
+  height: '100vh',
   backgroundColor: 'rgb(20,20,20)',
-  boxShadow: 'rgba(255, 255, 255, 0.75) 0rem 0rem 1rem',
   display: 'flex',
   flexDirection: 'column',
+  overflowY: 'hidden',
 
   hr: {
     borderColor: '#ffffff90'
   },
 
-  '@md': {
-    width: '45rem'
-  },
+  form: {
+    height: '100%'
+  }
 
 })
 
@@ -68,26 +67,21 @@ export const Header = styled('div', {
 
 export const Body = styled('div', {
 
+  height: 'calc(100% - 130px)',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
   flexDirection: 'column',
   textAlign: 'center',
   color: '#ffffff90',
   padding: '2rem',
   gap: '2rem',
+  overflowY: 'auto',
 
-  '.div': {
+  '&.div': {
     width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: '2rem',
-    marginLeft: '-2rem',
-
-    '@md': {
-      marginLeft: '-1rem'
-    },
 
     'button': {
       whiteSpace: 'nowrap',
@@ -101,11 +95,34 @@ export const Body = styled('div', {
     },
   
     'button:hover': {
-  
       background: '#00fff750',
-  
     }
   },
+
+});
+
+export const Card = styled('div', {
+
+  width: '100%',
+  border: '2px solid grey',
+  borderRadius: '5px',
+
+  h1: {
+    textAlign: 'left',
+    fontSize: '2rem',
+    padding: '1rem',
+    fontFamily: 'El Messiri',
+    height: '45px'
+  },
+
+  '.div': {
+    padding: '2rem 1rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    gap: '2rem'
+  }
 
 });
 
@@ -118,6 +135,7 @@ export const Footer = styled('div', {
 
   button: {
     background: 'none',
+    borderRadius: '5px',
     border: '2px solid #00ff88',
     color: '#00ff88',
     width: '90%',

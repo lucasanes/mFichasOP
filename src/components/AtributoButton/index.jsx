@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { api } from "../../services/api"
 import { Modal } from "../Modals/Modal"
-import { ModalDadoRolado } from "../ModalDadoRolado"
+import { ModalDadoRolado } from "../Modals/ModalDadoRolado"
 import { Container, Top, Bot, Mid, Img } from "./styles"
 import AtributosImg from '../../assets/imgs/AtributosImg.png'
 
