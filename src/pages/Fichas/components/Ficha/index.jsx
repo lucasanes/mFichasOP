@@ -1,9 +1,11 @@
 import {Body, Card, Container, Header, HeaderButtons} from './styles'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import {useFicha} from '../../../../hooks/ficha'
 
 export function Ficha({data}) {
+
   return (
     <Container>
 
@@ -11,7 +13,8 @@ export function Ficha({data}) {
         <h1>{data.nome} {data.sessao && ' - ' + data.sessao}</h1>
         
         <HeaderButtons>
-          <Link to={`/ficha/${data.token}`}
+          <Link
+          to={`/ficha/${data.token}`}
           ><BsBoxArrowUpRight color={'cyan'}/></Link>
         </HeaderButtons>
       </Header>

@@ -35,19 +35,8 @@ export const Title = styled('h1', {
   color: 'white',
   fontSize: '6rem',
   fontFamily: 'Special Elite',
-  zIndex: 1
-
-});
-
-export const BgTitle = styled('h1', {
-
-  marginBottom: '7rem',
-  paddingTop: '1rem',
-  color: '#ffffff20',
-  fontSize: '5rem',
-  fontFamily: 'sinais',
-  textShadow: '#ffffff90 0px 0px 20px, white 0px 0px 30px',
-  position: 'fixed'
+  zIndex: 1,
+  textShadow: '0px 0px 10px #ffffff, 0px 0px 15px #ffffff25'
 
 });
 

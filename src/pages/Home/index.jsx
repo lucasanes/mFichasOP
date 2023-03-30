@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { AtributoButton } from '../../components/AtributoButton';
 import { Toggle } from '../../components/Toggle';
 import { useAuth } from '../../hooks/auth';
-import {BgTitle, Container, DivTitle, SubTitles, Title} from './styles'
+import {Container, DivTitle, SubTitles, Title} from './styles'
 
 // import { io } from 'socket.io-client';
 // const socket = io('http://localhost:8080')
@@ -23,10 +23,6 @@ export function Home() {
         <Title>
           FichasOP
         </Title>
-
-        <BgTitle>
-          EasterEgg
-        </BgTitle>
 
       </DivTitle>
 

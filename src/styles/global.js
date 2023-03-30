@@ -1,13 +1,8 @@
-import { globalCss } from "@stitches/react";
+import { globalCss } from "@stitches/react"
 
 export const GlobalStyles = globalCss({
   ":root": {
     fontSize: "62.5%",
-  },
-
-  '@font-face': {
-    fontFamily: 'sinais',
-    src: "url('https://fichasop.com/assets/css/SinaisEstrangeiro.ttf')"
   },
 
   "*": {
@@ -16,13 +11,13 @@ export const GlobalStyles = globalCss({
     boxSizing: "border-box",
     fontSize: "1.6rem",
     '::-webkit-scrollbar': {
-      backgroundColor: '#1d1d1d',
+      backgroundColor: '#373737',
       width: '7px',
       borderTopRightRadius: '5px',
       borderBottomRightRadius: '5px'
     },
     '::-webkit-scrollbar-thumb': {
-      backgroundColor: '#5b5b5b',
+      backgroundColor: '#6b6b6b',
       borderRadius: '5px',
     },
   },

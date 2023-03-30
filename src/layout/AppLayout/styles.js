@@ -14,9 +14,12 @@ export const ContentWrapper = styled('main', {
       true: {
         height: 'calc(100% - 140px)',
       },
+      trueficha: {
+        height: 'calc(100% - 120px)',
+      },
       false: {
         height: 'calc(100% - 60px)'
-      }
+      },
     }
   }
 
