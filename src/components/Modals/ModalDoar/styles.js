@@ -29,7 +29,8 @@ export const Header = styled('div', {
   color: 'white',
 
   h1: {
-    fontSize: '1.8rem'
+    fontSize: '1.8rem',
+    fontFamily: 'Special Elite'
   },
   
   button: {
@@ -37,7 +38,12 @@ export const Header = styled('div', {
     border: "none",
     color: '#ffffff90',
     fontSize: '2.5rem',
-    transition: '0.2s'
+    transition: '0.2s',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '30px',
+    height: '25px'
   },
 
   'button:hover': {

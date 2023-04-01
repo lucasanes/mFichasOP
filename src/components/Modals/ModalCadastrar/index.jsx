@@ -5,6 +5,7 @@ import {Input} from '../../Input'
 import { Toggle } from "../../Toggle";
 import { useAuth } from "../../../hooks/auth";
 import { api } from "../../../services/api";
+import { IoClose } from 'react-icons/io5'
 
 export function ModalCadastrar({setModalClose}) {
 

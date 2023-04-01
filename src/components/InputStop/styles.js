@@ -31,6 +31,7 @@ export const InputB = styled('input', {
   border: 'none',
   outline: 'solid 0.2rem white',
   color: 'transparent',
+  textOverflow: 'ellipsis',
   caretColor: 'white',
 })
 

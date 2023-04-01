@@ -7,7 +7,7 @@ export const Container = styled('div', {
   height: '100%',
   overflowX: "hidden",
   overflowY: 'auto',
-  backgroundColor: 'rgb(25,25,25)',
+  backgroundColor: 'rgb(20,20,20)',
   
 });
 
@@ -15,7 +15,6 @@ export const Body = styled('div', {
 
   width: '100%',
   height: '100%',
-  padding: '2rem',
 
   variants: {
     isLoading: {

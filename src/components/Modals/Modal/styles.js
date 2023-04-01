@@ -11,13 +11,8 @@ export const ContentContainer = styled("div", {
   display: "flex",
   justifyContent: 'center',
   backgroundColor: "#00000095",
-  padding: "2rem 5rem",
   overflowY: 'auto',
   overflowX: 'hidden',
-
-  '@sm': {
-    padding: 0
-  }
 
 });
 

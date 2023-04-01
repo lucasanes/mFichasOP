@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Button, Container, ContainerInput, InputB, LabelContainer, LabelContainerMenor, LabelContainerMenorEPadding } from "./styles"
+import { Button, Container, ContainerInput, InputB, LabelContainer} from "./styles"
 import {AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 export function Input({ isSenha = false, label, setValor, valor, onlyNumber = false, opcional = false, valorMax = null, ...rest }) {

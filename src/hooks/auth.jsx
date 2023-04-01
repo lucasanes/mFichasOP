@@ -1,6 +1,6 @@
 import axios from "axios";
 import { React, createContext, useContext, useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { api } from "../services/api.js";
@@ -43,11 +43,11 @@ function AuthProvider({ children }) {
     if (location != null) {
 
       if (location.pathname != '/') {
-        window.location.href = "/"
+        window.location.replace('/')
       }
 
     } else {
-      window.location.href = "/"
+      window.location.replace('/')
     }
     
     setData({});

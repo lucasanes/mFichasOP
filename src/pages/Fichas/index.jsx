@@ -20,7 +20,7 @@ export function Fichas() {
 
   const [isLoading, setIsLoading] = useState(true)
 
-  const {token} = useAuth()
+  const {token, signOut} = useAuth()
 
   const [fichas, setFichas] = useState([])
 
@@ -50,7 +50,7 @@ export function Fichas() {
     <Container>
 
       <Body isLoading={isLoading}>
-        {!isLoading && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
+        {(!isLoading && fichas) && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
       </Body>
 
     </Container>

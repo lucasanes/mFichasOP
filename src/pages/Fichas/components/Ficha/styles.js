@@ -11,13 +11,14 @@ export const Header = styled('div', {
 
   borderBottom: '2px solid grey',
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'baseline',
   justifyContent: 'space-between',
   padding: '.5rem 1rem',
 
   h1: {
     color: '#0050a6',
-    fontSize: '2rem'
+    fontSize: '2.2rem',
+    fontFamily: 'Special Elite'
   }
 
 });

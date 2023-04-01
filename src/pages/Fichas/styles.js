@@ -7,7 +7,7 @@ export const Container = styled('div', {
   height: '100%',
   overflowX: "hidden",
   overflowY: 'auto',
-  backgroundColor: 'rgb(25,25,25)',
+  backgroundColor: 'rgb(20,20,20)',
   
 });
 

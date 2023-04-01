@@ -35,7 +35,6 @@ export const Title = styled('h1', {
   color: 'white',
   fontSize: '6rem',
   fontFamily: 'Special Elite',
-  zIndex: 1,
   textShadow: '0px 0px 10px #ffffff, 0px 0px 15px #ffffff25'
 
 });
