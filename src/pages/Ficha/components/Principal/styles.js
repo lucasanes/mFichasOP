@@ -10,7 +10,7 @@ export const Container = styled('div', {
 
 export const Body = styled('div', {
 
-  maxHeight: 'calc(100% - 48px)',
+  maxHeight: 'calc(100% - 60px)',
   display: 'grid',
   gridTemplateColumns: '1fr',
   gap: '2rem 1rem',
@@ -25,6 +25,7 @@ export const Body = styled('div', {
 
 export const Header = styled('div', {
 
+  height: '60px',
   width: '100%',
   padding: '1rem',
   display: 'flex',
@@ -36,8 +37,9 @@ export const Header = styled('div', {
     fontFamily: 'Special Elite',
     textAlign: 'center',
     fontSize: '2.4rem',
-    paddingTop: '0.4rem',
-    letterSpacing: '1px'
+    letterSpacing: '1px',
+    border: '2px solid grey',
+    padding: '.8rem 1rem .4rem 1rem',
   },
 
   button: {

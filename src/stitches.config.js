@@ -6,6 +6,5 @@ export const { styled, css, keyframes } = createStitches({
         md: "(min-width: 520px)",
         lg: "(min-width: 620px)",
         xlg: "(min-width: 720px)",
-        xxlg: "(min-width: 820px)",
     }
 });

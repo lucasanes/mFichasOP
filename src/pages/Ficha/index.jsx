@@ -55,8 +55,43 @@ export function Ficha() {
         })
 
         setStatus({
-          foto: ficha.foto,
-          
+          status: {
+            foto: ficha.foto,
+            foto_insano: ficha.foto_enlouquecendo,
+            foto_ferido: ficha.foto_ferido,
+            foto_morrendo: ficha.foto_morrendo,
+            foto_insanoeferido: ficha.foto_ferenl,
+            pvA: ficha.pva,
+            pvMax: ficha.pv,
+            psA: ficha.sana,
+            psMax: ficha.san,
+            peA: ficha.pea,
+            peMax: ficha.pe,
+            combate: ficha.combate,
+            morto: ficha.morrendo,
+            opv: ficha.opv,
+            ops: ficha.osan,
+            ope: ficha.ope
+          },
+          defesas: {
+            passiva: ficha.passiva,
+            esquiva: ficha.esquiva,
+            bloqueio: ficha.bloqueio,
+            sanidade: ficha.mental,
+            morte: ficha.morte,
+            sangue: ficha.sangue,
+            energia: ficha.energia,
+            conhecimento: ficha.conhecimento,
+            balistica: ficha.balistica,
+            corte: ficha.corte,
+            eletricidade: ficha.eletricidade,
+            fisico: ficha.fisica,
+            fogo: ficha.fogo,
+            frio: ficha.frio,
+            impacto: ficha.impacto,
+            perfuracao: ficha.perfuracao,
+            quimico: ficha.quimico,
+          }
         })
 
       } finally {

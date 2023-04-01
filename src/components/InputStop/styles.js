@@ -52,4 +52,5 @@ export const LabelContainer = styled('label', {
   fontFamily: 'Cormorant Garamond',
   color: '#ffffff90',
   transition: '0.3s',
+  textTransform: 'capitalize'
 })
