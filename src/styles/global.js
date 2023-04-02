@@ -3,7 +3,6 @@ import { globalCss } from "@stitches/react"
 export const GlobalStyles = globalCss({
   ":root": {
     fontSize: "62.5%",
-    position: 'fixed',
   },
 
   "*": {
@@ -28,7 +27,6 @@ export const GlobalStyles = globalCss({
     height: "100vh",
     fontFamily: "Arial, Helvetica, sans-serif",
     backgroundColor: "rgb(10,10,10)",
-    position: 'fixed',
     overflow: 'hidden'
   },
 

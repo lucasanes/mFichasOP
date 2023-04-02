@@ -8,7 +8,6 @@ export const Container = styled('div', {
   overflowX: "hidden",
   overflowY: 'auto',
   backgroundColor: 'rgb(20,20,20)',
-  position: 'fixed'
   
 });
 
