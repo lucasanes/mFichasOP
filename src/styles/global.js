@@ -3,6 +3,7 @@ import { globalCss } from "@stitches/react"
 export const GlobalStyles = globalCss({
   ":root": {
     fontSize: "62.5%",
+    position: 'fixed',
   },
 
   "*": {

@@ -11,7 +11,7 @@ export const Container = styled('div', {
 export const BodyDefesas = styled('div', {
 
   maxHeight: 'calc(100% - 60px)',
-  padding: '2rem 1rem',
+  padding: '1.9rem 1rem',
   overflow: 'hidden auto',
   display: 'flex',
   flexDirection: 'column',
