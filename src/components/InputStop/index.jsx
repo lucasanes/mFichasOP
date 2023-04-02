@@ -1,4 +1,4 @@
-import { Container, ContainerInput, InputB, LabelContainer } from "./styles"
+import { Container, InputB, LabelContainer } from "./styles"
 
 export function InputStop({ label, valor, ...rest }) {
 
@@ -9,9 +9,7 @@ export function InputStop({ label, valor, ...rest }) {
         {label}
       </LabelContainer>
 
-      <ContainerInput>
-        <InputB disabled={true} autoComplete="off" value={valor} type={'text'} {...rest}/>
-      </ContainerInput>
+      <InputB disabled={true} autoComplete="off" value={valor} type={'text'} {...rest}/>
     </Container>
   )
 }

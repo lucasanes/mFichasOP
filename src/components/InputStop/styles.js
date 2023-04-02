@@ -3,6 +3,7 @@ import { styled } from '../../stitches.config';
 export const Container = styled('div', {
 
   width: '100%',
+  height: 'fit-content',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -10,29 +11,18 @@ export const Container = styled('div', {
 
 })
 
-export const ContainerInput = styled('div', {
+export const InputB = styled('input', {
+
   width: '100%',
   overflow: 'hidden',
   border: "2px solid #ffffff90",
   borderRadius: '1rem',
   display: 'block',
   background: 'transparent',
-  zIndex: 3
-})
-
-export const InputB = styled('input', {
-  width: '100%',
-  height: 'auto',
-  wordWrap: 'break-all',
+  zIndex: 3,
   fontSize: "2rem",
   padding: "1rem",
-  background: "transparent",
-  borderRadius: "0.7rem",
-  border: 'none',
-  outline: 'solid 0.2rem white',
-  color: 'transparent',
   textOverflow: 'ellipsis',
-  caretColor: 'white',
 })
 
 export const LabelContainer = styled('label', {

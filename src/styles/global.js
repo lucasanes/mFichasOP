@@ -43,4 +43,13 @@ export const GlobalStyles = globalCss({
     '-webkit-box-shadow': '0 0 0 30px rgb(20,20,20) inset'
   },
 
+  'input[type=number]::-webkit-inner-spin-button': { 
+    '-webkit-appearance': 'none'  
+  },
+
+  'input[type=number]': { 
+    '-moz-appearance': 'textfield',
+    'appearance': 'textfield'
+  }
+
 });
