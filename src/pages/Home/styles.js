@@ -12,9 +12,17 @@ export const Container = styled('div', {
   overflowY: 'auto',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
   flexDirection: 'column',
-  padding: '2rem',
+
+});
+
+export const Body = styled('div', {
+
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  margin: 'auto',
+  padding: ' 0 2rem'
 
 });
 
@@ -33,9 +41,17 @@ export const Title = styled('h1', {
   marginBottom: '6rem',
   paddingTop: '1rem',
   color: 'white',
-  fontSize: '6rem',
+  fontSize: '5.8rem',
   fontFamily: 'Special Elite',
-  textShadow: '0px 0px 10px #ffffff, 0px 0px 15px #ffffff25'
+  textShadow: '0px 0px 10px #ffffff, 0px 0px 15px #ffffff25',
+
+  '@sm': {
+    fontSize: '7rem'
+  },
+
+  '@md': {
+    fontSize: '8rem'
+  }
 
 });
 
