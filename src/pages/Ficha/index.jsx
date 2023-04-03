@@ -37,6 +37,7 @@ export function Ficha() {
         console.log(response.data)
 
         setNome(ficha.nome)
+        document.title = `mFichasOP - ${ficha.nome}`
 
         setPrincipal({
           nome: ficha.nome,

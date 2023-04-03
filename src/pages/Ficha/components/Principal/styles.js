@@ -10,7 +10,7 @@ export const Container = styled('div', {
 
 export const Body = styled('div', {
 
-  height: 'calc(100% - 60px)',
+  maxHeight: 'calc(100% - 60px)',
   display: 'grid',
   gridTemplateColumns: '1fr',
   gap: '2rem 1rem',

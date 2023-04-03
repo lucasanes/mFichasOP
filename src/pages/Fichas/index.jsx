@@ -9,6 +9,8 @@ import {Body, Container} from './styles'
 
 export function Fichas() {
 
+  document.title = 'mFichasOP - Fichas'
+
   // useEffect(() => {
   
     // function executeUpdateCombate({token, combate}) {

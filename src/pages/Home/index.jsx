@@ -15,6 +15,8 @@ export function Home() {
   //   socket.emit("combate", {token, combate: true})
   // }
 
+  document.title = 'mFichasOP'
+
   return (
     <Container>
 
