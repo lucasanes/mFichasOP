@@ -7,13 +7,13 @@ export const Container = styled('div', {
 
 export const ContentWrapper = styled('main', {
   width: '100%',
-  position: 'fixed',
-  top: '6rem',
+  marginTop: '6rem',
+  position: 'relative',
 
   variants: {
     auth: {
       true: {
-        height: '500px',
+        marginBottom: '8rem'
       },
       trueficha: {
         height: 'calc(100% - 120px)',
