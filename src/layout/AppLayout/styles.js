@@ -13,7 +13,7 @@ export const ContentWrapper = styled('main', {
   variants: {
     auth: {
       true: {
-        height: 'calc(1000px - 345px)',
+        height: 'calc(100% - 140px)',
       },
       trueficha: {
         height: 'calc(100% - 120px)',
