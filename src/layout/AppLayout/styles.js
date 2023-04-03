@@ -12,13 +12,13 @@ export const ContentWrapper = styled('main', {
   variants: {
     auth: {
       true: {
-        marginBottom: '8rem'
+        height: 'calc(100vh - 140px)',
       },
       trueficha: {
-        marginBottom: '6rem'
+        height: 'calc(100vh - 120px)',
       },
       false: {
-        marginBottom: '0rem'
+        height: 'calc(100vh - 60px)'
       },
     }
   }

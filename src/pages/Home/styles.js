@@ -22,7 +22,7 @@ export const Body = styled('div', {
   alignItems: 'center',
   flexDirection: 'column',
   margin: 'auto',
-  padding: ' 0 2rem'
+  padding: '1rem 2rem'
 
 });
 
