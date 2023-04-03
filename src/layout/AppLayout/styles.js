@@ -20,7 +20,7 @@ export const ContentWrapper = styled('main', {
         marginBottom: '6rem'
       },
       false: {
-        height: '100%',
+        height: 'calc(100% - 60px)',
         marginBottom: '0rem'
       },
     }
