@@ -53,6 +53,8 @@ export function Fichas() {
 
       <Body isLoading={isLoading}>
         {(!isLoading && fichas) && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
+        {(!isLoading && fichas) && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
+        {(!isLoading && fichas) && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
       </Body>
 
     </Container>
