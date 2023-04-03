@@ -53,8 +53,6 @@ export function Fichas() {
 
       <Body isLoading={isLoading}>
         {fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
-        {fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
-        {fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
       </Body>
 
     </Container>

@@ -29,14 +29,19 @@ export function Status({data}) {
   useEffect(() => {
 
     if (status.foto_morrendo != null && (pvA == 0)) {
+      console.log('morrendo')
       setFotoAtual(status.foto_morrendo);
     } else if (status.foto_insanoeferido != null && (psA == 0 && pvA < (pvMax / 2))) {
+      console.log('insano e ferido')
       setFotoAtual(status.foto_insanoeferido);
     } else if (status.foto_ferido != null && (pvA < (status.pvMax / 2))) {
+      console.log('ferido')
       setFotoAtual(status.foto_ferido);
     } else if (status.foto_insano != null && psA == 0) {
+      console.log('insano')
       setFotoAtual(status.foto_insano);
     } else {
+      console.log('normal')
       setFotoAtual(status.foto);
     }
 
