@@ -8,12 +8,12 @@ export function Routes() {
   const {user} = useAuth()
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       {user ?
         <UserRoutes/> 
       :
         <AuthRoutes/>
       }
-    </BrowserRouter>
+    </HashRouter>
   );
 }
