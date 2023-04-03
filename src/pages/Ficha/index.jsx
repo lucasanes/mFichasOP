@@ -108,10 +108,10 @@ export function Ficha() {
   }, [])
 
   return (
-    <Container>
+    <Container isLoading={isLoading}>
       <Body isLoading={isLoading}>
-        {(!isLoading && body == 'principal') && <Principal data={principal}/>}
-        {(!isLoading && body == 'status') && <Status data={status}/>}
+        {(body == 'principal') && <Principal data={principal}/>}
+        {(body == 'status') && <Status data={status}/>}
       </Body>
       <ToastContainer/>
     </Container>

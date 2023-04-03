@@ -8,6 +8,17 @@ export const Container = styled('div', {
   overflowX: "hidden",
   overflowY: 'auto',
   backgroundColor: 'rgb(20,20,20)',
+
+  variants: {
+    isLoading: {
+      true: {
+        backgroundImage: `url(${Loading})`,
+        backgroundSize: '20rem',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+      }
+    }
+  }
   
 });
 
@@ -21,10 +32,7 @@ export const Body = styled('div', {
   variants: {
     isLoading: {
       true: {
-        backgroundImage: `url(${Loading})`,
-        backgroundSize: '20rem',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center'
+        opacity: 0
       }
     }
   }

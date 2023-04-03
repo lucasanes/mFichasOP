@@ -49,12 +49,12 @@ export function Fichas() {
   }, [])
 
   return (
-    <Container>
+    <Container isLoading={isLoading}>
 
       <Body isLoading={isLoading}>
-        {(!isLoading && fichas) && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
-        {(!isLoading && fichas) && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
-        {(!isLoading && fichas) && fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
+        {fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
+        {fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
+        {fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
       </Body>
 
     </Container>
