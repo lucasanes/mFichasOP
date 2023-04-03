@@ -7,19 +7,20 @@ export const Container = styled('div', {
 
 export const ContentWrapper = styled('main', {
   width: '100%',
+  marginBottom: '6rem',
 
-  variants: {
-    auth: {
-      true: {
-        paddingBottom: '8rem'
-      },
-      trueficha: {
-        paddingBottom: '6rem'
-      },
-      false: {
-        paddingBottom: '0 rem'
-      },
-    }
-  }
+  // variants: {
+  //   auth: {
+  //     true: {
+  //       paddingBottom: '8rem'
+  //     },
+  //     trueficha: {
+  //       paddingBottom: '6rem'
+  //     },
+  //     false: {
+  //       paddingBottom: '0rem'
+  //     },
+  //   }
+  // }
 
 })
