@@ -49,7 +49,8 @@ export const BodyStatus = styled('div', {
     color: 'white',
     textAlign: 'center',
     fontSize: '2rem',
-    fontFamily: 'El Messiri'
+    fontFamily: 'El Messiri',
+    letterSpacing: '1px'
   },
 
   '.header': {
@@ -153,6 +154,22 @@ export const PortraitButton = styled('button', {
         '&:hover': {
           background: '#ff434350'
         },
+      },
+      darkred: {
+        border: '1px solid #8c0000',
+        color: '#8c0000',
+
+        '&:hover': {
+          background: '#8c000050'
+        },
+      },
+      aqua: {
+        border: '1px solid #00eeff',
+        color: '#00eeff',
+
+        '&:hover': {
+          background: '#00eeff50'
+        }
       },
       blue: {
         border: '1px solid #005eff',

@@ -1,4 +1,5 @@
 import { styled } from "../../../stitches.config";
+import Loading from '../../../assets/imgs/Loading2.gif'
 
 export const Container = styled('div', {
 
@@ -15,6 +16,17 @@ export const Container = styled('div', {
 
   form: {
     height: '100%'
+  },
+
+  variants: {
+    isLoading: {
+      true: {
+        backgroundImage: `url(${Loading})`,
+        backgroundSize: '20rem',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+      }
+    }
   }
 
 })
@@ -104,6 +116,14 @@ export const Body = styled('div', {
       background: '#00fff750',
     }
   },
+
+  variants: {
+    isLoading: {
+      true: {
+        opacity: 0
+      }
+    }
+  }
 
 });
 

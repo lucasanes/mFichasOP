@@ -10,8 +10,10 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
   useEffect(() => {
     if (valor != null && valor.toString().length > 0) {
       setFocus(true)
+    } else {
+      setFocus(false)
     }
-  })
+  }, [valor])
 
   function onlyNumbers(v) {
     if (valorMax != null && valorMax >= v || valorMax == null) {

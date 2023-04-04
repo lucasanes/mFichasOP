@@ -113,6 +113,9 @@ export const Progress = styled('div', {
       },
       aqua: {
         backgroundColor: '#005795',
+      },
+      orange: {
+        backgroundColor: '#00ff8cff'
       }
     }
   }

@@ -18,6 +18,17 @@ export const Container = styled('div', {
     width: '45rem'
   },
 
+  h2: {
+    fontSize: '3rem',
+    textAlign: 'center',
+    padding: '2rem 0',
+    paddingBottom: '1.5rem',
+    color: 'white',
+    fontFamily: 'Special Elite',
+    fontWeight: 100,
+    letterSpacing: '1px'
+  }
+
 })
 
 export const Header = styled('div', {
@@ -106,6 +117,16 @@ export const Body = styled('div', {
   
     }
   },
+
+  variants: {
+    isLoading: {
+      true: {
+        opacity: 0,
+        padding: 0,
+        height: 0
+      }
+    }
+  }
 
 });
 

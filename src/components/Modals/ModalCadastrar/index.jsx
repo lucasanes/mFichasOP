@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import { Body, Container, Footer, Header } from "./styles";
 import {Input} from '../../Input'
@@ -9,11 +9,27 @@ import { IoClose } from 'react-icons/io5'
 
 export function ModalCadastrar({setModalClose}) {
 
+  const [isLoading, setIsLoading] = useState(true)
+
   const [nome, setNome] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [repetirSenha, setRepetirSenha] = useState('')
+
+  useEffect(() => {
+    setTimeout(() => {
+      setNome('')
+      setUsername('')
+      setEmail('')
+      setSenha('')
+      setRepetirSenha('')
+    }, 1000);
+
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1300);
+  }, [])
 
   async function handleLogin(e) {
 
@@ -44,7 +60,9 @@ export function ModalCadastrar({setModalClose}) {
 
         <hr />
 
-        <Body>
+        {isLoading && <h2>Seja bem-vindo ao FichasOP!</h2>}
+
+        <Body isLoading={isLoading}>
 
           <Input label={'Nome'} valor={nome} setValor={setNome}/>
           <Input label={'Username'} valor={username} setValor={setUsername}/>

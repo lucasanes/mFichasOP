@@ -68,6 +68,8 @@ export function Ficha() {
             psMax: ficha.san,
             peA: ficha.pea,
             peMax: ficha.pe,
+            municaoA: ficha.balasusadas,
+            municaoMax: ficha.balas,
             combate: ficha.combate,
             morto: ficha.morrendo,
             opv: ficha.opv,

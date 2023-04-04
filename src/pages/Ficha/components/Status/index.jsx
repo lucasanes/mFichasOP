@@ -4,8 +4,14 @@ import { MdOutlineModeEditOutline } from 'react-icons/md'
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import {Barrinha} from '../../../../components/Barrinha'
+import { api } from '../../../../services/api';
+import { useParams } from 'react-router-dom';
+import { useAuth } from '../../../../hooks/auth';
 
 export function Status({data}) {
+
+  const {id} = useParams()
+  const {token} = useAuth()
 
   const [miniBody, setMiniBody] = useState('status')
   const status = data.status
@@ -25,27 +31,80 @@ export function Status({data}) {
   const [psMax, setPsMax] = useState(status.psMax)
   const [peA, setPeA] = useState(status.peA)
   const [peMax, setPeMax] = useState(status.peMax)
+  const [municaoA, setMunicaoA] = useState(status.municaoA)
+  const [municaoMax, setMunicaoMax] = useState(status.municaoMax)
+
+  const foto = new Image();
+  foto.src = status.foto;
+  const foto_ferido = new Image();
+  foto_ferido.src = status.foto_ferido;
+  const foto_insano = new Image();
+  foto_insano.src = status.foto_insano;
+  const foto_insanoeferido = new Image();
+  foto_insanoeferido.src = status.foto_insanoeferido;
+  const foto_morrendo = new Image();
+  foto_morrendo.src = status.foto_morrendo;
 
   useEffect(() => {
 
     if (status.foto_morrendo != null && (pvA == 0)) {
-      console.log('morrendo')
-      setFotoAtual(status.foto_morrendo);
+      setFotoAtual(foto_morrendo.src);
     } else if (status.foto_insanoeferido != null && (psA == 0 && pvA < (pvMax / 2))) {
-      console.log('insano e ferido')
-      setFotoAtual(status.foto_insanoeferido);
-    } else if (status.foto_ferido != null && (pvA < (status.pvMax / 2))) {
-      console.log('ferido')
-      setFotoAtual(status.foto_ferido);
+      setFotoAtual(foto_insanoeferido.src);
     } else if (status.foto_insano != null && psA == 0) {
-      console.log('insano')
-      setFotoAtual(status.foto_insano);
-    } else {
-      console.log('normal')
-      setFotoAtual(status.foto);
+      setFotoAtual(foto_insano.src);
+    } else if (status.foto_ferido != null && (pvA < (status.pvMax / 2))) {
+      setFotoAtual(foto_ferido.src);
+    }  else {
+      setFotoAtual(foto.src);
     }
 
   }, [pvA, pvMax, psA, psMax, peA, peMax])
+
+  async function updateFicha() {
+
+    const response = await api.post('https://api.fichasop.com/beta_api.php', {
+      query: 'fichas_info_update',
+      sessid: token,
+      token: id,
+      dados: {
+        pva: pvA,
+        pv: pvMax,
+        sana: psA,
+        san: psMax,
+        pea: peA,
+        pe: peMax,
+        balasusadas: municaoA,
+        balas: municaoMax,
+        combate: combate,
+        morrendo: morto,
+        opv: opv,
+        osan: ops,
+        ope: ope,
+
+        proficiencias: [{
+          id: 751975,
+          nome: "Munição agg"
+        }]
+      }
+    })
+
+    console.log(response)
+
+  }
+
+  let changingtimer;
+
+  function subtimer() {
+    clearTimeout(changingtimer);
+    changingtimer = setTimeout(updateFicha, 1500);
+  }
+
+  useEffect(() => {
+
+    subtimer()
+
+  }, [pvA, pvMax, psA, psMax, peA, peMax, municaoA, municaoMax, combate, morto, opv, ops, ope])
 
   return (
     <Container>
@@ -73,6 +132,8 @@ export function Status({data}) {
                 <div className='portrait-status'>
                   <h2>Status</h2>
                   <PortraitButton onClick={() => setCombate(!combate)} active={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
+                  {/* <PortraitButton onClick={() => setMorto(!morto)}  active={morto + 'aqua'} color={'aqua'}>Insano</PortraitButton>
+                  <PortraitButton onClick={() => setMorto(!morto)}  active={morto + 'red'} color={'darkred'}>Morrendo</PortraitButton> */}
                   <PortraitButton onClick={() => setMorto(!morto)}  active={morto + 'red'} color={'red'}>Morto</PortraitButton>
                 </div>
 
@@ -92,7 +153,8 @@ export function Status({data}) {
           <Barrinha color={'aqua'} number={2} valorA={psA} setValorA={setPsA} valorMax={psMax} setValorMax={setPsMax} />
           <h3>Esforço</h3>
           <Barrinha color={'yellow'} number={3} valorA={peA} setValorA={setPeA} valorMax={peMax} setValorMax={setPeMax} />
-
+          <h3>Munição</h3>
+          <Barrinha color={'orange'} number={4} valorA={municaoA} setValorA={setMunicaoA} valorMax={municaoMax} setValorMax={setMunicaoMax} />
         </BodyStatus>
 
       </> : <>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import { Body, Card, Container, Footer, Header } from "./styles";
 import {Input} from '../../Input'
@@ -11,12 +11,29 @@ export function ModalConta({setModalClose}) {
 
   const {user} = useAuth()
 
+  const [isLoading, setIsLoading] = useState(true)
+
   const [nome, setNome] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [repetirSenha, setRepetirSenha] = useState('')
   const [senhaAtual, setSenhaAtual] = useState('')
+
+  useEffect(() => {
+    setTimeout(() => {
+      setNome('')
+      setUsername('')
+      setEmail('')
+      setSenha('')
+      setRepetirSenha('')
+      setSenhaAtual('')
+    }, 1000);
+
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1300);
+  }, [])
 
   async function handleLogin(e) {
 
@@ -34,7 +51,7 @@ export function ModalConta({setModalClose}) {
   }
 
   return (
-    <Container>
+    <Container isLoading={isLoading}>
 
       <form onSubmit={handleLogin}>
 
@@ -47,7 +64,7 @@ export function ModalConta({setModalClose}) {
 
         <hr />
 
-        <Body>
+        <Body isLoading={isLoading}>
 
           <Card>
             <h1>Alterar Username</h1>
