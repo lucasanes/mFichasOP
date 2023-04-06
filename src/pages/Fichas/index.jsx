@@ -22,7 +22,7 @@ export function Fichas() {
 
   const [isLoading, setIsLoading] = useState(true)
 
-  const {token, signOut} = useAuth()
+  const {token} = useAuth()
 
   const [fichas, setFichas] = useState([])
 
@@ -32,9 +32,8 @@ export function Fichas() {
 
       try {
 
-        const response = await api.post("/", {query: 'get_fichas', sessid: token})
-
-        console.log(response.data.fichas)
+        const response = await api.post("/", {query: 'fichas_all_get', sessid: token})
+        
         setFichas(response.data.fichas)
 
       } finally {

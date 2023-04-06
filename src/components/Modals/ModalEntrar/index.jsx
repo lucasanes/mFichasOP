@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { Body, Container, Footer, Header } from "./styles";
 import {Input} from '../../Input'
 import { Toggle } from "../../Toggle";

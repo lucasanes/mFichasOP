@@ -5,11 +5,23 @@ export const Container = styled('div', {
   minWidth: '30rem',
   borderRadius: '1.2rem',
   backgroundColor: 'rgb(27,27,27)',
-  border: '2px solid #00eaff7e',
-  boxShadow: 'rgba(255, 255, 255, 0.75) 0rem 0rem 2rem',
+  border: '1px solid grey',
+  boxShadow: 'rgba(255, 255, 255, 0.5) 0rem 0rem 2rem',
   textAlign: 'center',
   display: 'flex',
   flexDirection: 'column',
+  margin: '0 1rem',
+
+  variants: {
+    isDano: {
+      true: {
+        borderColor: '#ff4b4b'
+      },
+      false: {
+        borderColor: '#00fff2' 
+      }
+    }
+  }
 
 })
 
@@ -24,13 +36,28 @@ export const Header = styled('div', {
   justifyContent: 'space-between',
   background: 'rgb(20,20,20)',
   padding: '0 2rem',
+  paddingTop: '.2rem',
+
+  button: {
+    paddingTop: '.3rem',
+  },
 
   h1: {
-    color: '#cacaca',
     fontSize: '2.2rem',
     textAlign: 'left',
-    fontFamily: 'Arvo'
+    fontFamily: 'Arvo',
   },
+
+  variants: {
+    isDano: {
+      true: {
+        h1: { color: '#ff4b4b' }
+      },
+      false: {
+        h1: { color: '#00fff2' }
+      }
+    }
+  }
 
 })
 
@@ -41,7 +68,6 @@ export const CloseButton = styled('button', {
   background: 'none',
   color: '#ffffff90',
   fontWeight: 100,
-  top: '5%',
 
 })
 
@@ -54,33 +80,14 @@ export const Main = styled('div', {
   color: 'white',
   marginRight: '2rem',
   paddingTop: '1rem',
-
-  h1: {
-    fontSize: '2.5rem',
-    fontWeight: 100,
-    marginRight: '1rem',
-    width: 'min-content',
-    textAlign: 'left',
-    textTransform: 'capitalize',
-    fontFamily: 'Rye'
-  },
+  flexWrap: 'wrap',
 
   span: {
     fontSize: '2.5rem',
     fontFamily: 'Special Elite',
-    wordBreak: 'break-all'
+    wordBreak: 'break-all',
+    marginTop: '1rem'
   },
-
-  variants: {
-    isDano: {
-      true: {
-        h1: { color: 'Crimson' }
-      },
-      false: {
-        h1: { color: 'purple' }
-      }
-    }
-  }
 
 })
 

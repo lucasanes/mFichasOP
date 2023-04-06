@@ -8,41 +8,28 @@ export const Container = styled('div', {
 
 });
 
-export const Body = styled('div', {
-
-  maxHeight: 'calc(100% - 60px)',
-  display: 'grid',
-  gridTemplateColumns: '1fr',
-  gap: '2rem 1rem',
-  padding: '2rem 1rem',
-  overflowY: 'auto',
-
-  '@sm': {
-    gridTemplateColumns: '1fr 1fr'
-  }
-
-});
-
 export const Header = styled('div', {
 
   minHeight: '60px',
   width: '100%',
-  padding: '1rem 6rem',
+  padding: '1rem',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '1rem',
   flexWrap: 'wrap',
+  gap: '1rem'
 
-  h1: {
-    color: 'white',
-    fontFamily: 'Special Elite',
-    textAlign: 'center',
-    fontSize: '2.4rem',
-    letterSpacing: '1px',
-    border: '2px solid grey',
-    padding: '.8rem 1rem .4rem 1rem',
-  },
+});
+
+export const Body = styled('div', {
+
+  width: '100%',
+  height: 'calc(100% - 150px)',
+  padding: '2rem 1rem',
+  display: 'flex',
+  flexDirection: 'column',
+  overflowY: 'auto',
+  gap: '2rem'
 
 });
 

@@ -45,10 +45,19 @@ export function Ficha({data}) {
           </Card>
           }
 
-          <Card>
-            <label>Nacionalidade:</label>
-            <span>{data.local}</span>
-          </Card>
+          {data.missao ?
+            <Card>
+              <label>Sessão:</label>
+              <span>{data.missao}</span>
+            </Card>
+          :
+            <Card>
+              <label>Nacionalidade:</label>
+              <span>{data.local}</span>
+            </Card>
+          }
+
+          
         </div>
       </Body>
 

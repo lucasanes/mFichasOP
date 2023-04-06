@@ -240,28 +240,13 @@ export const Button = styled('button', {
     active: {
       true: {
         background: '#ffffff30',
-        cursor: 'default'
+        cursor: 'default',
+
+        '&:hover': {
+          background: '#ffffff30'
+        },
       }
     }
-  }
-
-});
-
-export const ButtonEdit = styled('button', {
-
-  position: 'fixed',
-  right: 15,
-  background: 'none',
-  border: '1px solid transparent',
-  borderRadius: '5px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '.2rem',
-  transition: '.3s',
-
-  '&:hover': {
-    borderColor: 'Yellow'
   }
 
 });

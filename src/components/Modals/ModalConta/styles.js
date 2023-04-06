@@ -22,7 +22,7 @@ export const Container = styled('div', {
     isLoading: {
       true: {
         backgroundImage: `url(${Loading})`,
-        backgroundSize: '20rem',
+        backgroundSize: '15rem',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
       }

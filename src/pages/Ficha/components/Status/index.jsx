@@ -1,14 +1,19 @@
-import {BodyDefesas, BodyStatus, Button, ButtonEdit, Container, Header, Img, PortraitButton} from './styles'
+import {BodyDefesas, BodyStatus, Button, Container, Header, Img, PortraitButton} from './styles'
 import {InputStop} from '../../../../components/InputStop'
 import { MdOutlineModeEditOutline } from 'react-icons/md'
 import { ToastContainer, toast } from 'react-toastify';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {Barrinha} from '../../../../components/Barrinha'
 import { api } from '../../../../services/api';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../../../../hooks/auth';
+import { ButtonEdit } from '../../../../components/ButtonEdit';
 
-export function Status({data}) {
+export function Status({data, setData}) {
+
+  const isFirstRender = useRef(true)
+
+  const [changinTimer, setChanginTimer] = useState(null)
 
   const {id} = useParams()
   const {token} = useAuth()
@@ -61,9 +66,9 @@ export function Status({data}) {
 
   }, [pvA, pvMax, psA, psMax, peA, peMax])
 
-  async function updateFicha() {
+  async function updateFichaAPI() {
 
-    const response = await api.post('https://api.fichasop.com/beta_api.php', {
+    const response = await api.post('/', {
       query: 'fichas_info_update',
       sessid: token,
       token: id,
@@ -81,11 +86,6 @@ export function Status({data}) {
         opv: opv,
         osan: ops,
         ope: ope,
-
-        proficiencias: [{
-          id: 751975,
-          nome: "Munição agg"
-        }]
       }
     })
 
@@ -93,14 +93,41 @@ export function Status({data}) {
 
   }
 
-  let changingtimer;
-
   function subtimer() {
-    clearTimeout(changingtimer);
-    changingtimer = setTimeout(updateFicha, 1500);
+    clearTimeout(changinTimer);
+    setChanginTimer(setTimeout(updateFichaAPI, 2000))
   }
 
   useEffect(() => {
+
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
+    setData(prevState => ({
+      ...prevState,
+      status: {
+        foto: status.foto,
+        foto_insano: status.foto_insano,
+        foto_ferido: status.foto_ferido,
+        foto_morrendo: status.foto_morrendo,
+        foto_insanoeferido: status.foto_insanoeferido,
+        pvA,
+        pvMax,
+        psA,
+        psMax,
+        peA,
+        peMax,
+        municaoA,
+        municaoMax,
+        combate,
+        morto,
+        opv,
+        ops,
+        ope,
+      }
+    }))
 
     subtimer()
 
@@ -112,7 +139,7 @@ export function Status({data}) {
       <Header>
         <Button active={miniBody == 'status'} onClick={() => setMiniBody('status')}>Status</Button>
         <Button active={miniBody == 'defesas'} onClick={() => setMiniBody('defesas')}>Defesas</Button>
-        <ButtonEdit><MdOutlineModeEditOutline color='yellow' size={22}/></ButtonEdit>
+        <ButtonEdit/>
       </Header>
 
       <hr />

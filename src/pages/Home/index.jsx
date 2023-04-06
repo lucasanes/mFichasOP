@@ -3,6 +3,7 @@ import { AtributoButton } from '../../components/AtributoButton';
 import { Toggle } from '../../components/Toggle';
 import { useAuth } from '../../hooks/auth';
 import {Body, Container, DivTitle, SubTitles, Title} from './styles'
+import { ToastContainer } from 'react-toastify';
 
 // import { io } from 'socket.io-client';
 // const socket = io('http://localhost:8080')
@@ -36,6 +37,8 @@ export function Home() {
         <AtributoButton agi={3} forca={2} int={2} pre={1} vig={1}/>
 
       </Body>
+
+      <ToastContainer/>
 
       {/* <button onClick={newCombate}>Enviar Socket</button> */}
 

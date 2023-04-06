@@ -13,7 +13,7 @@ function AuthProvider({ children }) {
 
   async function signIn({username, senha, manterAtivo }) {
 
-    const response = await api.post('/', { query: 'account_get', login: username, senha });
+    const response = await api.post('/', { query: 'account_user_get', login: username, senha });
 
     if (response.data.success) {
 
@@ -67,7 +67,7 @@ function AuthProvider({ children }) {
           signOut({location: null})
         } else {
 
-          const response = await api.post('/', { query: 'account_check', sessid: token});
+          const response = await api.post('/', { query: 'account_user_get', sessid: token});
 
           const tokenIsValid = response.data.success
           const user = response.data.conta

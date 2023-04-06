@@ -9,6 +9,8 @@ import { IoClose } from 'react-icons/io5'
 
 export function ModalCadastrar({setModalClose}) {
 
+  const {signIn} = useAuth()
+
   const [isLoading, setIsLoading] = useState(true)
 
   const [nome, setNome] = useState('')
@@ -35,11 +37,11 @@ export function ModalCadastrar({setModalClose}) {
 
     e.preventDefault()
 
-    const response = await api.post('/', {query: 'account_create', nome, login: username, email, senha, csenha: repetirSenha})
+    const response = await api.post('/', {query: 'account_user_create', nome, login: username, email, senha, csenha: repetirSenha})
 
     if (response.data.success) {
       setModalClose()
-      toast.success('Conta criada com sucesso!')
+      signIn({username, senha, manterAtivo: true})
     } else {
       toast.error(response.data.msg)
     }
@@ -64,11 +66,11 @@ export function ModalCadastrar({setModalClose}) {
 
         <Body isLoading={isLoading}>
 
-          <Input label={'Nome'} valor={nome} setValor={setNome}/>
-          <Input label={'Username'} valor={username} setValor={setUsername}/>
-          <Input label={'Email'} valor={email} setValor={setEmail}/>
-          <Input isSenha={true} label={'Senha'} valor={senha} setValor={setSenha}/>
-          <Input isSenha={true} label={'Repetir Senha'} valor={repetirSenha} setValor={setRepetirSenha}/>
+          <Input label={'Nome'} valor={nome} setValor={setNome} minLength={2} maxLength={50}/>
+          <Input label={'Username'} valor={username} setValor={setUsername} minLength={2} maxLength={16}/>
+          <Input label={'Email'} valor={email} setValor={setEmail} minLength={5} maxLength={200}/>
+          <Input isSenha={true} label={'Senha'} valor={senha} setValor={setSenha} minLength={8} maxLength={50}/>
+          <Input isSenha={true} label={'Repetir Senha'} valor={repetirSenha} setValor={setRepetirSenha} minLength={8} maxLength={50}/>
 
         </Body>
 
