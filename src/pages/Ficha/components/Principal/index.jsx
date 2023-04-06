@@ -3,43 +3,42 @@ import {InputStop} from '../../../../components/InputStop'
 import { MdOutlineModeEditOutline } from 'react-icons/md'
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect, useRef, useState } from 'react';
-import { ButtonEdit } from '../../../../components/ButtonEdit';
+import { ButtonEditHeader } from '../../../../components/ButtonEditHeader';
+import {useFicha} from '../../../../hooks/ficha'
 
 export function Principal({data}) {
 
   const [miniBody, setMiniBody] = useState('infos')
-
-  const headerRef = useRef(null)
-  const bodyRef = useRef(null)
+  const [low, setLow] = useState(false)
 
   useEffect(() => {
-    const content1 = headerRef.current
-    const content2 = bodyRef.current
-    
-    content2.style = `max-height: calc(100% - ${content1.scrollHeight}px)`;  
+    if (innerWidth > 485) {
+      setLow(false)
+    } else {
+      setLow(true)
+    }
   }, [])
 
   window.addEventListener('resize', () => {
-    const content1 = headerRef.current
-    const content2 = bodyRef.current
-
-    content2.style = `max-height: calc(100% - ${content1.scrollHeight}px)`;  
+    if (innerWidth > 485) {
+      setLow(false)
+    } else {
+      setLow(true)
+    }
   })
 
   return (
     <Container>
 
-      <Header ref={headerRef}>
+      <Header>
         <Button active={miniBody == 'infos'} onClick={() => setMiniBody('infos')}>Informações</Button>
         <Button active={miniBody == 'personagem'} onClick={() => setMiniBody('personagem')}>Personagem</Button>
-        <ButtonEdit/>
+        <ButtonEditHeader/>
       </Header>
 
       <hr />
-
       
-      
-      <Body ref={bodyRef}>
+      <Body low={low}>
         
         {miniBody == 'infos' ? <>
           <InputStop label={'Nome'} valor={data.nome}/>

@@ -2,6 +2,7 @@ import {styled} from '../../stitches.config';
 
 export const Container = styled('div', {
 
+  width: 'fit-content',
   position: 'absolute',
   right: 15,
   display: 'flex',
@@ -23,11 +24,11 @@ export const Container = styled('div', {
     borderColor: 'Yellow'
   },
 
-  variants: {
-    segundo: {
-      true: {
-        right: 45
-      }
-    }
-  }
+  // variants: {
+  //   segundo: {
+  //     true: {
+  //       right: 45
+  //     }
+  //   }
+  // }
 });

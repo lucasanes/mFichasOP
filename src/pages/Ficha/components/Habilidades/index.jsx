@@ -1,8 +1,8 @@
 import {Body, Button, Container, Header} from './styles'
-import { ButtonEdit } from '../../../../components/ButtonEdit';
 import { useEffect, useRef, useState } from 'react';
 import { Habilidade } from './Habilidade';
 import { Proficiencia } from './Proficiencia';
+import { useFicha } from '../../../../hooks/ficha';
 
 export function Habilidades({data, setData}) {
 
@@ -12,27 +12,28 @@ export function Habilidades({data, setData}) {
   const poderes = data.poderes
   const proficiencias = data.proficiencias
 
-  const headerRef = useRef(null)
-  const bodyRef = useRef(null)
+  const [low, setLow] = useState(false)
 
   useEffect(() => {
-    const content1 = headerRef.current
-    const content2 = bodyRef.current
-    
-    content2.style.height = `calc(100% - ${content1.scrollHeight}px)`;  
+    if (innerWidth > 562) {
+      setLow(false)
+    } else {
+      setLow(true)
+    }
   }, [])
 
   window.addEventListener('resize', () => {
-    const content1 = headerRef.current
-    const content2 = bodyRef.current
-    
-    content2.style.height = `calc(100% - ${content1.scrollHeight}px)`;  
+    if (innerWidth > 562) {
+      setLow(false)
+    } else {
+      setLow(true)
+    }
   })
  
   return (
     <Container>
 
-      <Header ref={headerRef}>
+      <Header>
         <Button active={miniBody == 'habilidades'} onClick={() => setMiniBody('habilidades')}>Habilidades</Button>
         <Button active={miniBody == 'poderes'} onClick={() => setMiniBody('poderes')}>Poderes</Button>
         <Button active={miniBody == 'proficiencias'} onClick={() => setMiniBody('proficiencias')}>Proficiências</Button>
@@ -40,7 +41,7 @@ export function Habilidades({data, setData}) {
 
       <hr />
 
-      <Body ref={bodyRef}>
+      <Body low={low}>
 
         {miniBody == 'habilidades' && habilidades.map(habilidade => <Habilidade data={habilidade}/>)}
 

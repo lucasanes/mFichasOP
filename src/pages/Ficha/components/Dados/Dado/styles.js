@@ -22,25 +22,26 @@ export const Button = styled('button', {
   flexDirection: 'column',
   gap: '1rem',
   fontSize: '2.2rem',
-  fontFamily: 'El Messiri',
+  fontFamily: 'Rye',
+  color: 'white',
 
   span: {
     fontSize: '1.8rem',
-    fontFamily: 'El Messiri',
+    fontFamily: 'Rye',
     marginTop: '-1rem'
   },
 
   variants: {
     isDano: {
       true: {
-        color: '#ff4b4b',
+        textShadow: '#ff4b4b 2px 2px 3px',
 
         '&:hover': {
           border: '2px solid #ff4b4b',
         }
       },
       false: {
-        color: '#00fff2',
+        textShadow: '#00fff2 2px 2px 3px',
 
         '&:hover': {
           border: '2px solid #00fff2',

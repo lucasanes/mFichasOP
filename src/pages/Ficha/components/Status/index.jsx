@@ -7,7 +7,7 @@ import {Barrinha} from '../../../../components/Barrinha'
 import { api } from '../../../../services/api';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../../../../hooks/auth';
-import { ButtonEdit } from '../../../../components/ButtonEdit';
+import { ButtonEditHeader } from '../../../../components/ButtonEditHeader';
 
 export function Status({data, setData}) {
 
@@ -139,7 +139,7 @@ export function Status({data, setData}) {
       <Header>
         <Button active={miniBody == 'status'} onClick={() => setMiniBody('status')}>Status</Button>
         <Button active={miniBody == 'defesas'} onClick={() => setMiniBody('defesas')}>Defesas</Button>
-        <ButtonEdit/>
+        <ButtonEditHeader/>
       </Header>
 
       <hr />

@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import { Pericias } from './components/Pericias';
 import { Habilidades } from './components/Habilidades';
 import { Dados } from './components/Dados';
+import { Rituais } from './components/Rituais';
 
 export function Ficha() {
 
@@ -139,6 +140,8 @@ export function Ficha() {
 
         setHpe({habilidades: ficha.habilidades, poderes: ficha.poderes, proficiencias: ficha.proficiencias})
 
+        setRituais(ficha.rituais)
+
       } finally {
         setTimeout(() => {
           setIsLoading(false)
@@ -158,6 +161,7 @@ export function Ficha() {
         {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
         {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
         {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}
+        {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
         {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
       </Body>
       <ToastContainer/>

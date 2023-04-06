@@ -1,4 +1,4 @@
-import { styled } from '../../../stitches.config';
+import { keyframes, styled } from '../../../stitches.config';
 
 export const Container = styled('div', {
 
@@ -15,10 +15,12 @@ export const Container = styled('div', {
   variants: {
     isDano: {
       true: {
-        borderColor: '#ff4b4b'
+        borderColor: '#ff4b4b',
+        h1: { color: '#ff4b4b' }
       },
       false: {
-        borderColor: '#00fff2' 
+        borderColor: '#00fff2',
+        h1: { color: '#00fff2' }
       }
     }
   }
@@ -46,18 +48,8 @@ export const Header = styled('div', {
     fontSize: '2.2rem',
     textAlign: 'left',
     fontFamily: 'Arvo',
+    textTransform: 'capitalize'
   },
-
-  variants: {
-    isDano: {
-      true: {
-        h1: { color: '#ff4b4b' }
-      },
-      false: {
-        h1: { color: '#00fff2' }
-      }
-    }
-  }
 
 })
 
@@ -69,6 +61,42 @@ export const CloseButton = styled('button', {
   color: '#ffffff90',
   fontWeight: 100,
 
+})
+
+const shake = keyframes({
+  '0%': {
+    transform: 'translate(1px, 1px) rotate(0deg)'
+  },
+  '10%': {
+    transform: 'translate(-1px, -1px) rotate(-0.5deg)'
+  },
+  '20%': {
+    transform: 'translate(-1px, 1px) rotate(.5deg)'
+  },
+  '30%': {
+    transform: 'translate(1px, 1px) rotate(0deg)'
+  },
+  '40%': {
+    transform: 'translate(-1px, -1px) rotate(.5deg)'
+  },
+  '50%': {
+    transform: 'translate(1px, -1px) rotate(-.5deg)'
+  },
+  '60%': {
+    transform: 'translate(1px, 1px) rotate(0deg)'
+  },
+  '70%': {
+    transform: 'translate(-1px, -1px) rotate(-0.5deg)'
+  },
+  '80%': {
+    transform: 'translate(-1px, -1px) rotate(.5deg)'
+  },
+  '90%': {
+    transform: 'translate(1px, 1px) rotate(0deg)'
+  },
+  '100%': {
+    transform: 'translate(1px, 1px) rotate(.5deg)'
+  }
 })
 
 export const Main = styled('div', {
@@ -89,6 +117,16 @@ export const Main = styled('div', {
     marginTop: '1rem'
   },
 
+  variants: {
+    isCritico: {
+      true: {
+        span: {
+          animation: `${shake} .5s infinite`
+        }
+      }
+    }
+  }
+
 })
 
 export const Footer = styled('div', {
@@ -102,6 +140,20 @@ export const Footer = styled('div', {
   paddingTop: '2rem',
   color: '#e7e7e7b9',
   fontFamily: 'Special Elite',
-  gap: '.5rem'
+  gap: '.5rem',
+
+  span: {
+    width: 'fit-content'
+  },
+
+  variants: {
+    isCritico: {
+      true: {
+        span: {
+          animation: `${shake} .5s infinite`
+        }
+      }
+    }
+  }
 
 })

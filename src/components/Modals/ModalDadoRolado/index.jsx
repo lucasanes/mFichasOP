@@ -238,9 +238,9 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
         } else {
           if (quantidade > 0) {
             quantidade = (saida["print"] ? "+" : (negativo ? "-" : "+")) + quantidade;
+            print += quantidade;
           }
           resultado += parseInt(quantidade);
-          print += quantidade;
         }
       })
 
@@ -255,6 +255,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
       saida["print"] = print;
       saida["rolagens"] = rolagens
 
+      console.log(saida)
       setDado(saida)
 
       return saida;
@@ -267,20 +268,20 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
   return (
     <Container isDano={data.isDano}>
 
-      <Header isDano={data.isDano}>
+      <Header>
 
         <h1>{pericias(data.nome) != null ? pericias(data.nome) : data.nome}</h1>
         <CloseButton onClick={setModalEditIsOpenFalse}>X</CloseButton>
 
       </Header>
 
-      <Main isDano={data.isDano}>
+      <Main isCritico={data.critico}>
         <span>
           {dado.print} = {dado.resultado}
         </span>
       </Main>
 
-      <Footer>
+      <Footer isCritico={data.critico}>
         {dado.rolagens && dado.rolagens.map((dado) => (
           <span key={dado.dado}>
             {dado.dado}: {dado.resultados.join(', ')}

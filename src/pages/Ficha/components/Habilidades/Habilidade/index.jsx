@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { ButtonDelete } from '../../../../../components/ButtonDelete';
-import { ButtonEdit } from '../../../../../components/ButtonEdit';
+import { ButtonDeleteComponent } from '../../../../../components/ButtonDeleteComponent';
+import { ButtonEditComponent } from '../../../../../components/ButtonEditComponent';
 import {Container, Header1, Button, Body} from './styles'
 import { IoIosArrowForward } from 'react-icons/io'
 
@@ -28,8 +28,10 @@ export function Habilidade({data}) {
     <Container>
       <Header1>
         <Button active={active} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
-        <ButtonEdit segundo size={18}/>
-        <ButtonDelete size={18}/>
+        <div>
+          <ButtonEditComponent segundo size={18}/>
+          <ButtonDeleteComponent size={18}/>
+        </div>
       </Header1>
       <hr />
       <Body ref={contentRef}>

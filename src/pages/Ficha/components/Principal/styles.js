@@ -19,6 +19,14 @@ export const Body = styled('div', {
 
   '@sm': {
     gridTemplateColumns: '1fr 1fr'
+  },
+
+  variants: {
+    low: {
+      true: {
+        maxHeight: 'calc(100% - 110px)',
+      }
+    }
   }
 
 });

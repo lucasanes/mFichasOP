@@ -1,5 +1,5 @@
 import {Body, Container, Header} from './styles'
-import {ButtonEdit} from '../../../../components/ButtonEdit'
+import {ButtonEditHeader} from '../../../../components/ButtonEditHeader'
 import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
 import { Pericia } from './Pericia';
@@ -14,7 +14,7 @@ export function Pericias({data}) {
 
       <Header>
         <h1>Perícias</h1>
-        <ButtonEdit/>
+        <ButtonEditHeader/>
       </Header>
 
       <hr />
