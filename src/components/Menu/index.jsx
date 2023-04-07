@@ -22,7 +22,7 @@ export function Menu() {
   const { signOut } = useAuth();
   const location = useLocation()
 
-  const [active, setActive] = useState('fechado')
+  const [focus, setfocus] = useState('fechado')
   const [modalDoarIsOpen, setModalDoarIsOpen] = useState(false)
   const [modalCreditosIsOpen, setModalCreditosIsOpen] = useState(false)
   const [modalEntrarIsOpen, setModalEntrarIsOpen] = useState(false)
@@ -31,27 +31,27 @@ export function Menu() {
   const [modalRecuperarSenhaIsOpen, setModalRecuperarSenhaIsOpen] = useState(false)
 
   function abrirMenu() {
-    if (active == 'fechado') {
-      setActive('aberto')
-    } else if (active == 'aberto') {
-      setActive('fechando')
-      setTimeout(() => { setActive('fechado') }, 400)
+    if (focus == 'fechado') {
+      setfocus('aberto')
+    } else if (focus == 'aberto') {
+      setfocus('fechando')
+      setTimeout(() => { setfocus('fechado') }, 400)
     }
   }
 
   window.addEventListener("click", (event) => {
 
     if (event.clientY > 272) {
-      if (active == 'aberto') {
-        setActive('fechando')
-        setTimeout(() => { setActive('fechado') }, 300)
+      if (focus == 'aberto') {
+        setfocus('fechando')
+        setTimeout(() => { setfocus('fechado') }, 300)
       }
     }
 
   });
 
   return (
-    <Container active={active} >
+    <Container focus={focus} >
 
       <Modal isOpen={modalDoarIsOpen} setClose={() => setModalDoarIsOpen(false)}>
         <ModalDoar setModalClose={() => setModalDoarIsOpen(false)}/>
@@ -82,14 +82,14 @@ export function Menu() {
         <Link to={'/'} ><img src={icon} width={'60px'} /></Link>
 
         <button onClick={abrirMenu}>
-          <Line1 active={active} />
-          <Line2 active={active} />
-          <Line3 active={active} />
+          <Line1 focus={focus} />
+          <Line2 focus={focus} />
+          <Line3 focus={focus} />
         </button>
 
       </Header>
 
-      <Body active={active}>
+      <Body focus={focus}>
 
         <ul>
 

@@ -40,7 +40,7 @@ export const HeaderButtons = styled('div', {
     transition: '.3s'
   },
 
-  'a:active': {
+  'a:focus': {
     border: '1px solid cyan'
   }
 

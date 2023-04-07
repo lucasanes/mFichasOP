@@ -54,17 +54,17 @@ export const Button = styled('button', {
   border: '2px solid grey',
   transition: '.3s',
 
-  '&:active': {
+  '&:focus': {
     background: '#ffffff15'
   },
 
   variants: {
-    active: {
+    focus: {
       true: {
         background: '#ffffff30',
         cursor: 'default',
 
-        '&:active': {
+        '&:focus': {
           background: '#ffffff30'
         },
       }

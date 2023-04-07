@@ -69,7 +69,7 @@ export const Button = styled('button', {
   },
 
   variants: {
-    active: {
+    focus: {
       true: {
         svg: {
           transform: 'rotate(90deg)'

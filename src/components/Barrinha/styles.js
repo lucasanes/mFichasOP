@@ -46,7 +46,7 @@ export const Botoes = styled('div', {
     }
   },
 
-  'button:active': {
+  'button:focus': {
     border: '1px solid white'
   },
 

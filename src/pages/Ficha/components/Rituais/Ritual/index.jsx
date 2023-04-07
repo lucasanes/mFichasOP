@@ -9,7 +9,7 @@ import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
 
 export function Ritual({data}) {
 
-  const [active, setActive] = useState(false)
+  const [focus, setfocus] = useState(false)
   const contentRef = useRef(null)
   const [modalDadoIsOpen, setModalDadoIsOpen] = useState(false)
   const [dadoData, setDadoData] = useState({})
@@ -18,14 +18,14 @@ export function Ritual({data}) {
     
     const content = ref.current;
   
-    if (active) {
+    if (focus) {
       content.style.transition = "0.3s ease-out";
       content.style.height = "0";
-      setActive(false);
+      setfocus(false);
     } else {
       content.style.transition = "0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
-      setActive(true);
+      setfocus(true);
     }
   }
 
@@ -37,14 +37,14 @@ export function Ritual({data}) {
       </Modal>
 
       <Header1>
-        <Button elemento={data.elemento.toLowerCase()} active={active} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
+        <Button elemento={data.elemento.toLowerCase()} focus={focus} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonEditComponent segundo size={18}/>
           <ButtonDeleteComponent size={18}/>
         </div>
       </Header1>
       <hr/>
-      <Body isActive={active} ref={contentRef}>
+      <Body isfocus={focus} ref={contentRef}>
         <img width={100} src={data.foto} />
 
         <div className='infos'>

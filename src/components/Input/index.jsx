@@ -25,7 +25,7 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
   return (
     <Container>
       
-      <LabelContainer active={focus}>
+      <LabelContainer focus={focus}>
         {label}
       </LabelContainer>
 

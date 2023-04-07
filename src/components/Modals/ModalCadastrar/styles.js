@@ -57,7 +57,7 @@ export const Header = styled('div', {
     justifyContent: 'center',
   },
 
-  'button:active': {
+  'button:focus': {
     opacity: 0.5,
   },
 
@@ -111,7 +111,7 @@ export const Body = styled('div', {
       transition: '.3s',
     },
   
-    'button:active': {
+    'button:focus': {
   
       background: '#00fff750',
   
@@ -147,7 +147,7 @@ export const Footer = styled('div', {
     borderRadius: '5px'
   },
 
-  'button:active': {
+  'button:focus': {
     background: '#00ff8850'
   }
 
