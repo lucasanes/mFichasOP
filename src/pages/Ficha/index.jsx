@@ -150,6 +150,10 @@ export function Ficha() {
     
     fetchData()
 
+    return () => {
+      setNome('...')
+    }
+
   }, [])
 
   return (

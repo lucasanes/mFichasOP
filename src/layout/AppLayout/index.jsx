@@ -12,11 +12,13 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
-  window.addEventListener('click', (e) => {
-    if (e.target.tagName == 'BUTTON') {
-      e.target.blur()
-    }
-  })
+  const buttons = document.querySelectorAll('button');
+
+  buttons.forEach(button => {
+    button.addEventListener('touchend', () => {
+      button.blur();
+    });
+  });
 
   return (
     <Container>
