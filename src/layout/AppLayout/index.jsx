@@ -14,7 +14,9 @@ export function AppLayout() {
 
   document.addEventListener('touchend', (e) => {
     if (e.target.tagName == 'BUTTON') {
-      document.getElementById('root').focus()
+      setTimeout(() => {
+        e.target.blur()
+      }, 500);
     }  
   })
 
