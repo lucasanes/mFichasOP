@@ -50,6 +50,12 @@ export function Status({data, setData}) {
   const foto_morrendo = new Image();
   foto_morrendo.src = status.foto_morrendo;
 
+  document.addEventListener('touchend', (e) => {
+    if (e.target.tagName == 'BUTTON') {
+      e.target.blur()
+    }
+  })
+
   useEffect(() => {
 
     if (status.foto_morrendo != null && (pvA == 0)) {

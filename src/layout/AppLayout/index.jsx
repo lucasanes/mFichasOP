@@ -12,17 +12,11 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
-  useEffect(() => {
-
-    document.addEventListener('touchend', (e) => {
-      if (e.target.tagName == 'BUTTON') {
-        e.target.blur()
-      }
-    })
-
-  }, [])
-
-  
+  document.addEventListener('touchend', (e) => {
+    if (e.target.tagName == 'BUTTON') {
+      e.target.blur()
+    }
+  })
 
   return (
     <Container>
