@@ -60,6 +60,7 @@ export const CloseButton = styled('button', {
   background: 'none',
   color: '#ffffff90',
   fontWeight: 100,
+  padding: '0 .75rem'
 
 })
 

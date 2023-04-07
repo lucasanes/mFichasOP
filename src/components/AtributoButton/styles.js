@@ -24,7 +24,7 @@ export const Container = styled('div', {
     transition: '.3s',
   },
 
-  'button:active': {
+  'button:hover': {
     color: 'Crimson'
   }
 

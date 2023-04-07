@@ -4,14 +4,14 @@ import {AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 export function Input({ isSenha = false, label, setValor, valor, onlyNumber = false, opcional = false, valorMax = null, ...rest }) {
 
-  const [active, setactive] = useState(false)
+  const [hover, sethover] = useState(false)
   const [isSenhaVisible, setIsSenhaVisible] = useState(false)
 
   useEffect(() => {
     if (valor != null && valor.toString().length > 0) {
-      setactive(true)
+      sethover(true)
     } else {
-      setactive(false)
+      sethover(false)
     }
   }, [valor])
 
@@ -25,7 +25,7 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
   return (
     <Container>
       
-      <LabelContainer active={active}>
+      <LabelContainer hover={hover}>
         {label}
       </LabelContainer>
 
@@ -38,12 +38,12 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
               setValor(event.target.value)
             }
           }}
-          onactive={() => {
-            setactive(true)
+          onhover={() => {
+            sethover(true)
           }}
           onBlur={() => {
             if (valor == null || valor.toString().length == 0) {
-              setactive(false)
+              sethover(false)
             }
           }}
         />

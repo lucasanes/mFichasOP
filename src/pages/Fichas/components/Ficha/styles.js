@@ -40,7 +40,7 @@ export const HeaderButtons = styled('div', {
     transition: '.3s'
   },
 
-  'a:active': {
+  'a:hover': {
     border: '1px solid cyan'
   }
 

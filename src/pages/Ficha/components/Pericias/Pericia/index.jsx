@@ -34,7 +34,7 @@ export function Pericia({data}) {
     <Container>
 
       <Modal isOpen={modalDadoRoladoIsOpen} setClose={() => setModalDadoRoladoIsOpen(false)}>
-        <ModalDadoRolado data={dataDado} setModalEditIsOpenFalse={() => setModalDadoRoladoIsOpen}/>
+        <ModalDadoRolado data={dataDado} setModalEditIsOpenFalse={() => setModalDadoRoladoIsOpen(false)}/>
       </Modal>
 
       <span>{pericias(data.nome)}</span>

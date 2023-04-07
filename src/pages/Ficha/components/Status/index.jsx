@@ -137,8 +137,8 @@ export function Status({data, setData}) {
     <Container>
 
       <Header>
-        <Button active={miniBody == 'status'} onClick={() => setMiniBody('status')}>Status</Button>
-        <Button active={miniBody == 'defesas'} onClick={() => setMiniBody('defesas')}>Defesas</Button>
+        <Button hover={miniBody == 'status'} onClick={() => setMiniBody('status')}>Status</Button>
+        <Button hover={miniBody == 'defesas'} onClick={() => setMiniBody('defesas')}>Defesas</Button>
         <ButtonEditHeader/>
       </Header>
 
@@ -158,17 +158,17 @@ export function Status({data, setData}) {
               <div className='portrait-body'>
                 <div className='portrait-status'>
                   <h2>Status</h2>
-                  <PortraitButton onClick={() => setCombate(!combate)} active={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
-                  {/* <PortraitButton onClick={() => setMorto(!morto)}  active={morto + 'aqua'} color={'aqua'}>Insano</PortraitButton>
-                  <PortraitButton onClick={() => setMorto(!morto)}  active={morto + 'red'} color={'darkred'}>Morrendo</PortraitButton> */}
-                  <PortraitButton onClick={(e) => setMorto(!morto)}  active={morto + 'red'} color={'red'}>Morto</PortraitButton>
+                  <PortraitButton onClick={() => setCombate(!combate)} hover={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
+                  {/* <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'aqua'} color={'aqua'}>Insano</PortraitButton>
+                  <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'red'} color={'darkred'}>Morrendo</PortraitButton> */}
+                  <PortraitButton onClick={(e) => setMorto(!morto)}  hover={morto + 'red'} color={'red'}>Morto</PortraitButton>
                 </div>
 
                 <div className='portrait-ocultar'>
                   <h2>Ocultar</h2>
-                  <PortraitButton onClick={() => setOpv(!opv)} active={opv + 'red'} color={'red'}>Vida</PortraitButton>
-                  <PortraitButton onClick={() => setOps(!ops)} active={ops + 'blue'} color={'blue'}>Sanidade</PortraitButton>
-                  <PortraitButton onClick={() => setOpe(!ope)} active={ope + 'yellow'} color={'yellow'}>Esforço</PortraitButton>
+                  <PortraitButton onClick={() => setOpv(!opv)} hover={opv + 'red'} color={'red'}>Vida</PortraitButton>
+                  <PortraitButton onClick={() => setOps(!ops)} hover={ops + 'blue'} color={'blue'}>Sanidade</PortraitButton>
+                  <PortraitButton onClick={() => setOpe(!ope)} hover={ope + 'yellow'} color={'yellow'}>Esforço</PortraitButton>
                 </div>
               </div>
             </div>

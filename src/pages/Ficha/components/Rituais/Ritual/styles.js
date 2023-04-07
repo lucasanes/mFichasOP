@@ -108,7 +108,7 @@ export const Body = styled('div', {
     transition: '.3s'
   },
 
-  'button:active': {
+  'button:hover': {
     background: '#7c7c7c50'
   }
 
@@ -136,7 +136,7 @@ export const Button = styled('button', {
   },
 
   variants: {
-    active: {
+    hover: {
       true: {
         svg: {
           transform: 'rotate(90deg)'
