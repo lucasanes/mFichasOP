@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Header, Main, Footer, CloseButton } from './styles';
+import { Container, Header, Main, Footer, CloseButton, Span } from './styles';
 import pericias from '../../mappers/pericias/pericias';
 
 export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
@@ -202,10 +202,10 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
           faces = parseInt(separador[1]);
 
           if (quantidade === 0) {
-            quantidade = 1;
+            quantidade = -2;
           }
           if (quantidade < 0) {
-            quantidade = Math.abs(quantidade);
+            quantidade = -2;
             negativo = true;
           }
           saida[index] = {}
@@ -237,7 +237,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
           index++;
         } else {
           if (quantidade > 0) {
-            quantidade = (saida["print"] ? "+" : (negativo ? "-" : "+")) + quantidade;
+            quantidade = (saida["print"] ? "+" : "+") + quantidade;
             print += quantidade;
           }
           resultado += parseInt(quantidade);
@@ -265,7 +265,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
   }, [])
 
   return (
-    <Container isDano={data.isDano}>
+    <Container isDano={data.isDano.toString()}>
 
       <Header>
 
@@ -276,7 +276,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
 
       <Main isCritico={dado.critico}>
         <span>
-          {dado.print} = <span className={dado.critico && 'critico'}>{dado.resultado}</span>
+          {dado.print} = <Span critico={dado.critico}>{dado.resultado}</Span>
         </span>
       </Main>
 

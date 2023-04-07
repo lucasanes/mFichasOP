@@ -26,8 +26,14 @@ export function Pericia({data}) {
   }, [])
 
   let dados = []
-  for (let i = 0; i < data.atributoChave; i++) {
-    dados[i] = <FaDiceD20 size={20}/>
+  if (data.atributoChave == 0) {
+    for (let i = 0; i < 2; i++) {
+      dados[i] = <FaDiceD20 key={i} size={20}/>
+    }
+  } else {
+    for (let i = 0; i < data.atributoChave; i++) {
+      dados[i] = <FaDiceD20 key={i} size={20}/>
+    }
   }
 
   return (
@@ -46,7 +52,7 @@ export function Pericia({data}) {
           isDano: false
         })
         setModalDadoRoladoIsOpen(true)
-      }} level={level}>{dados}+{data.valor}</Button>
+      }} level={level}>{data.atributoChave == 0 && '-'}{dados}+{data.valor}</Button>
     </Container>
   );
 }

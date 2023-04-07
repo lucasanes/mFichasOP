@@ -1,4 +1,4 @@
-import {BodyDefesas, BodyStatus, Button, Container, Header, Img, PortraitButton} from './styles'
+import {BodyDefesas, BodyStatus, Button, Container, DivImg, Header, Img, PortraitButton} from './styles'
 import {InputStop} from '../../../../components/InputStop'
 import { MdOutlineModeEditOutline } from 'react-icons/md'
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,6 +8,10 @@ import { api } from '../../../../services/api';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../../../../hooks/auth';
 import { ButtonEditHeader } from '../../../../components/ButtonEditHeader';
+import {Modal} from '../../../../components/Modals/Modal'
+import { ModalEditDefesas } from './ModalEditDefesas';
+import {ButtonEditComponent} from '../../../../components/ButtonEditComponent'
+import { ModalEditFoto } from './ModalEditFoto';
 
 export function Status({data, setData}) {
 
@@ -15,14 +19,20 @@ export function Status({data, setData}) {
 
   const [changinTimer, setChanginTimer] = useState(null)
 
+  const [modalDefesasIsOpen, setModalDefesasIsOpen] = useState(false)
+
   const {id} = useParams()
   const {token} = useAuth()
 
   const [miniBody, setMiniBody] = useState('status')
+
   const status = data.status
   const defesas = data.defesas
+  const fotos = data.fotos
 
   const [fotoAtual, setFotoAtual] = useState('')
+
+  const [modalEditFotoIsOpen, setModalEditFotoIsOpen] = useState(false)
 
   const [combate, setCombate] = useState(status.combate == 1)
   const [morto, setMorto] = useState(status.morto == 1)
@@ -40,25 +50,25 @@ export function Status({data, setData}) {
   const [municaoMax, setMunicaoMax] = useState(status.municaoMax)
 
   const foto = new Image();
-  foto.src = status.foto;
+  foto.src = fotos.foto;
   const foto_ferido = new Image();
-  foto_ferido.src = status.foto_ferido;
+  foto_ferido.src = fotos.foto_ferido;
   const foto_insano = new Image();
-  foto_insano.src = status.foto_insano;
+  foto_insano.src = fotos.foto_insano;
   const foto_insanoeferido = new Image();
-  foto_insanoeferido.src = status.foto_insanoeferido;
+  foto_insanoeferido.src = fotos.foto_insanoeferido;
   const foto_morrendo = new Image();
-  foto_morrendo.src = status.foto_morrendo;
+  foto_morrendo.src = fotos.foto_morrendo;
 
   useEffect(() => {
 
-    if (status.foto_morrendo != null && (pvA == 0)) {
+    if (fotos.foto_morrendo != null && (pvA == 0)) {
       setFotoAtual(foto_morrendo.src);
-    } else if (status.foto_insanoeferido != null && (psA == 0 && pvA < (pvMax / 2))) {
+    } else if (fotos.foto_insanoeferido != null && (psA == 0 && pvA < (pvMax / 2))) {
       setFotoAtual(foto_insanoeferido.src);
-    } else if (status.foto_insano != null && psA == 0) {
+    } else if (fotos.foto_insano != null && psA == 0) {
       setFotoAtual(foto_insano.src);
-    } else if (status.foto_ferido != null && (pvA < (status.pvMax / 2))) {
+    } else if (fotos.foto_ferido != null && (pvA < (status.pvMax / 2))) {
       setFotoAtual(foto_ferido.src);
     }  else {
       setFotoAtual(foto.src);
@@ -108,11 +118,6 @@ export function Status({data, setData}) {
     setData(prevState => ({
       ...prevState,
       status: {
-        foto: status.foto,
-        foto_insano: status.foto_insano,
-        foto_ferido: status.foto_ferido,
-        foto_morrendo: status.foto_morrendo,
-        foto_insanoeferido: status.foto_insanoeferido,
         pvA,
         pvMax,
         psA,
@@ -135,11 +140,19 @@ export function Status({data, setData}) {
 
   return (
     <Container>
+ 
+      <Modal isOpen={modalDefesasIsOpen} setClose={() => setModalDefesasIsOpen(false)}>
+        <ModalEditDefesas data={defesas} setData={setData} setModalClose={() => setModalDefesasIsOpen(false)}/>
+      </Modal>
+
+      <Modal isOpen={modalEditFotoIsOpen} setClose={() => setModalEditFotoIsOpen(false)}>
+        <ModalEditFoto data={fotos} setData={setData} setModalClose={() => setModalEditFotoIsOpen(false)}/>
+      </Modal>
 
       <Header>
         <Button hover={miniBody == 'status'} onClick={() => setMiniBody('status')}>Status</Button>
         <Button hover={miniBody == 'defesas'} onClick={() => setMiniBody('defesas')}>Defesas</Button>
-        <ButtonEditHeader/>
+        <ButtonEditHeader onClick={() => setModalDefesasIsOpen(true)}/>
       </Header>
 
       <hr />
@@ -148,9 +161,12 @@ export function Status({data, setData}) {
 
         <BodyStatus>
           <div className='header'>
-            <Img>
-              <img src={fotoAtual} style={{filter: `brightness(${morto ? 0 : 1})`}}/>
-            </Img>
+            <DivImg>
+              <Img>
+                <img src={fotoAtual} style={{filter: `brightness(${morto ? 0 : 1})`}}/>
+              </Img>
+              <ButtonEditComponent className='editimg' onClick={() => setModalEditFotoIsOpen(true)}/>
+            </DivImg>
 
             <div className='portrait'>
               <h1>Portrait</h1>
@@ -174,11 +190,11 @@ export function Status({data, setData}) {
             </div>
           </div> 
 
-          <h3>Vida</h3>
+          <h3>Vida <span className='ocult'>{opv && '?'}</span></h3>
           <Barrinha color={'red'} number={1} valorA={pvA} setValorA={setPvA} valorMax={pvMax} setValorMax={setPvMax} />
-          <h3>Sanidade</h3>
+          <h3>Sanidade <span className='ocult'>{ops && '?'}</span></h3>
           <Barrinha color={'aqua'} number={2} valorA={psA} setValorA={setPsA} valorMax={psMax} setValorMax={setPsMax} />
-          <h3>Esforço</h3>
+          <h3>Esforço <span className='ocult'>{ope && '?'}</span></h3>
           <Barrinha color={'yellow'} number={3} valorA={peA} setValorA={setPeA} valorMax={peMax} setValorMax={setPeMax} />
           <h3>Munição</h3>
           <Barrinha color={'orange'} number={4} valorA={municaoA} setValorA={setMunicaoA} valorMax={municaoMax} setValorMax={setMunicaoMax} />

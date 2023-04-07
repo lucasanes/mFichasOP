@@ -44,7 +44,7 @@ export function Ritual({data}) {
         </div>
       </Header1>
       <hr/>
-      <Body ishover={hover} ref={contentRef}>
+      <Body ishover={hover.toString()} ref={contentRef}>
         <img width={100} src={data.foto} />
 
         <div className='infos'>

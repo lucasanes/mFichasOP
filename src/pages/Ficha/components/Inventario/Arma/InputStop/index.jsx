@@ -9,7 +9,7 @@ export function InputStop({ label, valor, ...rest }) {
         {label}
       </LabelContainer>
 
-      <InputB  disabled={true} autoComplete="off" value={valor} type={'text'} {...rest}/>
+      <InputB disabled={true} autoComplete="off" defaultValue={valor} type={'text'} {...rest}/>
     </Container>
   )
 }

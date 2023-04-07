@@ -16,7 +16,7 @@ export function Dados({data}) {
       <hr />
 
       <Body>
-        {data.map(dado => <Dado data={dado} key={dado.id}/>)}  
+        {data.map(dado => <Dado data={dado} key={dado.token}/>)}  
       </Body>
     </Container>
   );

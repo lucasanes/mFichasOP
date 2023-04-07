@@ -111,10 +111,6 @@ export const Main = styled('div', {
   paddingTop: '1rem',
   flexWrap: 'wrap',
 
-  '.critico': {
-    color: 'Crimson'
-  },
-
   span: {
     fontSize: '2.5rem',
     fontFamily: 'Special Elite',
@@ -133,6 +129,21 @@ export const Main = styled('div', {
   }
 
 })
+
+export const Span = styled('span', {
+  fontSize: '2.5rem',
+  fontFamily: 'Special Elite',
+  wordBreak: 'break-all',
+  marginTop: '1rem',
+  
+  variants: {
+    critico: {
+      true: {
+        color: 'Crimson',
+      }
+    }
+  }
+});
 
 export const Footer = styled('div', {
 

@@ -9,7 +9,7 @@ export function InputStop({ label, valor, ...rest }) {
         {label}
       </LabelContainer>
 
-      <InputB  disabled={true} autoComplete="off" value={valor} type={'text'} {...rest}/>
+      <InputB  disabled={true} autoComplete="off" value={((valor == 0) || (valor != null && valor != undefined && valor != '')) ? valor : '- - -'} type={'text'} {...rest}/>
     </Container>
   )
 }

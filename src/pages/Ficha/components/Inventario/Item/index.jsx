@@ -38,7 +38,7 @@ export function Item({data}) {
       </Modal>
 
       <Header1>
-        <Button hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome} -  {data.quantidade}</Button>
+        <Button hover={hover.toString()} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome} -  {data.quantidade}</Button>
         <div>
           <ButtonEditComponent segundo size={18}/>
           <ButtonDeleteComponent size={18}/>
@@ -47,7 +47,7 @@ export function Item({data}) {
 
       <hr/>
       
-      <Body ishover={hover} ref={contentRef}>
+      <Body ishover={hover.toString()} ref={contentRef}>
 
         <div className='infos'>
           <InputStop label={'Categoria:'} valor={data.prestigio}/>

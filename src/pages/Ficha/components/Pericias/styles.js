@@ -40,16 +40,26 @@ export const Body = styled('div', {
     }
   },
 
+  variants: {
+    low: {
+      true: {
+        maxHeight: 'calc(100% - 110px)',
+      }
+    }
+  }
+
 });
 
 export const Header = styled('div', {
 
-  height: '60px',
+  minHeight: '60px',
   width: '100%',
-  padding: '1rem',
+  padding: '1rem 6rem',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  gap: '1rem',
+  flexWrap: 'wrap',
 
   h1: {
     color: 'white',
@@ -61,21 +71,35 @@ export const Header = styled('div', {
     padding: '.8rem 1rem .4rem 1rem',
   },
 
-  button: {
-    position: 'fixed',
-    right: 15,
-    background: 'none',
-    border: '1px solid transparent',
-    borderRadius: '5px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '.2rem',
-    transition: '.3s'
+});
+
+export const Button = styled('button', {
+
+  color: 'white',
+  fontFamily: 'Special Elite',
+  textAlign: 'center',
+  fontSize: '2.4rem',
+  padding: '.8rem 1rem .4rem 1rem',
+  letterSpacing: '1px',
+  background: 'none',
+  border: '2px solid grey',
+  transition: '.3s',
+
+  '&:hover': {
+    background: '#ffffff15'
   },
 
-  'button:hover': {
-    borderColor: 'Yellow'
+  variants: {
+    hover: {
+      true: {
+        background: '#ffffff30',
+        cursor: 'default',
+
+        '&:hover': {
+          background: '#ffffff30'
+        },
+      }
+    }
   }
 
 });

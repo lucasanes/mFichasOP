@@ -38,7 +38,7 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
               setValor(event.target.value)
             }
           }}
-          onhover={() => {
+          onFocus={() => {
             sethover(true)
           }}
           onBlur={() => {

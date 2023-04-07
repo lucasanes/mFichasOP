@@ -31,6 +31,25 @@ export const Body = styled('div', {
 
 });
 
+export const Body2 = styled('div', {
+
+  maxHeight: 'calc(100% - 60px)',
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gap: '3rem',
+  padding: '3rem 1rem',
+  overflowY: 'auto',
+  
+  variants: {
+    low: {
+      true: {
+        maxHeight: 'calc(100% - 110px)',
+      }
+    }
+  }
+
+});
+
 export const Header = styled('div', {
 
   minHeight: '60px',

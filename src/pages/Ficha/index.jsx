@@ -47,28 +47,42 @@ export function Ficha() {
         document.title = `mFichasOP - ${ficha.nome}`
 
         setPrincipal({
-          nome: ficha.nome,
-          usuario: ficha.usuario,
-          classe: ficha.classe,
-          idade: ficha.idade,
-          nacionalidade: ficha.local,
-          patente: ficha.patente,
-          nex: ficha.nex,
-          origem: ficha.origem,
-          peprod: ficha.pe_rodada,
-          trilha: ficha.trilha,
-          prestigio: ficha.pp,
-          deslocamento: ficha.deslocamento,
-          afinidade: ficha.afinidade
+          infos: {
+            nome: ficha.nome,
+            usuario: ficha.usuario,
+            classe: ficha.classe,
+            idade: ficha.idade,
+            nacionalidade: ficha.local,
+            patente: ficha.patente,
+            nex: ficha.nex,
+            origem: ficha.origem,
+            peprod: ficha.pe_rodada,
+            trilha: ficha.trilha,
+            prestigio: ficha.pp,
+            deslocamento: ficha.deslocamento,
+            afinidade: ficha.afinidade,
+          },
+          personagem: {
+            historia: ficha.historia,
+            aparencia: ficha.aparencia,
+            pep: ficha.encontro,
+            dfm: ficha.medos,
+            favoritos: ficha.favoritos,
+            personalidade: ficha.frases,
+            pesadelo: ficha.pior_pesadelo,
+            anotacoes: ficha.anotacoes
+          }
         })
 
         setStatus({
-          status: {
+          fotos: {
             foto: ficha.foto,
             foto_insano: ficha.foto_enlouquecendo,
             foto_ferido: ficha.foto_ferido,
             foto_morrendo: ficha.foto_morrendo,
             foto_insanoeferido: ficha.foto_ferenl,
+          },
+          status: {
             pvA: ficha.pva,
             pvMax: ficha.pv,
             psA: ficha.sana,
@@ -104,36 +118,44 @@ export function Ficha() {
           }
         })
 
-        setPericias([
-          {nome: 'acrobacia', valor: ficha.acrobacias, atributoChave: ficha.agilidade},
-          {nome: 'adestramento', valor: ficha.adestramento, atributoChave: ficha.presenca},
-          {nome: 'arte', valor: ficha.artes, atributoChave: ficha.presenca},
-          {nome: 'atletismo', valor: ficha.atletismo, atributoChave: ficha.forca},
-          {nome: 'atualidade', valor: ficha.atualidades, atributoChave: ficha.inteligencia},
-          {nome: 'ciencia', valor: ficha.ciencia, atributoChave: ficha.inteligencia},
-          {nome: 'crime', valor: ficha.crime, atributoChave: ficha.agilidade},
-          {nome: 'diplomacia', valor: ficha.diplomacia, atributoChave: ficha.presenca},
-          {nome: 'enganacao', valor: ficha.enganacao, atributoChave: ficha.presenca},
-          {nome: 'fortitude', valor: ficha.fortitude, atributoChave: ficha.vigor},
-          {nome: 'furtividade', valor: ficha.furtividade, atributoChave: ficha.agilidade},
-          {nome: 'iniciativa', valor: ficha.iniciativa, atributoChave: ficha.agilidade},
-          {nome: 'intimidacao', valor: ficha.intimidacao, atributoChave: ficha.presenca},
-          {nome: 'intuicao', valor: ficha.intuicao, atributoChave: ficha.inteligencia},
-          {nome: 'investigacao', valor: ficha.investigacao, atributoChave: ficha.inteligencia},
-          {nome: 'luta', valor: ficha.luta, atributoChave: ficha.forca},
-          {nome: 'medicina', valor: ficha.medicina, atributoChave: ficha.inteligencia},
-          {nome: 'ocultismo', valor: ficha.ocultismo, atributoChave: ficha.inteligencia},
-          {nome: 'percepcao', valor: ficha.percepcao, atributoChave: ficha.presenca},
-          {nome: 'pilotagem', valor: ficha.pilotagem, atributoChave: ficha.agilidade},
-          {nome: 'pontaria', valor: ficha.pontaria, atributoChave: ficha.agilidade},
-          {nome: 'profissao', valor: ficha.profissao, atributoChave: ficha.inteligencia},
-          {nome: 'reflexo', valor: ficha.reflexos, atributoChave: ficha.agilidade},
-          {nome: 'religiao', valor: ficha.religiao, atributoChave: ficha.presenca},
-          {nome: 'sobrevivencia', valor: ficha.sobrevivencia, atributoChave: ficha.inteligencia},
-          {nome: 'tatica', valor: ficha.tatica, atributoChave: ficha.inteligencia},
-          {nome: 'tecnologia', valor: ficha.tecnologia, atributoChave: ficha.inteligencia},
-          {nome: 'vontade', valor: ficha.vontade, atributoChave: ficha.presenca}
-        ])
+        setPericias({
+          atributos: {
+            agilidade: ficha.agilidade,
+            presenca: ficha.presenca,
+            vigor: ficha.vigor,
+            forca: ficha.forca,
+            intelecto: ficha.inteligencia
+          },
+          pericias: [
+          {id: 1, nome: 'acrobacia', valor: ficha.acrobacias, atributoChave: ficha.agilidade},
+          {id: 2, nome: 'adestramento', valor: ficha.adestramento, atributoChave: ficha.presenca},
+          {id: 3, nome: 'arte', valor: ficha.artes, atributoChave: ficha.presenca},
+          {id: 4, nome: 'atletismo', valor: ficha.atletismo, atributoChave: ficha.forca},
+          {id: 5, nome: 'atualidade', valor: ficha.atualidades, atributoChave: ficha.inteligencia},
+          {id: 6, nome: 'ciencia', valor: ficha.ciencia, atributoChave: ficha.inteligencia},
+          {id: 7, nome: 'crime', valor: ficha.crime, atributoChave: ficha.agilidade},
+          {id: 8, nome: 'diplomacia', valor: ficha.diplomacia, atributoChave: ficha.presenca},
+          {id: 9, nome: 'enganacao', valor: ficha.enganacao, atributoChave: ficha.presenca},
+          {id: 10, nome: 'fortitude', valor: ficha.fortitude, atributoChave: ficha.vigor},
+          {id: 11, nome: 'furtividade', valor: ficha.furtividade, atributoChave: ficha.agilidade},
+          {id: 12, nome: 'iniciativa', valor: ficha.iniciativa, atributoChave: ficha.agilidade},
+          {id: 13, nome: 'intimidacao', valor: ficha.intimidacao, atributoChave: ficha.presenca},
+          {id: 14, nome: 'intuicao', valor: ficha.intuicao, atributoChave: ficha.inteligencia},
+          {id: 15, nome: 'investigacao', valor: ficha.investigacao, atributoChave: ficha.inteligencia},
+          {id: 16, nome: 'luta', valor: ficha.luta, atributoChave: ficha.forca},
+          {id: 17, nome: 'medicina', valor: ficha.medicina, atributoChave: ficha.inteligencia},
+          {id: 18, nome: 'ocultismo', valor: ficha.ocultismo, atributoChave: ficha.inteligencia},
+          {id: 19, nome: 'percepcao', valor: ficha.percepcao, atributoChave: ficha.presenca},
+          {id: 20, nome: 'pilotagem', valor: ficha.pilotagem, atributoChave: ficha.agilidade},
+          {id: 21, nome: 'pontaria', valor: ficha.pontaria, atributoChave: ficha.agilidade},
+          {id: 22, nome: 'profissao', valor: ficha.profissao, atributoChave: ficha.inteligencia},
+          {id: 23, nome: 'reflexo', valor: ficha.reflexos, atributoChave: ficha.agilidade},
+          {id: 24, nome: 'religiao', valor: ficha.religiao, atributoChave: ficha.presenca},
+          {id: 25, nome: 'sobrevivencia', valor: ficha.sobrevivencia, atributoChave: ficha.inteligencia},
+          {id: 26, nome: 'tatica', valor: ficha.tatica, atributoChave: ficha.inteligencia},
+          {id: 27, nome: 'tecnologia', valor: ficha.tecnologia, atributoChave: ficha.inteligencia},
+          {id: 28, nome: 'vontade', valor: ficha.vontade, atributoChave: ficha.presenca}
+        ]})
 
         setInventario({itens: ficha.itens, armas: ficha.armas})
 
@@ -162,7 +184,7 @@ export function Ficha() {
   return (
     <Container isLoading={isLoading}>
       <Body isLoading={isLoading}>
-        {(!isLoading && body == 'principal') && <Principal data={principal}/>}
+        {(!isLoading && body == 'principal') && <Principal data={principal} setData={setPrincipal}/>}
         {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
         {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
         {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}

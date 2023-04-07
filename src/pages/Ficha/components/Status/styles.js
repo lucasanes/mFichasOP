@@ -53,6 +53,15 @@ export const BodyStatus = styled('div', {
     letterSpacing: '1px'
   },
 
+  '.ocult': {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: '2rem',
+    fontFamily: 'El Messiri',
+    letterSpacing: '1px',
+    color: 'crimson'
+  },
+
   '.header': {
     display: 'flex',
     alignItems: 'center',
@@ -115,9 +124,23 @@ export const BodyStatus = styled('div', {
 
 });
 
+export const DivImg = styled('div', {
+
+  position: 'relative',
+  display: 'flex',
+
+  '.editimg': {
+    position: 'absolute',
+    right: -5,
+    top: -5,
+  }
+
+});
+
 export const Img = styled('div', {
 
   width: '180px',
+  height: '180px',
   border: '2px solid white',
   borderRadius: '100%',
   display: 'flex',
@@ -127,11 +150,10 @@ export const Img = styled('div', {
 
   img: {
     width: '180px',
+    height: '180px',
     borderRadius: '100%',
     transition: '1s',
-
-  }
-
+  },
 
 });
 
