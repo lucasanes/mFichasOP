@@ -11,6 +11,7 @@ import { Pericias } from './components/Pericias';
 import { Habilidades } from './components/Habilidades';
 import { Dados } from './components/Dados';
 import { Rituais } from './components/Rituais';
+import { Inventario } from './components/Inventario';
 
 export function Ficha() {
 
@@ -134,6 +135,8 @@ export function Ficha() {
           {nome: 'vontade', valor: ficha.vontade, atributoChave: ficha.presenca}
         ])
 
+        setInventario({itens: ficha.itens, armas: ficha.armas})
+
         setDados(ficha.dices)
 
         setHpe({habilidades: ficha.habilidades, poderes: ficha.poderes, proficiencias: ficha.proficiencias})
@@ -163,6 +166,7 @@ export function Ficha() {
         {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
         {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
         {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}
+        {(!isLoading && body == 'inventario') && <Inventario data={inventario} setData={setInventario}/>}
         {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
         {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
       </Body>

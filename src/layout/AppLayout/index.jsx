@@ -12,15 +12,6 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
-  document.addEventListener('touchstart', (e) => {
-    if (e.target.tagName == 'BUTTON') {
-      setTimeout(() => {
-        e.current.style.pointerEvents = "none";
-        e.currentTarget.style.pointerEvents = "none";   
-      }, 200);
-    }  
-  })
-
   return (
     <Container>
       {!location.pathname.startsWith('/ficha/') ? <Menu/> : <MenuFicha/>}

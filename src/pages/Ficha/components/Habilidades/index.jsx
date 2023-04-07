@@ -43,11 +43,11 @@ export function Habilidades({data, setData}) {
 
       <Body low={low}>
 
-        {miniBody == 'habilidades' && habilidades.map(habilidade => <Habilidade data={habilidade}/>)}
+        {miniBody == 'habilidades' && habilidades.map(habilidade => <Habilidade key={habilidade.id} data={habilidade}/>)}
 
-        {miniBody == 'poderes' && poderes.map(habilidade => <Habilidade data={habilidade}/>)}
+        {miniBody == 'poderes' && poderes.map(habilidade => <Habilidade key={habilidade.id} data={habilidade}/>)}
 
-        {miniBody == 'proficiencias' && proficiencias.map(proficiencia => <Proficiencia data={proficiencia}/>)}
+        {miniBody == 'proficiencias' && proficiencias.map(proficiencia => <Proficiencia key={proficiencia.id} data={proficiencia}/>)}
 
       </Body>
 
