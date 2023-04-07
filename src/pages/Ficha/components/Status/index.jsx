@@ -162,7 +162,7 @@ export function Status({data, setData}) {
                   {/* <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'aqua'} color={'aqua'}>Insano</PortraitButton>
                   <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'red'} color={'darkred'}>Morrendo</PortraitButton> */}
                   <PortraitButton onClick={(e) => {setMorto(!morto); setTimeout(() => {
-                    e.target.blur()
+                    e.currentTarget.blur()
                   }, 200);}}  hover={morto + 'red'} color={'red'}>Morto</PortraitButton>
                 </div>
 
