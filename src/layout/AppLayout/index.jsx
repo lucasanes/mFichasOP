@@ -15,7 +15,7 @@ export function AppLayout() {
   document.addEventListener('touchstart', (e) => {
     if (e.target.tagName == 'BUTTON') {
       setTimeout(() => {
-        e.target.blur()
+        e.target.classList.add('hoverdesactive')
       }, 500);
     }  
   })
