@@ -15,7 +15,8 @@ export function AppLayout() {
   const buttons = document.querySelectorAll('button');
 
   buttons.forEach(button => {
-    button.addEventListener('touchend', () => {
+    button.addEventListener('click', () => {
+      console.log('a')
       button.blur();
     });
   });
