@@ -15,6 +15,7 @@ export function AppLayout() {
   document.addEventListener('touchend', (e) => {
     if (e.target.tagName == 'BUTTON') {
       e.target.blur()
+      window.focus()
     }  
   })
 
