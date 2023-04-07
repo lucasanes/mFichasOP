@@ -12,23 +12,15 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
-  const [teste, setTeste] = useState(false)
-
   document.addEventListener('touchend', (e) => {
     if (e.target.tagName == 'BUTTON') {
-      setTeste(true)
-
-      setTimeout(() => {
-        setTeste(false)
-      }, 1000);
+      e.target.blur()
     }  
   })
 
   return (
     <Container>
       {!location.pathname.startsWith('/ficha/') ? <Menu/> : <MenuFicha/>}
-
-      {teste && <h5>BANANA</h5>}
 
       <ContentWrapper auth={location.pathname.startsWith('/ficha/') ? 'trueficha' : (token != undefined && token != null) ? 'true' : 'false'}>
         <Outlet />
