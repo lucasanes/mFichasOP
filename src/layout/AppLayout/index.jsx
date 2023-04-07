@@ -12,6 +12,12 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
+  window.addEventListener('click', (e) => {
+    if (e.target.tagName == 'BUTTON') {
+      e.currentTarget.blur()
+    }
+  })
+
   return (
     <Container>
       {!location.pathname.startsWith('/ficha/') ? <Menu/> : <MenuFicha/>}
