@@ -16,7 +16,11 @@ export function AppLayout() {
     if (e.target.tagName == 'BUTTON') {
       setTimeout(() => {
         e.target.classList.add('hoverdesactive')
-      }, 500);
+
+        setTimeout(() => {
+          e.target.classList.remove('hoverdesactive')
+        }, 100);
+      }, 200);
     }  
   })
 

@@ -5,8 +5,8 @@ export const Container = styled('div', {
   display: 'flex',
 
   '.hoverdesactive': {
-    background: 'none',
-    border: 'none'
+    background: 'none !important',
+    border: 'none !important'
   }
 })
 
