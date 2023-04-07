@@ -12,16 +12,10 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
-  document.addEventListener('touchstart', (e) => {
-    if (e.target.tagName == 'BUTTON') {
-      setTimeout(() => {
-        e.target.classList.add('hoverdesactive')
-
-        setTimeout(() => {
-          e.target.classList.remove('hoverdesactive')
-        }, 100);
-      }, 200);
-    }  
+  document.querySelector("button").addEventListener('touchend',(e)=>{
+    document.querySelector(e).blur();
+    e.current.style.pointerEvents = "none";
+    e.currentTarget.style.pointerEvents = "none";
   })
 
   return (
