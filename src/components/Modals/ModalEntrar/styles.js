@@ -46,7 +46,7 @@ export const Header = styled('div', {
     height: '25px'
   },
 
-  'button:hover': {
+  'button:active': {
     opacity: 0.5,
   },
 
@@ -106,7 +106,7 @@ export const Body = styled('div', {
       transition: '.3s'
     },
   
-    'button:hover': {
+    'button:active': {
   
       background: '#00fff750',
   
@@ -132,7 +132,7 @@ export const Footer = styled('div', {
     borderRadius: '5px'
   },
 
-  'button:hover': {
+  'button:active': {
     background: '#00ff8850'
   }
 

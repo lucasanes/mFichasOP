@@ -12,12 +12,6 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
-  document.addEventListener('touchend', (e) => {
-    if (e.target.tagName == 'BUTTON') {
-      e.target.blur()
-    }
-  })
-
   return (
     <Container>
       {!location.pathname.startsWith('/ficha/') ? <Menu/> : <MenuFicha/>}

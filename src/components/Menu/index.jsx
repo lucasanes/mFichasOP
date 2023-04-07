@@ -22,7 +22,7 @@ export function Menu() {
   const { signOut } = useAuth();
   const location = useLocation()
 
-  const [hover, sethover] = useState('fechado')
+  const [active, setactive] = useState('fechado')
   const [modalDoarIsOpen, setModalDoarIsOpen] = useState(false)
   const [modalCreditosIsOpen, setModalCreditosIsOpen] = useState(false)
   const [modalEntrarIsOpen, setModalEntrarIsOpen] = useState(false)
@@ -31,27 +31,27 @@ export function Menu() {
   const [modalRecuperarSenhaIsOpen, setModalRecuperarSenhaIsOpen] = useState(false)
 
   function abrirMenu() {
-    if (hover == 'fechado') {
-      sethover('aberto')
-    } else if (hover == 'aberto') {
-      sethover('fechando')
-      setTimeout(() => { sethover('fechado') }, 400)
+    if (active == 'fechado') {
+      setactive('aberto')
+    } else if (active == 'aberto') {
+      setactive('fechando')
+      setTimeout(() => { setactive('fechado') }, 400)
     }
   }
 
   window.addEventListener("click", (event) => {
 
     if (event.clientY > 272) {
-      if (hover == 'aberto') {
-        sethover('fechando')
-        setTimeout(() => { sethover('fechado') }, 300)
+      if (active == 'aberto') {
+        setactive('fechando')
+        setTimeout(() => { setactive('fechado') }, 300)
       }
     }
 
   });
 
   return (
-    <Container hover={hover} >
+    <Container active={active} >
 
       <Modal isOpen={modalDoarIsOpen} setClose={() => setModalDoarIsOpen(false)}>
         <ModalDoar setModalClose={() => setModalDoarIsOpen(false)}/>
@@ -82,14 +82,14 @@ export function Menu() {
         <Link to={'/'} ><img src={icon} width={'60px'} /></Link>
 
         <button onClick={abrirMenu}>
-          <Line1 hover={hover} />
-          <Line2 hover={hover} />
-          <Line3 hover={hover} />
+          <Line1 active={active} />
+          <Line2 active={active} />
+          <Line3 active={active} />
         </button>
 
       </Header>
 
-      <Body hover={hover}>
+      <Body active={active}>
 
         <ul>
 

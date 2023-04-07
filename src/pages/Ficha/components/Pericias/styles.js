@@ -35,7 +35,7 @@ export const Body = styled('div', {
       marginBottom: '2px'
     },
 
-    '&:hover': {
+    '&:active': {
       background: '#00ffff25'
     }
   },
@@ -74,7 +74,7 @@ export const Header = styled('div', {
     transition: '.3s'
   },
 
-  'button:hover': {
+  'button:active': {
     borderColor: 'Yellow'
   }
 

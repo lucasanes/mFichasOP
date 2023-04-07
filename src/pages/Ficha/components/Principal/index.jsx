@@ -31,8 +31,8 @@ export function Principal({data}) {
     <Container>
 
       <Header>
-        <Button hover={miniBody == 'infos'} onClick={() => setMiniBody('infos')}>Informações</Button>
-        <Button hover={miniBody == 'personagem'} onClick={() => setMiniBody('personagem')}>Personagem</Button>
+        <Button active={miniBody == 'infos'} onClick={() => setMiniBody('infos')}>Informações</Button>
+        <Button active={miniBody == 'personagem'} onClick={() => setMiniBody('personagem')}>Personagem</Button>
         <ButtonEditHeader/>
       </Header>
 

@@ -69,7 +69,7 @@ export const Button = styled('button', {
   },
 
   variants: {
-    hover: {
+    active: {
       true: {
         svg: {
           transform: 'rotate(90deg)'

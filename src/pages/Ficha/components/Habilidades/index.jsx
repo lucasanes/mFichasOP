@@ -34,9 +34,9 @@ export function Habilidades({data, setData}) {
     <Container>
 
       <Header>
-        <Button hover={miniBody == 'habilidades'} onClick={() => setMiniBody('habilidades')}>Habilidades</Button>
-        <Button hover={miniBody == 'poderes'} onClick={() => setMiniBody('poderes')}>Poderes</Button>
-        <Button hover={miniBody == 'proficiencias'} onClick={() => setMiniBody('proficiencias')}>Proficiências</Button>
+        <Button active={miniBody == 'habilidades'} onClick={() => setMiniBody('habilidades')}>Habilidades</Button>
+        <Button active={miniBody == 'poderes'} onClick={() => setMiniBody('poderes')}>Poderes</Button>
+        <Button active={miniBody == 'proficiencias'} onClick={() => setMiniBody('proficiencias')}>Proficiências</Button>
       </Header>
 
       <hr />

@@ -66,17 +66,17 @@ export const Button = styled('button', {
   border: '2px solid grey',
   transition: '.3s',
 
-  '&:hover': {
+  '&:active': {
     background: '#ffffff15'
   },
 
   variants: {
-    hover: {
+    active: {
       true: {
         background: '#ffffff30',
         cursor: 'default',
 
-        '&:hover': {
+        '&:active': {
           background: '#ffffff30'
         },
       }

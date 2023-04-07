@@ -51,7 +51,7 @@ export const Header = styled('div', {
     transition: '.3s'
   },
 
-  'button:hover': {
+  'button:active': {
     borderColor: 'Yellow'
   }
 
