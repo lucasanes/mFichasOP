@@ -108,7 +108,7 @@ export const Body = styled('div', {
     transition: '.3s'
   },
 
-  'button:hover': {
+  'button:active': {
     background: '#7c7c7c50'
   }
 

@@ -20,7 +20,7 @@ export const Container = styled('div', {
     transition: '.3s'
   },
 
-  'button:hover': {
+  'button:active': {
     borderColor: 'Yellow'
   },
 

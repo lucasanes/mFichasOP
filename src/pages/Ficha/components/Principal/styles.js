@@ -66,7 +66,7 @@ export const Button = styled('button', {
   border: '2px solid grey',
   transition: '.3s',
 
-  '&:hover': {
+  '&:active': {
     background: '#ffffff15'
   },
 
@@ -76,7 +76,7 @@ export const Button = styled('button', {
         background: '#ffffff30',
         cursor: 'default',
 
-        '&:hover': {
+        '&:active': {
           background: '#ffffff30'
         },
       }

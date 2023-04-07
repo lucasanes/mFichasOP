@@ -31,7 +31,7 @@ export const Button = styled(Link, {
   letterSpacing: '2px',
   textDecoration: 'none',
 
-  '&:hover': {
+  '&:active': {
     background: '#ffffff10',
   },
 
@@ -54,7 +54,7 @@ export const Button = styled(Link, {
 
     desabilitado: {
       true: {
-        '&:hover': {
+        '&:active': {
           background: 'none',
           cursor: 'default'
         },
@@ -81,7 +81,7 @@ export const Button2 = styled('button', {
   letterSpacing: '2px',
   textDecoration: 'none',
 
-  '&:hover': {
+  '&:active': {
     background: '#ffffff10',
   },
 
@@ -104,7 +104,7 @@ export const Button2 = styled('button', {
 
     desabilitado: {
       true: {
-        '&:hover': {
+        '&:active': {
           background: 'none',
           cursor: 'default'
         },

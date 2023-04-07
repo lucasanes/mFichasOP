@@ -82,12 +82,12 @@ export const Body = styled("div", {
         marginLeft: '-1rem',
     },
 
-    "button:hover": {
+    "button:active": {
         opacity: "0.5",
         transition: '.3s'
     },
 
-    "a:hover": {
+    "a:active": {
         opacity: "0.5",
         transition: '.3s'
     },
