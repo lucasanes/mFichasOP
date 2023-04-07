@@ -14,7 +14,7 @@ export function AppLayout() {
 
   window.addEventListener('click', (e) => {
     if (e.target.tagName == 'BUTTON') {
-      window.focus()
+      e.target.blur()
     }
   })
 
