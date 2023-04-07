@@ -12,10 +12,13 @@ export function AppLayout() {
   const {token} = useAuth()
   const location = useLocation()
 
-  document.querySelector("button").addEventListener('touchend',(e)=>{
-    document.querySelector(e).blur();
-    e.current.style.pointerEvents = "none";
-    e.currentTarget.style.pointerEvents = "none";
+  document.addEventListener('touchstart', (e) => {
+    if (e.target.tagName == 'BUTTON') {
+      setTimeout(() => {
+        e.current.style.pointerEvents = "none";
+        e.currentTarget.style.pointerEvents = "none";   
+      }, 200);
+    }  
   })
 
   return (
