@@ -110,6 +110,10 @@ export const Main = styled('div', {
   paddingTop: '1rem',
   flexWrap: 'wrap',
 
+  '.critico': {
+    color: 'Crimson'
+  },
+
   span: {
     fontSize: '2.5rem',
     fontFamily: 'Special Elite',

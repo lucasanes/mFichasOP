@@ -151,7 +151,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #ff4343',
         color: '#ff4343',
 
-        '&:hover': {
+        '&:active': {
           background: '#ff434350'
         },
       },
@@ -159,7 +159,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #8c0000',
         color: '#8c0000',
 
-        '&:hover': {
+        '&:active': {
           background: '#8c000050'
         },
       },
@@ -167,7 +167,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #00eeff',
         color: '#00eeff',
 
-        '&:hover': {
+        '&:active': {
           background: '#00eeff50'
         }
       },
@@ -175,7 +175,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #005eff',
         color: '#005eff',
 
-        '&:hover': {
+        '&:active': {
           background: '#005eff50'
         }
       },
@@ -183,7 +183,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #ffd900',
         color: '#ffd900',
 
-        '&:hover': {
+        '&:active': {
           background: '#ffd90050'
         }
       }

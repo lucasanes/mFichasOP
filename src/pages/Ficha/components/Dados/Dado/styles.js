@@ -15,6 +15,7 @@ export const Button = styled('button', {
   transition: '.3s',
   padding: '0rem 1rem',
   paddingTop: '1rem',
+  paddingBottom: '.8rem',
   borderRadius: '1rem',
   display: 'flex',
   alignItems: 'center',
@@ -30,11 +31,14 @@ export const Button = styled('button', {
     fontFamily: 'Rye',
     marginTop: '-1rem'
   },
-
   variants: {
     isDano: {
       true: {
         textShadow: '#ff4b4b 2px 2px 3px',
+
+        svg: {
+          filter: 'drop-shadow(#ff4b4b 0 0 3px)'
+        },
 
         '&:hover': {
           border: '2px solid #ff4b4b',
@@ -42,6 +46,10 @@ export const Button = styled('button', {
       },
       false: {
         textShadow: '#00fff2 2px 2px 3px',
+
+        svg: {
+          filter: 'drop-shadow(#00fff2 0 0 3px)'
+        },
 
         '&:hover': {
           border: '2px solid #00fff2',

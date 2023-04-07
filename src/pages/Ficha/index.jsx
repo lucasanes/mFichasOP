@@ -39,9 +39,7 @@ export function Ficha() {
         const response = await api.post("/", {query: 'fichas_info_get', sessid: token, token: id})
 
         const ficha = response.data.ficha
-
-        console.log(ficha)
-
+        
         const primeiroNome = ficha.nome.split(' ')[0]
 
         setNome(primeiroNome)

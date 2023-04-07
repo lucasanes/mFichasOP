@@ -255,7 +255,6 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
       saida["print"] = print;
       saida["rolagens"] = rolagens
 
-      console.log(saida)
       setDado(saida)
 
       return saida;
@@ -275,13 +274,13 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
 
       </Header>
 
-      <Main isCritico={data.critico}>
+      <Main isCritico={dado.critico}>
         <span>
-          {dado.print} = {dado.resultado}
+          {dado.print} = <span className={dado.critico && 'critico'}>{dado.resultado}</span>
         </span>
       </Main>
 
-      <Footer isCritico={data.critico}>
+      <Footer isCritico={dado.critico}>
         {dado.rolagens && dado.rolagens.map((dado) => (
           <span key={dado.dado}>
             {dado.dado}: {dado.resultados.join(', ')}

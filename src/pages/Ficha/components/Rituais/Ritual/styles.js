@@ -58,7 +58,7 @@ export const Header1 = styled('div', {
 
 export const Body = styled('div', {
 
-  height: 'auto',
+  height: 0,
   overflow: 'hidden',
   display: 'flex',
   alignItems: 'center',
