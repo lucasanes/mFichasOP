@@ -50,12 +50,6 @@ export function Status({data, setData}) {
   const foto_morrendo = new Image();
   foto_morrendo.src = status.foto_morrendo;
 
-  document.addEventListener('touchend', (e) => {
-    if (e.target.tagName == 'BUTTON') {
-      e.target.blur()
-    }
-  })
-
   useEffect(() => {
 
     if (status.foto_morrendo != null && (pvA == 0)) {
@@ -167,7 +161,9 @@ export function Status({data, setData}) {
                   <PortraitButton onClick={() => setCombate(!combate)} hover={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
                   {/* <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'aqua'} color={'aqua'}>Insano</PortraitButton>
                   <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'red'} color={'darkred'}>Morrendo</PortraitButton> */}
-                  <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'red'} color={'red'}>Morto</PortraitButton>
+                  <PortraitButton onClick={(e) => {setMorto(!morto); setTimeout(() => {
+                    e.target.blur()
+                  }, 200);}}  hover={morto + 'red'} color={'red'}>Morto</PortraitButton>
                 </div>
 
                 <div className='portrait-ocultar'>
