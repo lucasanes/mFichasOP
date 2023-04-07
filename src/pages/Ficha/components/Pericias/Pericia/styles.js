@@ -43,7 +43,7 @@ export const Button = styled('button', {
         border: '2px solid #797979',
         color: '#797979',
 
-        '&:focus': {
+        '&:hover': {
           background: '#79797950'
         }
       },
@@ -51,7 +51,7 @@ export const Button = styled('button', {
         border: '2px solid #00632b',
         color: '#00632b',
 
-        '&:focus': {
+        '&:hover': {
           background: '#00632b50'
         }
       },
@@ -59,7 +59,7 @@ export const Button = styled('button', {
         border: '2px solid #0059ff',
         color: '#0059ff',
 
-        '&:focus': {
+        '&:hover': {
           background: '#0059ff50'
         }
       },
@@ -67,7 +67,7 @@ export const Button = styled('button', {
         border: '2px solid #ffd500',
         color: '#ffd500',
 
-        '&:focus': {
+        '&:hover': {
           background: '#ffd50050'
         }
       }

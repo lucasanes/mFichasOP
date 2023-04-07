@@ -30,7 +30,7 @@ export const Button = styled('button', {
   fontFamily: 'Special Elite',
   letterSpacing: '2px',
 
-  '&:focus': {
+  '&:hover': {
     background: '#ffffff10',
   },
 
@@ -39,11 +39,11 @@ export const Button = styled('button', {
   },
 
   variants: {
-    focus: {
+    hover: {
       true: {
         background: '#ffffff30',
 
-        '&:focus': {
+        '&:hover': {
           background: '#ffffff30',
           cursor: 'default'
         }

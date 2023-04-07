@@ -72,7 +72,7 @@ export const LabelContainer = styled('label', {
   transition: '0.3s',
 
   variants: {
-    focus: {
+    hover: {
       true: {
         fontSize: '2rem',
         transform: 'translateX(1rem) translateY(-2.7rem)',

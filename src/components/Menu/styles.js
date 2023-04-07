@@ -20,7 +20,7 @@ export const Container = styled("div", {
     },
 
     variants: {
-        focus: {
+        hover: {
             aberto: {
                 height: "282px",
                 zIndex: 10,
@@ -82,18 +82,18 @@ export const Body = styled("div", {
         marginLeft: '-1rem',
     },
 
-    "button:focus": {
+    "button:hover": {
         opacity: "0.5",
         transition: '.3s'
     },
 
-    "a:focus": {
+    "a:hover": {
         opacity: "0.5",
         transition: '.3s'
     },
 
     variants: {
-        focus: {
+        hover: {
             aberto: {
                 height: "210px",
                 transition: '.5s',
@@ -146,7 +146,7 @@ export const Line1 = styled('div', {
     transition: '.3s',
 
     variants: {
-        focus: {
+        hover: {
             aberto: {
                 transform: 'rotate(45deg) translate(7px, 7px)',
             }
@@ -161,7 +161,7 @@ export const Line2 = styled('div', {
     transition: '.2s',
 
     variants: {
-        focus: {
+        hover: {
             aberto: {
                 opacity: 0
             }
@@ -176,7 +176,7 @@ export const Line3 = styled('div', {
     transition: '.3s',
 
     variants: {
-        focus: {
+        hover: {
             aberto: {
                 transform: 'rotate(-45deg) translate(5px, -7px)',
             }

@@ -46,7 +46,7 @@ export const Botoes = styled('div', {
     }
   },
 
-  'button:focus': {
+  'button:hover': {
     border: '1px solid white'
   },
 

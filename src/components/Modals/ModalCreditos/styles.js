@@ -46,7 +46,7 @@ export const Header = styled('div', {
     justifyContent: 'center',
   },
 
-  'button:focus': {
+  'button:hover': {
     opacity: 0.5,
   },
 

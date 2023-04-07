@@ -40,7 +40,7 @@ export const Button = styled('button', {
           filter: 'drop-shadow(#ff4b4b 0 0 3px)'
         },
 
-        '&:focus': {
+        '&:hover': {
           border: '2px solid #ff4b4b',
         }
       },
@@ -51,7 +51,7 @@ export const Button = styled('button', {
           filter: 'drop-shadow(#00fff2 0 0 3px)'
         },
 
-        '&:focus': {
+        '&:hover': {
           border: '2px solid #00fff2',
         }
       }

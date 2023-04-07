@@ -46,7 +46,7 @@ export const Header = styled('div', {
     height: '25px'
   },
 
-  'button:focus': {
+  'button:hover': {
     opacity: 0.5,
   },
 

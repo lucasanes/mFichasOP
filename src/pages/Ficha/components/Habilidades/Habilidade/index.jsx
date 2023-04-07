@@ -6,28 +6,28 @@ import { IoIosArrowForward } from 'react-icons/io'
 
 export function Habilidade({data}) {
 
-  const [focus, setfocus] = useState(false)
+  const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
 
   function slideToggle(ref) {
     
     const content = ref.current;
   
-    if (focus) {
+    if (hover) {
       content.style.transition = "height 0.3s ease-out";
       content.style.height = "0";
-      setfocus(false);
+      sethover(false);
     } else {
       content.style.transition = "height 0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
-      setfocus(true);
+      sethover(true);
     }
   }
 
   return (
     <Container>
       <Header1>
-        <Button focus={focus} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
+        <Button hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonEditComponent segundo size={18}/>
           <ButtonDeleteComponent size={18}/>

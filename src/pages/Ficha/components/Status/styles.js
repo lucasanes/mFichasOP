@@ -151,7 +151,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #ff4343',
         color: '#ff4343',
 
-        '&:focus': {
+        '&:hover': {
           background: '#ff434350'
         },
       },
@@ -159,7 +159,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #8c0000',
         color: '#8c0000',
 
-        '&:focus': {
+        '&:hover': {
           background: '#8c000050'
         },
       },
@@ -167,7 +167,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #00eeff',
         color: '#00eeff',
 
-        '&:focus': {
+        '&:hover': {
           background: '#00eeff50'
         }
       },
@@ -175,7 +175,7 @@ export const PortraitButton = styled('button', {
         border: '1px solid #005eff',
         color: '#005eff',
 
-        '&:focus': {
+        '&:hover': {
           background: '#005eff50'
         }
       },
@@ -183,13 +183,13 @@ export const PortraitButton = styled('button', {
         border: '1px solid #ffd900',
         color: '#ffd900',
 
-        '&:focus': {
+        '&:hover': {
           background: '#ffd90050'
         }
       }
     },
 
-    focus: {
+    hover: {
       truered: {
         color: 'white',
         background: '#ff434350'
@@ -232,17 +232,17 @@ export const Button = styled('button', {
   border: '2px solid grey',
   transition: '.3s',
 
-  '&:focus': {
+  '&:hover': {
     background: '#ffffff15'
   },
 
   variants: {
-    focus: {
+    hover: {
       true: {
         background: '#ffffff30',
         cursor: 'default',
 
-        '&:focus': {
+        '&:hover': {
           background: '#ffffff30'
         },
       }

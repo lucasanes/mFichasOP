@@ -53,17 +53,17 @@ export const Button = styled('button', {
   border: '2px solid grey',
   transition: '.3s',
 
-  '&:focus': {
+  '&:hover': {
     background: '#ffffff15'
   },
 
   variants: {
-    focus: {
+    hover: {
       true: {
         background: '#ffffff30',
         cursor: 'default',
 
-        '&:focus': {
+        '&:hover': {
           background: '#ffffff30'
         },
       }
