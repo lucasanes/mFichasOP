@@ -226,7 +226,7 @@ export function Ficha() {
   }, [])
 
   return (
-    <Container isLoading={isLoading} onSwiper={(e) => console.log(e)}>
+    <Container isLoading={isLoading} cssMode>
       {!isLoading && <>
         <SwiperSlide>
           <Principal data={principal} setData={setPrincipal}/>
