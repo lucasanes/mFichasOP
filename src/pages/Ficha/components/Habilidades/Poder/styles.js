@@ -8,7 +8,12 @@ export const Container = styled('div', {
   alignItems: 'left',
   fontFamily: 'El Messiri',
   flexDirection: 'column',
-  border: '2px solid #dddddd',
+  border: '2px solid #0026ff90',
+
+  hr: {
+    borderColor: '#0026ff90'
+  },
+
   borderRadius: '5px',
   position: 'relative',
 });

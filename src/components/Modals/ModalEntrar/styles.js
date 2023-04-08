@@ -89,7 +89,7 @@ export const Body = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: '2rem',
+    gap: '1rem',
     marginLeft: '-2rem',
 
     '@md': {

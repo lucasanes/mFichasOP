@@ -13,6 +13,15 @@ import { Dados } from './components/Dados';
 import { Rituais } from './components/Rituais';
 import { Inventario } from './components/Inventario';
 
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { MenuBottomFicha } from '../../components/MenuBottomFicha';
+
 export function Ficha() {
 
   const {setNome, body, setBody, setDc} = useFicha()
@@ -30,8 +39,7 @@ export function Ficha() {
   const [dados, setDados] = useState({})
 
   useEffect(() => {
-
-    setBody('principal')
+    
     setNome('...')
 
     async function fetchData() {
@@ -219,16 +227,42 @@ export function Ficha() {
 
   return (
     <Container isLoading={isLoading}>
-        <Body isLoading={isLoading}>
-          {(!isLoading && body == 'principal') && <Principal data={principal} setData={setPrincipal}/>}
-          {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
-          {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
-          {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}
-          {(!isLoading && body == 'inventario') && <Inventario data={inventario} setData={setInventario}/>}
-          {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
-          {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
-        </Body>
-      <ToastContainer/>
+      {!isLoading && <>
+        <SwiperSlide>
+          <Principal data={principal} setData={setPrincipal}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Status data={status} setData={setStatus}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Pericias data={pericias} setData={setPericias}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Habilidades data={hpe} setData={setHpe}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Inventario data={inventario} setData={setInventario}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Rituais data={rituais} setData={setRituais}/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Dados data={dados} setData={setDados}/>
+        </SwiperSlide>
+      </>}
+      <MenuBottomFicha/>
     </Container>
+    // <Container isLoading={isLoading}>
+    //     <Body isLoading={isLoading}>
+    //       {(!isLoading && body == 'principal') && <Principal data={principal} setData={setPrincipal}/>}
+    //       {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
+    //       {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
+    //       {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}
+    //       {(!isLoading && body == 'inventario') && <Inventario data={inventario} setData={setInventario}/>}
+    //       {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
+    //       {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
+    //     </Body>
+    //   <ToastContainer/>
+    // </Container>
   );
 }

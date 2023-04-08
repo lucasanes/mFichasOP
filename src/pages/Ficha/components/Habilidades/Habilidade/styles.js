@@ -8,9 +8,14 @@ export const Container = styled('div', {
   alignItems: 'left',
   fontFamily: 'El Messiri',
   flexDirection: 'column',
-  border: '2px solid #dddddd',
+  border: '2px solid #ffee0090',
   borderRadius: '5px',
   position: 'relative',
+
+  hr: {
+    borderColor: '#ffee0090'
+  },
+
 });
 
 export const Header1 = styled('div', {

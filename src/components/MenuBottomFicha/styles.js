@@ -34,10 +34,6 @@ export const Button = styled('button', {
     background: '#ffffff10',
   },
 
-  '.lock': {
-    position: 'absolute'
-  },
-
   variants: {
     hover: {
       true: {

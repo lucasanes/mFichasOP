@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Button, Container, ContainerInput, InputB, LabelContainer} from "./styles"
 import {AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
-export function Input({ isSenha = false, label, setValor, valor, onlyNumber = false, opcional = false, valorMax = null, ...rest }) {
+export function Input({ isSenha = false, label, setValor, valor, opcional = false, ...rest }) {
 
   const [hover, sethover] = useState(false)
   const [isSenhaVisible, setIsSenhaVisible] = useState(false)
@@ -17,13 +17,6 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
     }
   }, [valor])
 
-  function onlyNumbers(v) {
-    if (valorMax != null && valorMax >= v || valorMax == null) {
-      v = v.replace(/[^0-9-]/g, "")
-      setValor(v)
-    }
-  }
-
   return (
     <Container>
       
@@ -34,8 +27,14 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
       <ContainerInput>
         <InputB autoComplete="on" value={valor} type={isSenhaVisible || !isSenha ? 'text' : 'password'} {...rest}
           onChange={(event) => {
-            if (onlyNumber) {
-              onlyNumbers(event.target.value)
+            if (event.target.type == 'number') {
+              if (event.target.value == '') {
+                setValor(0)
+                return
+              }
+              if ((parseInt(event.target.value) <= parseInt(event.target.max) && parseInt(event.target.value) >= parseInt(event.target.min))) {
+                setValor(parseInt(event.target.value))
+              }
             } else {
               setValor(event.target.value)
             }

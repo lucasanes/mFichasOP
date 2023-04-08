@@ -68,7 +68,7 @@ export function Status({data, setData}) {
       setFotoAtual(foto_insanoeferido.src);
     } else if (fotos.foto_insano != null && psA == 0) {
       setFotoAtual(foto_insano.src);
-    } else if (fotos.foto_ferido != null && (pvA < (status.pvMax / 2))) {
+    } else if (fotos.foto_ferido != null && (pvA < (status.pvMax / 2))) {   
       setFotoAtual(foto_ferido.src);
     }  else {
       setFotoAtual(foto.src);

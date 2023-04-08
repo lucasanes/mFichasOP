@@ -92,7 +92,7 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
 
         <Body>
 
-          <Input required label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input autoFocus required label={'Nome'} valor={nome} setValor={setnome}/>
           <Input label={'Dado'} valor={dado} setValor={setdado}/>
           <Toggle classNumber={1} span={"Rolar como dano?"} defaultChecked={data.dano == 1} onClick={() => {if (dano == 0) {setdano(1)} else {setdano(0)}}}/>     
 

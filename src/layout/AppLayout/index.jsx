@@ -17,11 +17,10 @@ export function AppLayout() {
       {!location.pathname.startsWith('/ficha/') ? <Menu/> : <MenuFicha/>}
 
       <ContentWrapper auth={location.pathname.startsWith('/ficha/') ? 'trueficha' : (token != undefined && token != null) ? 'true' : 'false'}>
-        <Outlet />
+        <Outlet/>
       </ContentWrapper>
 
       {(token != null && token != undefined && !location.pathname.startsWith('/ficha/')) && <MenuBottom/>}
-      {location.pathname.startsWith('/ficha/') && <MenuBottomFicha/>}
     </Container>
   );
 }

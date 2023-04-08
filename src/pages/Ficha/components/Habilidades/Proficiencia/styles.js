@@ -8,13 +8,14 @@ export const Container = styled('div', {
   fontFamily: 'El Messiri',
   flexDirection: 'column',
   gap: '1rem',
-  border: '2px solid #dddddd',
+  border: '2px solid #00ff5e90',
   padding: '1rem',
   borderRadius: '5px',
   position: 'relative',
   
   hr: {
-    margin: '0 -1rem'
+    margin: '0 -1rem',
+    borderColor: '#00ff5e90'
   },
 
   span: {

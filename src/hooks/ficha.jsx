@@ -5,7 +5,6 @@ const FichaContext = createContext({});
 function FichaProvider({ children }) {
 
   const [nome, setNome] = useState('');
-  const [body, setBody] = useState('principal');
   const [dc, setDc] = useState({})
   // const [ultimaRota, setUltimaRota] = useState('');
 
@@ -14,8 +13,6 @@ function FichaProvider({ children }) {
       value={{
         nome,
         setNome,
-        body,
-        setBody,
         dc,
         setDc
         // ultimaRota, 

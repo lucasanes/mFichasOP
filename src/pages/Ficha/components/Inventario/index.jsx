@@ -16,8 +16,8 @@ export function Inventario({data, setData}) {
 
       <Body>
 
-        {data.itens.map(item => <Item key={item.id} data={item}/>)}
         {data.armas.map(arma => <Arma key={arma.id} data={arma}/>)}
+        {data.itens.map(item => <Item key={item.id} data={item}/>)}
        
       </Body>
 
