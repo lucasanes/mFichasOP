@@ -24,7 +24,7 @@ export const Botoes = styled('div', {
   },
 
   button: {
-    margin: '.5rem',
+    margin: '.3rem',
     padding: '.8rem .5rem .4rem .5rem',
     fontFamily: 'Special Elite',
     background: 'none',
@@ -32,7 +32,7 @@ export const Botoes = styled('div', {
     justifyContent: 'center',
     alignItems: 'center',
     whiteSpace: 'nowrap',
-    gap: '.5rem',
+    gap: '0rem',
     transition: '.3s',
     color: 'White',
     border: '1px solid transparent',
@@ -92,6 +92,7 @@ export const ProgressBar = styled('div', {
   height: '2rem',
   borderRadius: '10px',
   backgroundColor: '#ffffff14',
+  overflow: 'hidden',
   display: 'flex',
 
 })
@@ -99,7 +100,7 @@ export const ProgressBar = styled('div', {
 export const Progress = styled('div', {
 
   height: '2rem',
-  borderRadius: '10px',
+  borderRadius: '10px 0 0 10px',
   display: 'flex',
   transition: '0.3s',
 

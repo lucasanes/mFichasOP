@@ -22,7 +22,7 @@ export const Container = styled('div', {
 
 export const InputB = styled('input', {
     width: '100%',
-    minWidth: '4.5rem',
+    minWidth: '5.2rem',
     height: '1rem',
     wordWrap: 'break-word',
     marginTop: "0px",

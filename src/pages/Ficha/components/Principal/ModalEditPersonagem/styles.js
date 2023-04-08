@@ -28,7 +28,8 @@ export const Header = styled('div', {
   color: 'white',
 
   h1: {
-    fontSize: '1.8rem',
+    fontSize: '2rem',
+    paddingBottom: '.3rem',
     fontFamily: 'Special Elite'
   },
   

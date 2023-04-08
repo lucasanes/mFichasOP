@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Container, Header, Main, Footer, CloseButton, Span } from './styles';
 import pericias from '../../mappers/pericias/pericias';
+import {useFicha} from '../../../hooks/ficha'
 
 export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
 
   const [dado, setDado] = useState({});
+  const {dc} = useFicha()
 
   // useEffect(() => {
   //   const rolarDado = () => {
@@ -167,6 +169,16 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
   //   rolarDado();
   // }, []);
 
+  function DadoDinamico(dado, arr = null) {
+    if (dado.includes("/")) {
+      for (const [i, v] of Object.entries(arr)) {
+        dado = dado.replaceAll(i, v);
+      }
+      dado = dado.replaceAll("/", "");
+    }
+    return dado;
+  }
+
   useEffect(() => {
     function rolarDado(dado_bruto, dano = false, margem = 20) {
 
@@ -196,51 +208,65 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
       let dado_fragmentado = dado_bruto.split("+");
   
       dado_fragmentado.forEach((e,i)=>{
-        let separador = e.split("d");
-        let quantidade = parseInt(separador[0]);
-        if (separador.length === 2) {
-          faces = parseInt(separador[1]);
+        if (e) {
+          let separador = e.split("d");
+          let quantidade = parseInt(separador[0] ? separador[0] : 1);
+          if (separador[0] === '-') {
+            quantidade = 1
+          }
+          if (separador.length === 2) {
+            faces = parseInt(separador[1]);
 
-          if (quantidade === 0) {
-            quantidade = -2;
-          }
-          if (quantidade < 0) {
-            quantidade = -2;
-            negativo = true;
-          }
-          saida[index] = {}
-          saida[index]["resultados"] = [];
-          if (dano) {
-            saida[index]["dado"] = "d" + faces;
-            for (let i = 0; i < quantidade; i++) {
-              saida[index]["rolagens"] = i + 1;
-              saida[index]["resultados"][i] = Math.floor(Math.random() * (faces)) + 1;
-              resultado += parseInt(saida[index]["resultados"][i]);
-              print += (print ? '+' : "") + saida[index]["resultados"][i];
+            if (quantidade === 0) {
+              quantidade = -2;
             }
-          } else {
-            for (let i = 0; i < quantidade; i++) {
-              saida[index]["resultados"][i] = Math.floor(Math.random() * (faces)) + 1;
-              if(faces === 20 && saida[index]["resultados"][i] >= margem){
-                critico = true;
+            if (quantidade < 0) {
+              quantidade = Math.abs(quantidade);
+              negativo = true;
+            }
+            saida[index] = {}
+            saida[index]["resultados"] = [];
+            if (dano) {
+              saida[index]["dado"] = "d" + faces;
+              for (let i = 0; i < quantidade; i++) {
+                saida[index]["rolagens"] = i + 1;
+                saida[index]["resultados"][i] = Math.floor(Math.random() * (faces)) + 1;
+                resultado += parseInt(saida[index]["resultados"][i]);
+                print += (print ? '+' : "") + saida[index]["resultados"][i];
               }
-            }
+            } else {
+              for (let i = 0; i < quantidade; i++) {
+                saida[index]["resultados"][i] = Math.floor(Math.random() * (faces)) + 1
+              }
 
-            saida[index]["rolagens"] = quantidade;
-            saida[index]["dado"] = "d" + faces;
-            saida[index]["melhor"] = best(saida[index]["resultados"]);
-            saida[index]["pior"] = worst(saida[index]["resultados"]);
-            resultado += parseInt(saida[index][negativo ? "pior" : "melhor"]);
-            print += (print ? "+" : '') + saida[index][negativo ? "pior" : "melhor"];
-            saida[index]["resultado"] = saida[index][negativo ? "pior" : "melhor"];
+              if (!negativo) {
+
+                if(faces === 20 && best(saida[index]['resultados']) >= margem){
+                  critico = true;
+                }
+
+              } else {
+                if(faces === 20 && worst(saida[index]['resultados']) >= margem){
+                  critico = true;
+                }
+              }
+
+              saida[index]["rolagens"] = quantidade;
+              saida[index]["dado"] = "d" + faces;
+              saida[index]["melhor"] = best(saida[index]["resultados"]);
+              saida[index]["pior"] = worst(saida[index]["resultados"]);
+              resultado += parseInt(saida[index][negativo ? "pior" : "melhor"]);
+              print += (print ? "+" : '') + saida[index][negativo ? "pior" : "melhor"];
+              saida[index]["resultado"] = saida[index][negativo ? "pior" : "melhor"];
+            }
+            index++;
+          } else {
+            if (quantidade > 0) {
+              quantidade = (saida["print"] ? "+" : "+") + quantidade;
+              print += quantidade;
+            }
+            resultado += parseInt(quantidade);
           }
-          index++;
-        } else {
-          if (quantidade > 0) {
-            quantidade = (saida["print"] ? "+" : "+") + quantidade;
-            print += quantidade;
-          }
-          resultado += parseInt(quantidade);
         }
       })
 
@@ -254,13 +280,13 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
       saida["margem"] = margem;
       saida["print"] = print;
       saida["rolagens"] = rolagens
-
+      
       setDado(saida)
 
       return saida;
     }
 
-    rolarDado(data.valor, data.isDano, data.margem)
+    rolarDado(DadoDinamico(data.valor, dc), data.isDano, data.margem)
 
   }, [])
 

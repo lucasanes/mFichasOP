@@ -1,6 +1,6 @@
 import { InputAtributo } from "./InputAtributo"
 import { Container, Top, Bot, Mid, Img } from "./styles"
-import AtributosImg from '../../assets/imgs/AtributosImg.png'
+import AtributosImg from '../../assets/imgs/AtributosImg-Pequeno.png'
 
 
 export function AtributoInput({ agi, setAgi, int, setInt, vig, setVig, pre, setPre, forca, setFor, ...rest }) {

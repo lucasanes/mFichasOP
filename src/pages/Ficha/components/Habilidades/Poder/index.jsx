@@ -4,12 +4,12 @@ import { ButtonEditComponent } from '../../../../../components/ButtonEditCompone
 import {Container, Header1, Button, Body} from './styles'
 import { IoIosArrowForward } from 'react-icons/io'
 import {Modal} from '../../../../../components/Modals/Modal'
-import { ModalEditHabilidade } from './ModalEditHabilidade';
-import { api } from '../../../../../services/api';
+import { ModalEditPoder } from './ModalEditPoder';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../../../../../hooks/auth';
+import { api } from '../../../../../services/api';
 
-export function Habilidade({data, lista, setData}) {
+export function Poder({data, lista, setData}) {
 
   const {id} = useParams()
   const {token} = useAuth()
@@ -26,15 +26,15 @@ export function Habilidade({data, lista, setData}) {
       sessid: token,
       token: id,
       dados: {
-        habilidades: [{
+        poderes: [{
           id: data.id
         }]
       }
     })
 
     if (response.data.success) {
-      const habilidadesAtualizadas = lista.filter(habilidade => habilidade.id != data.id)
-      setData(habilidadesAtualizadas)
+      const poderesAtualizadas = lista.filter(poder => poder.id != data.id)
+      setData(poderesAtualizadas)
     }
 
   }
@@ -58,7 +58,7 @@ export function Habilidade({data, lista, setData}) {
     <Container>
 
       <Modal isOpen={modalEditIsOpen} setClose={() => setModalEditIsOpen(false)}>
-        <ModalEditHabilidade lista={lista} data={data} setModalClose={() => setModalEditIsOpen(false)} />
+        <ModalEditPoder data={data} lista={lista} setModalClose={() => setModalEditIsOpen(false)} />
       </Modal>
 
       <Header1>

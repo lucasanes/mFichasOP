@@ -1,16 +1,16 @@
 import { useState } from "react"
 import { Container, InputB, LabelContainer } from "./styles"
 
-export function TextArea({ label, valor, setValor, ...rest }) {
+export function TextArea({ menor = false, label, valor, setValor, ...rest }) {
 
     const [focus, setFocus] = useState(false)
 
     return (
         <Container>
-            <LabelContainer active={focus}>
+            <LabelContainer menor={menor} active={focus}>
                 {label}
             </LabelContainer>
-            <InputB defaultValue={valor} type="text" {...rest}
+            <InputB menor={menor} defaultValue={valor} type="text" {...rest}
                 onChange={(event) => {
                     setValor(event.target.value)
                 }}

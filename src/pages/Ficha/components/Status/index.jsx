@@ -99,8 +99,6 @@ export function Status({data, setData}) {
       }
     })
 
-    console.log(response)
-
   }
 
   function subtimer() {

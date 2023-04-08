@@ -22,6 +22,7 @@ export const Button = styled('button', {
   justifyContent: 'center',
   flexDirection: 'column',
   gap: '1rem',
+  textTransform: 'capitalize',
   fontSize: '2.2rem',
   fontFamily: 'Rye',
   color: 'white',

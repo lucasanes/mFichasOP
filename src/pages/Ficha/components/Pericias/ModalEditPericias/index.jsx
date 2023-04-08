@@ -5,11 +5,14 @@ import {Input} from '../../../../../components/Input'
 import { api } from "../../../../../services/api";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../../../../hooks/auth";
+import { useFicha } from "../../../../../hooks/ficha";
 
 export function ModalEditPericias({data, setData, setModalClose}) {
 
   const {id} = useParams()
   const {token} = useAuth()
+
+  const {setDc} = useFicha()
 
   const [acrobacia, setacrobacia] = useState(data.pericias[0].valor ? data.pericias[0].valor : 0)
   const [adestramento, setadestramento] = useState(data.pericias[1].valor ? data.pericias[1].valor : 0)
@@ -119,6 +122,42 @@ export function ModalEditPericias({data, setData, setModalClose}) {
           {id: 27, nome: 'tecnologia', valor: tecnologia, atributoChave: data.atributos.intelecto},
           {id: 28, nome: 'vontade', valor: vontade, atributoChave: data.atributos.presenca}
         ]
+      })
+      setDc({
+        "FOR": data.atributos.forca,
+        "AGI": data.atributos.agilidade,
+        "INT": data.atributos.intelecto,
+        "PRE": data.atributos.presenca,
+        "VIG": data.atributos.vigor,
+
+        "ACRO": acrobacia,
+        "ADES": adestramento,
+        "ARTE": arte,
+        "ATLE": atletismo,
+        "ATUA": atualidade,
+        "CIEN": ciencia,
+        "CRIM": crime,
+        "DIPL": diplomacia,
+        "ENGA": enganacao,
+        "FORT": fortitude,
+        "FURT": furtividade,
+        "INIT": iniciativa,
+        "INTI": intimidacao,
+        "INTU": intuicao,
+        "INVE": investigacao,
+        "LUTA": luta,
+        "MEDI": medicina,
+        "OCUL": ocultismo,
+        "PERC": percepcao,
+        "PILO": pilotagem,
+        "PONT": pontaria,
+        "PROF": profissao,
+        "REFL": reflexo,
+        "RELI": religiao,
+        "SOBR": sobrevivencia,
+        "TATI": tatica,
+        "TECN": tecnologia,
+        "VONT": vontade
       })
       setModalClose()
     }

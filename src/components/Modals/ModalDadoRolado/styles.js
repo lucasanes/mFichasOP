@@ -30,7 +30,6 @@ export const Container = styled('div', {
 export const Header = styled('div', {
 
   width: '100%',
-  height: '5rem',
   borderRadius: '12px 12px 0px 0px',
   display: 'flex',
   flexDirection: 'row',
@@ -48,7 +47,8 @@ export const Header = styled('div', {
     fontSize: '2.2rem',
     textAlign: 'left',
     fontFamily: 'Arvo',
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    margin: '1rem 0'
   },
 
 })

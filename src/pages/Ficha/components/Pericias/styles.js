@@ -50,6 +50,20 @@ export const Body = styled('div', {
 
 });
 
+export const DivAtributos = styled('div', {
+
+  display: 'flex',
+  justifyContent: 'center',
+  position: 'relative',
+
+  '.buttonedit': {
+    position: 'absolute',
+    top: 20,
+    right: 40
+  }
+
+});
+
 export const Header = styled('div', {
 
   minHeight: '60px',

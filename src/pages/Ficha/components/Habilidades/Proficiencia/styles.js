@@ -19,7 +19,10 @@ export const Container = styled('div', {
 
   span: {
     fontWeight: 700,
-    textTransform: 'capitalize'
+    paddingTop: '.2rem',
+    textTransform: 'capitalize',
+    fontSize: '1.8rem',
+    paddingLeft: '1rem'
   }
 });
 
@@ -29,6 +32,10 @@ export const Header1 = styled('div', {
   alignItems: 'center',
   justifyContent: 'space-between',
   color: '#b8b8b8',
+
+  div: {
+    display: 'flex'
+  },
 
   button: {
     marginRight: '.5rem',

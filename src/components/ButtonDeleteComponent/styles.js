@@ -9,7 +9,9 @@ export const Container = styled('div', {
   justifyContent: 'center',
 
   button: {
-    
+    color: 'red',
+    gap: '1rem',
+    fontSize: '1.8rem',
     background: 'none',
     border: '1px solid transparent',
     borderRadius: '5px',

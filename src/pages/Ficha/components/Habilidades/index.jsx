@@ -2,15 +2,16 @@ import {Body, Button, Container, Header} from './styles'
 import { useEffect, useRef, useState } from 'react';
 import { Habilidade } from './Habilidade';
 import { Proficiencia } from './Proficiencia';
+import { Poder } from './Poder';
 import { useFicha } from '../../../../hooks/ficha';
 
-export function Habilidades({data, setData}) {
+export function Habilidades({data}) {
 
   const [miniBody, setMiniBody] = useState('habilidades')
 
-  const habilidades = data.habilidades
-  const poderes = data.poderes
-  const proficiencias = data.proficiencias
+  const [habilidades, sethabilidades] = useState(data.habilidades)
+  const [poderes, setpoderes] = useState(data.poderes)
+  const [proficiencias, setproficiencias] = useState(data.proficiencias ? data.proficiencias : [])
 
   const [low, setLow] = useState(false)
 
@@ -43,11 +44,11 @@ export function Habilidades({data, setData}) {
 
       <Body low={low}>
 
-        {miniBody == 'habilidades' && habilidades.map(habilidade => <Habilidade key={habilidade.id} data={habilidade}/>)}
+        {miniBody == 'habilidades' && habilidades.map(habilidade => <Habilidade key={habilidade.id} lista={habilidades} data={habilidade} setData={sethabilidades}/>)}
 
-        {miniBody == 'poderes' && poderes.map(habilidade => <Habilidade key={habilidade.id} data={habilidade}/>)}
+        {miniBody == 'poderes' && poderes.map(poder => <Poder key={poder.id} lista={poderes} data={poder} setData={setpoderes}/>)}
 
-        {miniBody == 'proficiencias' && proficiencias.map(proficiencia => <Proficiencia key={proficiencia.id} data={proficiencia}/>)}
+        {miniBody == 'proficiencias' && proficiencias.map(proficiencia => <Proficiencia key={proficiencia.id} lista={proficiencias} data={proficiencia} setData={setproficiencias}/>)}
 
       </Body>
 

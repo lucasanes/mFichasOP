@@ -6,6 +6,7 @@ function FichaProvider({ children }) {
 
   const [nome, setNome] = useState('');
   const [body, setBody] = useState('principal');
+  const [dc, setDc] = useState({})
   // const [ultimaRota, setUltimaRota] = useState('');
 
   return (
@@ -15,6 +16,8 @@ function FichaProvider({ children }) {
         setNome,
         body,
         setBody,
+        dc,
+        setDc
         // ultimaRota, 
         // setUltimaRota
       }}

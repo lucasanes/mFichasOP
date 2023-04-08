@@ -15,7 +15,7 @@ import { Inventario } from './components/Inventario';
 
 export function Ficha() {
 
-  const {setNome, body, setBody} = useFicha()
+  const {setNome, body, setBody, setDc} = useFicha()
   const {token} = useAuth()
   const {id} = useParams()
 
@@ -32,6 +32,7 @@ export function Ficha() {
   useEffect(() => {
 
     setBody('principal')
+    setNome('...')
 
     async function fetchData() {
 
@@ -40,7 +41,7 @@ export function Ficha() {
         const response = await api.post("/", {query: 'fichas_info_get', sessid: token, token: id})
 
         const ficha = response.data.ficha
-        
+
         const primeiroNome = ficha.nome.split(' ')[0]
 
         setNome(primeiroNome)
@@ -165,6 +166,41 @@ export function Ficha() {
 
         setRituais(ficha.rituais)
 
+        setDc({
+          "FOR": ficha.forca,
+          "AGI": ficha.agilidade,
+          "INT": ficha.inteligencia,
+          "PRE": ficha.presenca,
+          "VIG": ficha.vigor,
+          "ACRO": ficha.acrobacias,
+          "ADES": ficha.adestramento,
+          "ARTE": ficha.artes,
+          "ATLE": ficha.atletismo,
+          "ATUA": ficha.atualidades,
+          "CIEN": ficha.ciencia,
+          "CRIM": ficha.crime,
+          "DIPL": ficha.diplomacia,
+          "ENGA": ficha.enganacao,
+          "FORT": ficha.fortitude,
+          "FURT": ficha.furtividade,
+          "INIT": ficha.iniciativa,
+          "INTI": ficha.intimidacao,
+          "INTU": ficha.intuicao,
+          "INVE": ficha.investigacao,
+          "LUTA": ficha.luta,
+          "MEDI": ficha.medicina,
+          "OCUL": ficha.ocultismo,
+          "PERC": ficha.percepcao,
+          "PILO": ficha.pilotagem,
+          "PONT": ficha.pontaria,
+          "PROF": ficha.profissao,
+          "REFL": ficha.reflexos,
+          "SOBR": ficha.sobrevivencia,
+          "TATi": ficha.tatica,
+          "TECN": ficha.tecnologia,
+          "VONT": ficha.vontade
+        })
+
       } finally {
         setTimeout(() => {
           setIsLoading(false)
@@ -183,15 +219,15 @@ export function Ficha() {
 
   return (
     <Container isLoading={isLoading}>
-      <Body isLoading={isLoading}>
-        {(!isLoading && body == 'principal') && <Principal data={principal} setData={setPrincipal}/>}
-        {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
-        {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
-        {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}
-        {(!isLoading && body == 'inventario') && <Inventario data={inventario} setData={setInventario}/>}
-        {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
-        {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
-      </Body>
+        <Body isLoading={isLoading}>
+          {(!isLoading && body == 'principal') && <Principal data={principal} setData={setPrincipal}/>}
+          {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
+          {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
+          {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}
+          {(!isLoading && body == 'inventario') && <Inventario data={inventario} setData={setInventario}/>}
+          {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
+          {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
+        </Body>
       <ToastContainer/>
     </Container>
   );

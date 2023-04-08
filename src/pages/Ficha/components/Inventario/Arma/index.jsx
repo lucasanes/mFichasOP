@@ -58,6 +58,11 @@ export function Arma({data}) {
           onClick={() => {
             if (hover) {
               slideToggle(contentRef, true)
+            } else {
+              setMostrarComoItem(!mostrarComoItem)
+              setTimeout(() => {
+                slideToggle(contentRef)
+              }, 100);
             }
           }} 
           className='info'><IoMdInformationCircleOutline color='#00ffff' size={20}/></ButtonInfo>

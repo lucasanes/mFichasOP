@@ -11,7 +11,9 @@ export function Input({ isSenha = false, label, setValor, valor, onlyNumber = fa
     if (valor != null && valor.toString().length > 0) {
       sethover(true)
     } else {
-      sethover(false)
+      if (!hover) {
+        sethover(false)
+      }
     }
   }, [valor])
 

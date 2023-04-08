@@ -15,7 +15,7 @@ export function Rituais({data, setData}) {
 
       <Body>
 
-        {data.map(ritual => <Ritual key={ritual.id} data={ritual}/>)}
+        {data.map(ritual => <Ritual key={ritual.id} data={ritual} setData={setData} lista={data}/>)}
        
       </Body>
 

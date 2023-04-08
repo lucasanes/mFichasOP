@@ -9,8 +9,6 @@ import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
 
 export function Item({data}) {
 
-  console.log(data)
-
   const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
   const [modalImgIsOpen, setModalImgIsOpen] = useState(false)

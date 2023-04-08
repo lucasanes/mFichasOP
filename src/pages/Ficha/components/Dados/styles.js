@@ -4,7 +4,19 @@ export const Container = styled('div', {
 
   width: '100%',
   height: '100%',
-  overflow: 'hidden'
+  overflow: 'hidden',
+
+  '.span': {
+    color: '#00ffff',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1rem 0rem 0rem 1rem',
+
+    svg: {
+      marginBottom: '.25rem'
+    }
+  }
 
 });
 
@@ -15,6 +27,7 @@ export const Body = styled('div', {
   gap: '2rem',
   padding: '2rem 3rem',
   overflowY: 'auto',
+  overflowX: 'hidden',
   flexWrap: 'wrap'
 
 });

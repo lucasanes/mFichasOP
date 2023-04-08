@@ -33,7 +33,7 @@ export function Ficha({data}) {
             <span>{data.classe} - {data.nex}%</span>
           </Card>
 
-          {data.trilha != 'Nenhuma' ? 
+          {data.trilha && data.trilha != 'Nenhuma' ? 
           <Card>
             <label>Trilha:</label>
             <span>{data.trilha}</span>
@@ -45,7 +45,7 @@ export function Ficha({data}) {
           </Card>
           }
 
-          {data.missao ?
+          {data.missao && data.missao != 'Nenhuma' ?
             <Card>
               <label>Sessão:</label>
               <span>{data.missao}</span>

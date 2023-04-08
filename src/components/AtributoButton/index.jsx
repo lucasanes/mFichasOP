@@ -5,7 +5,7 @@ import { api } from "../../services/api"
 import { Modal } from "../Modals/Modal"
 import { ModalDadoRolado } from "../Modals/ModalDadoRolado"
 import { Container, Top, Bot, Mid, Img } from "./styles"
-import AtributosImg from '../../assets/imgs/AtributosImg.png'
+import AtributosImg from '../../assets/imgs/AtributosImg-Pequeno.png'
 
 export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
 

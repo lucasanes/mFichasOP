@@ -6,13 +6,39 @@ import { IoIosArrowForward } from 'react-icons/io'
 import {InputStop} from './InputStop'
 import {Modal} from '../../../../../components/Modals/Modal'
 import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
+import { useAuth } from '../../../../../hooks/auth';
+import { useParams } from 'react-router-dom';
+import { api } from '../../../../../services/api';
 
-export function Ritual({data}) {
+export function Ritual({data, setData, lista}) {
 
   const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
   const [modalDadoIsOpen, setModalDadoIsOpen] = useState(false)
   const [dadoData, setDadoData] = useState({})
+
+  const {id} = useParams()
+  const {token} = useAuth()
+
+  async function itemDelete() {
+
+    const response = await api.post('/', {
+      query: 'fichas_info_delete',
+      sessid: token,
+      token: id,
+      dados: {
+        rituais: [{
+          id: data.id
+        }]
+      }
+    })
+
+    if (response.data.success) {
+      const rituaisAtualizadas = lista.filter(ritual => ritual.id != data.id)
+      setData(rituaisAtualizadas)
+    }
+
+  }
 
   function slideToggle(ref) {
     
@@ -40,7 +66,7 @@ export function Ritual({data}) {
         <Button elemento={data.elemento.toLowerCase()} hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonEditComponent segundo size={18}/>
-          <ButtonDeleteComponent size={18}/>
+          <ButtonDeleteComponent onClick={itemDelete} size={18}/>
         </div>
       </Header1>
       <hr/>

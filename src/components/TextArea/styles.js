@@ -26,6 +26,15 @@ export const InputB = styled('textarea', {
     border: 'none',
     outline: 'solid 0.2rem white',
     color: 'white',
+
+    variants: {
+        menor: {
+            true: {
+                minHeight: '20rem',
+                maxHeight: '60rem'
+            }
+        }
+    }
 })
 
 export const LabelContainer = styled('label', {
@@ -45,9 +54,13 @@ export const LabelContainer = styled('label', {
     variants: {
         active: {
             true: {
-                fontSize: '2.4rem',
                 transform: 'translateY(-0.5rem)',
                 padding: '0px 1rem',
+            },
+        },
+        menor: {
+            true: {
+                fontSize: '2rem'
             }
         }
     },

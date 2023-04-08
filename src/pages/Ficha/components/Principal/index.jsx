@@ -6,11 +6,14 @@ import { TextAreaStop } from '../../../../components/TextAreaStop';
 import {Modal} from '../../../../components/Modals/Modal'
 import { ModalEditPrincipal } from './ModalEditPrincipal';
 import { ModalEditPersonagem } from './ModalEditPersonagem';
+import { useFicha } from '../../../../hooks/ficha';
 
 export function Principal({data, setData}) {
 
   const [miniBody, setMiniBody] = useState('infos')
   const [low, setLow] = useState(false)
+
+  const {setBody} = useFicha()
 
   const infos = data.infos
   const personagem = data.personagem
@@ -54,22 +57,22 @@ export function Principal({data, setData}) {
       <hr />
         
         {miniBody == 'infos' ?
-          <Body low={low}>
+          <Body id='slider' low={low}>
             <InputStop label={'Nome'} valor={infos.nome}/>
             <InputStop label={'Jogador'} valor={infos.usuario}/>
             <InputStop label={'Idade'} valor={infos.idade}/>
             <InputStop label={'Nacionalidade'} valor={infos.nacionalidade}/>
-            <InputStop label={'Origem'} valor={infos.origem}/>
+            <InputStop label={'Origem'} valor={infos.origem ? infos.origem : 'Nenhuma'}/>
             <InputStop label={'NEX'} valor={infos.nex}/>
-            <InputStop label={'Classe'} valor={infos.classe}/>
-            <InputStop label={'Trilha'} valor={infos.trilha}/>
-            <InputStop label={'Patente'} valor={`${infos.patente} - ${infos.prestigio}`}/>
+            <InputStop label={'Classe'} valor={infos.classe ? infos.classe : 'Nenhuma'}/>
+            <InputStop label={'Trilha'} valor={infos.trilha ? infos.trilha : 'Nenhuma'}/>
+            <InputStop label={'Patente'} valor={`${infos.patente ? infos.patente : 'Nenhuma'} - ${infos.prestigio}`}/>
             <InputStop label={'Deslocamento'} valor={infos.deslocamento}/>
             <InputStop label={'PE/Rod'} valor={infos.peprod}/>
             {infos.afinidade && <InputStop label={'Afinidade'} valor={infos.afinidade}/>}
           </Body>
         :
-          <Body2 low={low}>
+          <Body2 id='slider' low={low}>
             <TextAreaStop disabled={true} label={'História'} valor={personagem.historia}/>
             <TextAreaStop disabled={true} label={'Aparência'} valor={personagem.aparencia}/>
             <TextAreaStop disabled={true} label={'Primeiro Encontro Paranormal'} valor={personagem.pep}/>
