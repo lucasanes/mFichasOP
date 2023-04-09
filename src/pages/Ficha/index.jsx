@@ -226,7 +226,7 @@ export function Ficha() {
   }, [])
 
   return (
-    <Container isLoading={isLoading} cssMode>
+    <Container isLoading={isLoading} grabCursor threshold={10}>
       {!isLoading && <>
         <SwiperSlide>
           <Principal data={principal} setData={setPrincipal}/>
@@ -261,7 +261,6 @@ export function Ficha() {
     //       {(!isLoading && body == 'inventario') && <Inventario data={inventario} setData={setInventario}/>}
     //       {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
     //       {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
-    //     </Body>
     //   <ToastContainer/>
     // </Container>
   );

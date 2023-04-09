@@ -4,7 +4,6 @@ export const Container = styled('div', {
 
   width: '100%',
   height: '100%',
-  overflow: 'hidden'
 
 });
 
@@ -15,7 +14,7 @@ export const Body = styled('div', {
   gridTemplateColumns: '1fr',
   gap: '2rem 1rem',
   padding: '2rem 1rem',
-  overflowY: 'auto',
+  overflowY: 'auto !important',
 
   '@sm': {
     gridTemplateColumns: '1fr 1fr'
@@ -38,7 +37,7 @@ export const Body2 = styled('div', {
   gridTemplateColumns: '1fr',
   gap: '3rem',
   padding: '3rem 1rem',
-  overflowY: 'auto',
+  overflowY: 'auto !important',
   
   variants: {
     low: {
@@ -52,7 +51,7 @@ export const Body2 = styled('div', {
 
 export const Header = styled('div', {
 
-  minHeight: '60px',
+  height: '60px',
   width: '100%',
   padding: '1rem 6rem',
   display: 'flex',

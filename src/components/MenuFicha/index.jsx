@@ -13,7 +13,7 @@ export function MenuFicha() {
 
       <Header>
 
-        <Link to={'/fichas'}> <IoIosArrowBack size={35} color='white'/> </Link>
+        <Link to={'/'}> <IoIosArrowBack size={35} color='white'/> </Link>
 
         <h1>{nome}</h1>
 

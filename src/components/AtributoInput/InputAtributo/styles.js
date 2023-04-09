@@ -14,5 +14,6 @@ export const Input = styled('input', {
   fontFamily: 'Special Elite',
   fontSize: '3rem',
   height: '3rem',
-  width: '2.6rem'
+  textAlign: 'center',
+  width: '6rem'
 })

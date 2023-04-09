@@ -26,6 +26,7 @@ export const InputB = styled('textarea', {
     border: 'none',
     outline: 'solid 0.2rem white',
     color: 'white',
+    overflowY: 'auto'
 })
 
 export const LabelContainer = styled('label', {

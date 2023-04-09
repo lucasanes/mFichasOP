@@ -14,7 +14,7 @@ export const Container = styled('div', {
 
 });
 
-export const Button = styled(Link, {
+export const Button = styled('button', {
 
   width: '100%',
   height: '100%',
@@ -51,13 +51,10 @@ export const Button = styled(Link, {
         color: '#004edf'
       }
     },
-
-    desabilitado: {
+    active: {
       true: {
-        '&:hover': {
-          background: 'none',
-          cursor: 'default'
-        },
+        background: '#ffffff10',
+        cursor: 'default'
       }
     }
   }
@@ -82,7 +79,8 @@ export const Button2 = styled('button', {
   textDecoration: 'none',
 
   '&:hover': {
-    background: '#ffffff10',
+    background: 'none',
+    cursor: 'default'
   },
 
   '.lock': {
@@ -101,15 +99,6 @@ export const Button2 = styled('button', {
         color: '#004edf'
       }
     },
-
-    desabilitado: {
-      true: {
-        '&:hover': {
-          background: 'none',
-          cursor: 'default'
-        },
-      }
-    }
   }
 
 });

@@ -151,7 +151,7 @@ export const Footer = styled('div', {
   height: 'auto',
   flexDirection: 'column',
   textAlign: 'left',
-  paddingLeft: '2rem',
+  padding: '0 2rem',
   paddingBottom: '1rem',
   paddingTop: '2rem',
   color: '#e7e7e7b9',

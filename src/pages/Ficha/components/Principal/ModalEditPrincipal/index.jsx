@@ -72,7 +72,7 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
 
   }
 
-  const nomeRegex = '[a-zA-Z áéíóúãõàèìòùÁÉÍÓÚÃÕÀÈÌÒÙ]{,50}$'
+  const nomeRegex = '[a-zA-Z áéíóúãõàèìòùÁÉÍÓÚÃÕÀÈÌÒÙ]{0,50}$'
 
   return (
     <Container>
@@ -92,14 +92,14 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
 
           <Input required minLength={3} maxLength={50} pattern={nomeRegex} label={'Nome'} valor={nome} setValor={setnome}/>
           <Input label={'Idade'} type='number' max={9999} min={0} valor={idade} setValor={setidade}/>
-          <Input required label={'Nacionalidade'} valor={nacionalidade} setValor={setnacionalidade}/>
+          <Input maxLength={50} label={'Nacionalidade'} valor={nacionalidade} setValor={setnacionalidade}/>
           <datalist id="listaOrigens"><option value="Acadêmico" /><option value="Agente de Saúde" /><option value="Amnésico" /><option value="Artista" /><option value="Atleta" /><option value="Chef" /><option value="Crimisoso" /><option value="Cultusta Arrependido" /><option value="Desgarrado" /><option value="Engenheiro" /><option value="Executivo" /><option value="Investigador" /><option value="Lutador" /><option value="Magnata" /><option value="Mercenário" /><option value="Militar" /><option value="Operário" /><option value="Policial" /><option value="Religioso" /><option value="Sevidor Público" /><option value="Teórico da Conspiração" /><option value="T.I." /><option value="Trabalhador Rural" /><option value="Trambiqueiro" /><option value="Universitário" /><option value="Vítima" />
           </datalist>
-          <Input required list={'listaOrigens'} label={'Origem'} valor={origem} setValor={setorigem}/>
+          <Input required maxLength={50} list={'listaOrigens'} label={'Origem'} valor={origem} setValor={setorigem}/>
           <Input label={'NEX'} type='number' max={100} min={0} valor={nex} setValor={setnex}/>
           <datalist id="listaClasses"><option value="Mundano">Mundano</option><option value="Combatente">Combatente</option><option value="Especialista">Especialista</option><option value="Ocultista">Ocultista</option>
           </datalist>
-          <Input required list={'listaClasses'} label={'Classe'} valor={classe} setValor={setclasse}/>
+          <Input required maxLength={50} list={'listaClasses'} label={'Classe'} valor={classe} setValor={setclasse}/>
           <datalist id="listaTrilhas">
 
             {classe == 'Combatente' &&
@@ -132,13 +132,13 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
 
             }
           </datalist>
-          <Input list={'listaTrilhas'} label={'Trilha'} valor={trilha} setValor={settrilha}/>
+          <Input maxLength={50} list={'listaTrilhas'} label={'Trilha'} valor={trilha} setValor={settrilha}/>
           <datalist id="listaPatentes"><option value="Recruta">Recruta</option><option value="Operador" >Operador</option><option value="Agente Especial" >Agente Especial</option><option value="Oficial de Operações" >Oficial de Operações</option><option value="Agente de Elite" >Agente de Elite</option></datalist>
-          <Input list={'listaPatentes'} label={'Patente'} valor={patente} setValor={setpatente}/>
-          <Input label={'Pontos de Prestígio'} valor={prestigio} setValor={setprestigio}/>
-          <Input label={'Deslocamento'} valor={deslocamento} setValor={setdeslocamento}/>
-          <Input label={'PE/Rod'} valor={peprod} setValor={setpeprod}/>
-          <Input opcional label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
+          <Input maxLength={50} list={'listaPatentes'} label={'Patente'} valor={patente} setValor={setpatente}/>
+          <Input type='number' max={999999} min={0} label={'Pontos de Prestígio'} valor={prestigio} setValor={setprestigio}/>
+          <Input type='number' max={99} min={0} label={'Deslocamento'} valor={deslocamento} setValor={setdeslocamento}/>
+          <Input label={'PE/Rod'} type='number' min={0} max={99} valor={peprod} setValor={setpeprod}/>
+          <Input opcional maxLength={50} label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
 
         </Body>
 

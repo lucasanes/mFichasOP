@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import { api } from "../../services/api"
 import { Modal } from "../Modals/Modal"
 import { ModalDadoRolado } from "../Modals/ModalDadoRolado"
-import { Container, Top, Bot, Mid, Img } from "./styles"
+import { Container, Img } from "./styles"
 import AtributosImg from '../../assets/imgs/AtributosImg-Pequeno.png'
 
 export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
@@ -24,7 +24,7 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
         <ModalDadoRolado setModalEditIsOpenFalse={() => setModalDadoRoladoIsOpen(false)} data={data} />
       </Modal>
 
-      <Top>
+      <div className="b1">  
         <button onClick={() => {
           setModalDadoRoladoIsOpen(true);
 
@@ -34,9 +34,9 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
             isDano: false
           })
         }}>{agi}</button>
-      </Top>
+      </div>
 
-      <Mid>
+      <div className="b2">
         <button onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
@@ -46,7 +46,9 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
             isDano: false
           })
         }}>{forca}</button>
+      </div>
 
+      <div className="b3">
         <button onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
@@ -56,9 +58,9 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
             isDano: false
           })
         }}>{int}</button>
-      </Mid>
+      </div>
 
-      <Bot>
+      <div className="b4">
         <button onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
@@ -68,7 +70,9 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
             isDano: false
           })
         }}>{pre}</button>
+      </div>
 
+      <div className="b5">
         <button onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
@@ -78,8 +82,8 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
             isDano: false
           })
         }}>{vig}</button>
-      </Bot>
-
+      </div>
+      
       <Img {...rest} src={AtributosImg} />
 
     </Container>

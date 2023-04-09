@@ -14,6 +14,14 @@ export const Container = styled('div', {
     fontSize: '2rem',
     paddingTop: '.5rem',
     textOverflow: 'ellipsis'
+  },
+
+  '.plus': {
+    fontFamily: 'Special Elite',
+    textTransform: 'capitalize',
+    fontSize: '2rem',
+    marginBottom: '.5rem',
+    marginLeft: '.5rem'
   }
 
 });
@@ -43,6 +51,10 @@ export const Button = styled('button', {
         border: '2px solid #797979',
         color: '#797979',
 
+        '.plus': {
+          color: '#797979',
+        },
+
         '&:hover': {
           background: '#79797950'
         }
@@ -50,6 +62,10 @@ export const Button = styled('button', {
       t: {
         border: '2px solid #00632b',
         color: '#00632b',
+
+        '.plus': {
+          color: '#00632b',
+        },
 
         '&:hover': {
           background: '#00632b50'
@@ -59,6 +75,10 @@ export const Button = styled('button', {
         border: '2px solid #0059ff',
         color: '#0059ff',
 
+        '.plus': {
+          color: '#0059ff',
+        },
+
         '&:hover': {
           background: '#0059ff50'
         }
@@ -66,6 +86,10 @@ export const Button = styled('button', {
       e: {
         border: '2px solid #ffd500',
         color: '#ffd500',
+
+        '.plus': {
+          color: '#ffd500',
+        },
 
         '&:hover': {
           background: '#ffd50050'

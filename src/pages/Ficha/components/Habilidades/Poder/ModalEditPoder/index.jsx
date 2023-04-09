@@ -57,8 +57,8 @@ export function ModalEditPoder({data, lista, setModalClose}) {
 
         <Body>
 
-          <Input required label={'Nome'} valor={nome} setValor={setnome}/>
-          <TextArea menor required label={'Descrição'} valor={descricao} setValor={setdescricao} />
+          <Input maxLength={100} required label={'Nome'} valor={nome} setValor={setnome}/>
+          <TextArea maxLength={5000} menor required label={'Descrição'} valor={descricao} setValor={setdescricao} />
 
         </Body>
 

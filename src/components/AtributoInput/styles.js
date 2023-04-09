@@ -15,7 +15,7 @@ export const Top = styled('div', {
     display: 'flex',
     justifyContent: 'center',
     top: '10%',
-    marginRight: '.2rem',
+    marginRight: '.7rem',
 })
 
 export const Mid = styled('div', {
@@ -25,8 +25,8 @@ export const Mid = styled('div', {
     alignItems: 'center',
     justifyContent: 'center',
     top: '30%',
-    gap: '16.2rem',
-    marginRight: '.1rem'
+    gap: '12.8rem',
+    marginRight: '.7rem'
 })
 
 export const Bot = styled('div', {
@@ -35,9 +35,9 @@ export const Bot = styled('div', {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    top: '67.5%',
-    gap: '10.6rem',
-    marginRight: '.4rem'
+    top: '68%',
+    gap: '7.4rem',
+    marginRight: '.7rem'
 })
 
 export const Img = styled('img', {

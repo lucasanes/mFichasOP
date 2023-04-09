@@ -5,17 +5,25 @@ import {AiOutlineUser} from 'react-icons/ai'
 import {TiBusinessCard} from 'react-icons/ti'
 import { toast, ToastContainer } from 'react-toastify';
 import { useState } from 'react'
+import { useSwiper } from 'swiper/react'
 
 export function MenuBottom() {
 
+  const swiper = useSwiper()
+
   const [disabled, setDisabled] = useState(false)
+  const [active, setActive] = useState(swiper.activeIndex)
+
+  swiper.on('slideChange', (e) => {
+    setActive(e.activeIndex)
+  })
 
   return (
     <Container>
-      <Button color={'yellow'} to={'/'}><BsHouse color='#ffff50' size={30}/>Início</Button>
-      <Button color={'blue'} to={'/fichas'}><AiOutlineUser color='#004edf' size={30}/>Fichas</Button>
+      <Button active={active == 0} color={'yellow'} onClick={() => swiper.slideTo(0)}><BsHouse color='#ffff50' size={30}/>Início</Button>
+      <Button active={active == 1} color={'blue'} onClick={() => swiper.slideTo(1)}><AiOutlineUser color='#004edf' size={30}/>Fichas</Button>
 
-      <Button2 disabled={disabled} desabilitado={true} onClick={() => {
+      <Button2 disabled={disabled} onClick={() => {
         toast.error('Recurso em desenvolvimento!')
         setDisabled(true)
         setTimeout(() => {

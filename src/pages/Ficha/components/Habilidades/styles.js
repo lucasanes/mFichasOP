@@ -10,7 +10,7 @@ export const Container = styled('div', {
 
 export const Header = styled('div', {
 
-  minHeight: '60px',
+  height: '60px',
   width: '100%',
   padding: '1rem',
   display: 'flex',

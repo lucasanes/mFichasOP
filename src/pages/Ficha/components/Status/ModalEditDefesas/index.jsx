@@ -103,41 +103,41 @@ export function ModalEditDefesas({data, setData, setModalClose}) {
         <Body>
 
         <div className='grid2'>
-            <Input label={'Passiva'} valor={passiva} setValor={setpassiva} />
-            <Input label={'Esquiva'} valor={esquiva} setValor={setesquiva} />
+            <Input type='number' max={99} label={'Passiva'} valor={passiva} setValor={setpassiva} />
+            <Input type='number' max={99} label={'Esquiva'} valor={esquiva} setValor={setesquiva} />
           </div>
 
           <div className='grid2'>
-            <Input label={'Bloqueio'} valor={bloqueio} setValor={setbloqueio} />
-            <Input label={'Sanidade'} valor={sanidade} setValor={setsanidade} />
+            <Input type='number' max={99} label={'Bloqueio'} valor={bloqueio} setValor={setbloqueio} />
+            <Input type='number' max={99} label={'Sanidade'} valor={sanidade} setValor={setsanidade} />
           </div>
 
           <hr />
 
           <div className='grid2'>
-            <Input label={'Morte'} valor={morte} setValor={setmorte} />
-            <Input label={'Sangue'} valor={sangue} setValor={setsangue} />
+            <Input type='number' max={99} label={'Morte'} valor={morte} setValor={setmorte} />
+            <Input type='number' max={99} label={'Sangue'} valor={sangue} setValor={setsangue} />
           </div>
 
           <div className='grid2'>
-            <Input label={'Energia'} valor={energia} setValor={setenergia} />
-            <Input label={'Conhecimento'} valor={conhecimento} setValor={setconhecimento} />
+            <Input type='number' max={99} label={'Energia'} valor={energia} setValor={setenergia} />
+            <Input type='number' max={99} label={'Conhecimento'} valor={conhecimento} setValor={setconhecimento} />
           </div>
 
           <hr />
 
           <div className='grid3'>
-            <Input label={'Balística'} valor={balistica} setValor={setbalistica} />
-            <Input label={'Corte'} valor={corte} setValor={setcorte} />
-            <Input label={'Eletricidade'} valor={eletricidade} setValor={seteletricidade} />
+            <Input type='number' max={99} label={'Balística'} valor={balistica} setValor={setbalistica} />
+            <Input type='number' max={99} label={'Corte'} valor={corte} setValor={setcorte} />
+            <Input type='number' max={99} label={'Eletricidade'} valor={eletricidade} setValor={seteletricidade} />
 
-            <Input label={'Físico'} valor={fisico} setValor={setfisico} />
-            <Input label={'Fogo'} valor={fogo} setValor={setfogo} />
-            <Input label={'Frio'} valor={frio} setValor={setfrio} />
+            <Input type='number' max={99} label={'Físico'} valor={fisico} setValor={setfisico} />
+            <Input type='number' max={99} label={'Fogo'} valor={fogo} setValor={setfogo} />
+            <Input type='number' max={99} label={'Frio'} valor={frio} setValor={setfrio} />
 
-            <Input label={'Impacto'} valor={impacto} setValor={setimpacto} />
-            <Input label={'Perfuração'} valor={perfuracao} setValor={setperfuracao} />
-            <Input label={'Químico'} valor={quimico} setValor={setquimico} />
+            <Input type='number' max={99} label={'Impacto'} valor={impacto} setValor={setimpacto} />
+            <Input type='number' max={99} label={'Perfuração'} valor={perfuracao} setValor={setperfuracao} />
+            <Input type='number' max={99} label={'Químico'} valor={quimico} setValor={setquimico} />
           </div>
 
         </Body>

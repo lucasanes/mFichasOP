@@ -181,73 +181,73 @@ export function ModalEditPericias({data, setData, setModalClose}) {
         <Body>
 
         <div className='grid2'>
-          <Input label={'Acrobacia'} valor={acrobacia} setValor={setacrobacia} />
-          <Input label={'Adestramento'} valor={adestramento} setValor={setadestramento} />
+          <Input type='number' max={99} label={'Acrobacia'} valor={acrobacia} setValor={setacrobacia} />
+          <Input type='number' max={99} label={'Adestramento'} valor={adestramento} setValor={setadestramento} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Arte'} valor={arte} setValor={setarte} />
-          <Input label={'Atletismo'} valor={atletismo} setValor={setatletismo} />
+          <Input type='number' max={99} label={'Arte'} valor={arte} setValor={setarte} />
+          <Input type='number' max={99} label={'Atletismo'} valor={atletismo} setValor={setatletismo} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Atualidade'} valor={atualidade} setValor={setatualidade} />
-          <Input label={'Ciencia'} valor={ciencia} setValor={setciencia} />
+          <Input type='number' max={99} label={'Atualidade'} valor={atualidade} setValor={setatualidade} />
+          <Input type='number' max={99} label={'Ciencia'} valor={ciencia} setValor={setciencia} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Crime'} valor={crime} setValor={setcrime} />
-          <Input label={'Diplomacia'} valor={diplomacia} setValor={setdiplomacia} />
+          <Input type='number' max={99} label={'Crime'} valor={crime} setValor={setcrime} />
+          <Input type='number' max={99} label={'Diplomacia'} valor={diplomacia} setValor={setdiplomacia} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Enganacao'} valor={enganacao} setValor={setenganacao} />
-          <Input label={'Fortitude'} valor={fortitude} setValor={setfortitude} />
+          <Input type='number' max={99} label={'Enganacao'} valor={enganacao} setValor={setenganacao} />
+          <Input type='number' max={99} label={'Fortitude'} valor={fortitude} setValor={setfortitude} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Furtividade'} valor={furtividade} setValor={setfurtividade} />
-          <Input label={'Iniciativa'} valor={iniciativa} setValor={setiniciativa} />
+          <Input type='number' max={99} label={'Furtividade'} valor={furtividade} setValor={setfurtividade} />
+          <Input type='number' max={99} label={'Iniciativa'} valor={iniciativa} setValor={setiniciativa} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Intimidacao'} valor={intimidacao} setValor={setintimidacao} />
-          <Input label={'Intuicao'} valor={intuicao} setValor={setintuicao} />
+          <Input type='number' max={99} label={'Intimidacao'} valor={intimidacao} setValor={setintimidacao} />
+          <Input type='number' max={99} label={'Intuicao'} valor={intuicao} setValor={setintuicao} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Investigacao'} valor={investigacao} setValor={setinvestigacao} />
-          <Input label={'Luta'} valor={luta} setValor={setluta} />
+          <Input type='number' max={99} label={'Investigacao'} valor={investigacao} setValor={setinvestigacao} />
+          <Input type='number' max={99} label={'Luta'} valor={luta} setValor={setluta} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Medicina'} valor={medicina} setValor={setmedicina} />
-          <Input label={'Ocultismo'} valor={ocultismo} setValor={setocultismo} />
+          <Input type='number' max={99} label={'Medicina'} valor={medicina} setValor={setmedicina} />
+          <Input type='number' max={99} label={'Ocultismo'} valor={ocultismo} setValor={setocultismo} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Percepcao'} valor={percepcao} setValor={setpercepcao} />
-          <Input label={'Pilotagem'} valor={pilotagem} setValor={setpilotagem} />
+          <Input type='number' max={99} label={'Percepcao'} valor={percepcao} setValor={setpercepcao} />
+          <Input type='number' max={99} label={'Pilotagem'} valor={pilotagem} setValor={setpilotagem} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Pontaria'} valor={pontaria} setValor={setpontaria} />
-          <Input label={'Profissao'} valor={profissao} setValor={setprofissao} />
+          <Input type='number' max={99} label={'Pontaria'} valor={pontaria} setValor={setpontaria} />
+          <Input type='number' max={99} label={'Profissao'} valor={profissao} setValor={setprofissao} />
         </div>
 
         <div className='grid2'>
-        <Input label={'Reflexo'} valor={reflexo} setValor={setreflexo} />
-        <Input label={'Religiao'} valor={religiao} setValor={setreligiao} />
+        <Input type='number' max={99} label={'Reflexo'} valor={reflexo} setValor={setreflexo} />
+        <Input type='number' max={99} label={'Religiao'} valor={religiao} setValor={setreligiao} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Sobrevivencia'} valor={sobrevivencia} setValor={setsobrevivencia} />
-          <Input label={'Tatica'} valor={tatica} setValor={settatica} />
+          <Input type='number' max={99} label={'Sobrevivencia'} valor={sobrevivencia} setValor={setsobrevivencia} />
+          <Input type='number' max={99} label={'Tatica'} valor={tatica} setValor={settatica} />
         </div>
 
         <div className='grid2'>
-          <Input label={'Tecnologia'} valor={tecnologia} setValor={settecnologia} />
-          <Input label={'Vontade'} valor={vontade} setValor={setvontade} />
+          <Input type='number' max={99} label={'Tecnologia'} valor={tecnologia} setValor={settecnologia} />
+          <Input type='number' max={99} label={'Vontade'} valor={vontade} setValor={setvontade} />
         </div>
 
         </Body>

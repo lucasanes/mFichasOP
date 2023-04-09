@@ -34,7 +34,7 @@ export function Home() {
         <SubTitles>O SITE DE FICHAS PARA ORDEM PARANORMAL RPG</SubTitles>
         <SubTitles>O que está esperando? Entre já no mundo de Ordem Paranormal e divirta-se.</SubTitles>
 
-        <AtributoButton agi={3} forca={2} int={2} pre={1} vig={1}/>
+        <AtributoButton agi={5} forca={3} int={3} pre={2} vig={0}/>
 
       </Body>
 

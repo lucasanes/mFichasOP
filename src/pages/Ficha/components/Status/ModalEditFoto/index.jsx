@@ -66,11 +66,11 @@ export function ModalEditFoto({data, setData, setModalClose}) {
 
         <Body>
 
-          <Input label={'Normal'} valor={foto} setValor={setfoto}/>
-          <Input label={'Ferido'} valor={foto_ferido} setValor={setfoto_ferido}/>
-          <Input label={'Insano'} valor={foto_insano} setValor={setfoto_insano}/>
-          <Input label={'Insano e Ferido'} valor={foto_insanoeferido} setValor={setfoto_insanoeferido}/>
-          <Input label={'Morrendo'} valor={foto_morrendo} setValor={setfoto_morrendo}/>
+          <Input maxLength={255} label={'Normal'} valor={foto} setValor={setfoto}/>
+          <Input maxLength={255} label={'Ferido'} valor={foto_ferido} setValor={setfoto_ferido}/>
+          <Input maxLength={255} label={'Insano'} valor={foto_insano} setValor={setfoto_insano}/>
+          <Input maxLength={255} label={'Insano e Ferido'} valor={foto_insanoeferido} setValor={setfoto_insanoeferido}/>
+          <Input maxLength={255} label={'Morrendo'} valor={foto_morrendo} setValor={setfoto_morrendo}/>
 
         </Body>
 

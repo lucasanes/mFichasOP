@@ -6,8 +6,6 @@ export const Container = styled(Swiper, {
 
   width: '100%',
   height: '100%',
-  overflowX: "hidden",
-  overflowY: 'auto',
   backgroundColor: 'rgb(20,20,20)',
 
   '.swiper-pagination': {

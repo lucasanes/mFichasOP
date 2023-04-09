@@ -12,7 +12,7 @@ export const Container = styled('div', {
     width: 'fit-content',
     height: 'fit-content',
     fontSize: "3.3rem",
-    padding: '1rem .5rem 0rem .5rem',
+    padding: '1rem 2rem 3rem 2rem',
     background: "none",
     border: 'none',
     display: 'flex',
@@ -22,42 +22,62 @@ export const Container = styled('div', {
     zIndex: 1,
     fontFamily: 'Special Elite',
     transition: '.3s',
+    textAlign: 'center'
   },
 
   'button:hover': {
     color: 'Crimson'
-  }
+  },
 
-})
+  '.b1': {
+    position: 'absolute',
+    width: '6rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 28
+  },
 
-export const Top = styled('div', {
-  position: 'absolute',
-  display: 'flex',
-  justifyContent: 'center',
-  top: '8.5%',
-})
+  '.b2': {
+    position: 'absolute',
+    width: '6rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 90,
+    marginRight: '19rem'
+  },
 
-export const Mid = styled('div', {
-  position: 'absolute',
-  top: '29.5%',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '15.9rem',
-  marginRight: '0.2rem',
-})
+  '.b3': {
+    position: 'absolute',
+    width: '6rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 90,
+    marginLeft: '18.7rem'
+  },
 
-export const Bot = styled('div', {
+  '.b4': {
+    position: 'absolute',
+    width: '6rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 204,
+    marginRight: '13.4rem'
+  },
 
-  marginRight: '.3rem',
-  position: 'absolute',
-  top: '66.5%',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '10.5rem',
+  '.b5': {
+    position: 'absolute',
+    width: '6rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 204,
+    marginLeft: '13.2rem'
+  },
+
 })
 
 export const Img = styled('img', {

@@ -20,7 +20,7 @@ export function AppLayout() {
         <Outlet/>
       </ContentWrapper>
 
-      {(token != null && token != undefined && !location.pathname.startsWith('/ficha/')) && <MenuBottom/>}
+      {/* {(token != null && token != undefined && !location.pathname.startsWith('/ficha/')) && <MenuBottom/>} */}
     </Container>
   );
 }

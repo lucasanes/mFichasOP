@@ -22,13 +22,13 @@ export function ModalCreditos({setModalClose}) {
  
         <ul>
           <li><strong>Lucas</strong> — Fundador/Desenvolvedor</li>
+          <li><strong>Lightz</strong> — Desenvolvedor App</li>
           <li><strong>Pedro</strong> — Responsável pelo Discord e Design</li>
-          <li><strong>Lightz</strong> — Desenvolvedor</li>
           <li><strong>Bag</strong> — Staff Discord</li>
           <li><strong>Jotavi</strong> — Staff Discord</li>
           <li><strong>Botanic</strong> — Staff Discord</li>
           <li><strong>May</strong> — Staff Discord</li>
-          <li><strong>Leo</strong> — Staff Discord</li>
+          <li><strong>Leo</strong> — Ex Staff Discord</li>
           <li><strong>Zin</strong> — Ex Staff Discord</li>
         </ul>
 

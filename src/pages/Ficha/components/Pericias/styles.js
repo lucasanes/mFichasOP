@@ -14,7 +14,7 @@ export const Body = styled('div', {
   display: 'grid',
   gridTemplateColumns: '1fr',
   gap: '2rem 1rem',
-  padding: '2rem 3rem',
+  padding: '2rem',
   overflowY: 'auto',
   overflowX: 'hidden',
 
@@ -52,6 +52,8 @@ export const Body = styled('div', {
 
 export const DivAtributos = styled('div', {
 
+  width: 'fit-content',
+  margin: '0 auto',
   display: 'flex',
   justifyContent: 'center',
   position: 'relative',
@@ -66,7 +68,7 @@ export const DivAtributos = styled('div', {
 
 export const Header = styled('div', {
 
-  minHeight: '60px',
+  height: '60px',
   width: '100%',
   padding: '1rem 6rem',
   display: 'flex',

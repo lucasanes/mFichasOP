@@ -53,7 +53,7 @@ export function ModalEditProficiencia({data, lista, setModalClose}) {
 
         <Body>
 
-          <Input required label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input required maxLength={100} label={'Nome'} valor={nome} setValor={setnome}/>
 
         </Body>
 

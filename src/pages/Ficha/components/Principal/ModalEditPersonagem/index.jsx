@@ -75,14 +75,14 @@ export function ModalEditPersonagem({data, setData, setModalClose}) {
 
         <Body>
 
-          <TextArea label={'História'} valor={historia} setValor={sethistoria}/>
-          <TextArea label={'Aparência'} valor={aparencia} setValor={setaparencia}/>
-          <TextArea label={'Primeiro Encontro Paranormal'} valor={pep} setValor={setpep}/>
-          <TextArea label={'Doenças, Fobias e Manias'} valor={dfm} setValor={setdfm}/>
-          <TextArea label={'Favoritos'} valor={favoritos} setValor={setfavoritos}/>
-          <TextArea label={'Personalidade'} valor={personalidade} setValor={setpersonalidade}/>
-          <TextArea label={'Pior Pesadelo'} valor={pesadelo} setValor={setpesadelo}/>
-          <TextArea label={'Anotações'} valor={anotacoes} setValor={setanotacoes}/> 
+          <TextArea menor maxLength={5000} label={'História'} valor={historia} setValor={sethistoria}/>
+          <TextArea menor maxLength={5000} label={'Aparência'} valor={aparencia} setValor={setaparencia}/>
+          <TextArea menor maxLength={5000} label={'Primeiro Encontro Paranormal'} valor={pep} setValor={setpep}/>
+          <TextArea menor maxLength={5000} label={'Doenças, Fobias e Manias'} valor={dfm} setValor={setdfm}/>
+          <TextArea menor maxLength={5000} label={'Favoritos'} valor={favoritos} setValor={setfavoritos}/>
+          <TextArea menor maxLength={5000} label={'Personalidade'} valor={personalidade} setValor={setpersonalidade}/>
+          <TextArea menor maxLength={5000} label={'Pior Pesadelo'} valor={pesadelo} setValor={setpesadelo}/>
+          <TextArea menor maxLength={5000} label={'Anotações'} valor={anotacoes} setValor={setanotacoes}/> 
 
         </Body>
 
