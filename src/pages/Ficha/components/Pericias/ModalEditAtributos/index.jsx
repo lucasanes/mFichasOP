@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Body, Container, Footer, Header } from "./styles";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../components/Input'
 import { api } from "../../../../../services/api";
 import { useParams } from "react-router-dom";
@@ -76,6 +76,7 @@ export function ModalEditAtributos({data, setData, setModalClose}) {
         ]
       })
       setModalClose()
+      toast.success("Alterado com sucesso!")
     }
 
   }

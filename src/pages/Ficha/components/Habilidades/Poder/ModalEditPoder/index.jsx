@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Body, Container, Footer, Header } from "./styles";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../../components/Input'
 import { api } from "../../../../../../services/api";
 import { useParams } from "react-router-dom";
@@ -36,6 +36,7 @@ export function ModalEditPoder({data, lista, setModalClose}) {
       const poderAEditar = lista.filter(poder => poder.id == data.id)[0]
       poderAEditar.nome = nome
       poderAEditar.descricao = descricao
+      toast.success("Alterado com sucesso!")
       setModalClose()
     }
 
@@ -57,7 +58,7 @@ export function ModalEditPoder({data, lista, setModalClose}) {
 
         <Body>
 
-          <Input maxLength={100} required label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input maxLength={50} required label={'Nome'} valor={nome} setValor={setnome}/>
           <TextArea maxLength={5000} menor required label={'Descrição'} valor={descricao} setValor={setdescricao} />
 
         </Body>

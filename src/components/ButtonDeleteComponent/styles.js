@@ -24,5 +24,13 @@ export const Container = styled('div', {
 
   'button:hover': {
     borderColor: 'red'
+  },
+
+  variants: {
+    buttonDisabled: {
+      true: {
+        display: 'none !important'
+      }
+    }
   }
 });

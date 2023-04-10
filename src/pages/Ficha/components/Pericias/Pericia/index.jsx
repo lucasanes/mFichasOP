@@ -37,7 +37,7 @@ export function Pericia({data}) {
       b = data.atributoChave * -1
     }
 
-    if (data.atributoChave < -3) {
+    if (data.atributoChave < -3 || data.atributoChave > 3) {
       dados[0] = <FaDiceD20 key={0} size={20}/>
     } else {
       for (let i = 0; i < b; i++) {
@@ -63,7 +63,7 @@ export function Pericia({data}) {
           isDano: false
         })
         setModalDadoRoladoIsOpen(true)
-      }} level={level}>{data.atributoChave <= 0 && data.atributoChave >= -3 && '-'}{data.atributoChave < -3 && data.atributoChave}{dados} <span className='plus'>+</span>{data.valor}</Button>
+      }} level={level}>{data.atributoChave <= 0 && data.atributoChave >= -3 && '-'}{(data.atributoChave < -3 || data.atributoChave > 3) && data.atributoChave}{dados} <span className='plus'>+</span>{data.valor}</Button>
     </Container>
   );
 }

@@ -24,7 +24,7 @@ import { MenuBottomFicha } from '../../components/MenuBottomFicha';
 
 export function Ficha() {
 
-  const {setNome, body, setBody, setDc} = useFicha()
+  const {setNome, setBlockPerm, setDc} = useFicha()
   const {token} = useAuth()
   const {id} = useParams()
 
@@ -49,6 +49,7 @@ export function Ficha() {
         const response = await api.post("/", {query: 'fichas_info_get', sessid: token, token: id})
 
         const ficha = response.data.ficha
+        setBlockPerm(ficha.blockperm)
 
         const primeiroNome = ficha.nome.split(' ')[0]
 
@@ -250,18 +251,8 @@ export function Ficha() {
           <Dados data={dados} setData={setDados}/>
         </SwiperSlide>
       </>}
+      <ToastContainer/>
       <MenuBottomFicha/>
     </Container>
-    // <Container isLoading={isLoading}>
-    //     <Body isLoading={isLoading}>
-    //       {(!isLoading && body == 'principal') && <Principal data={principal} setData={setPrincipal}/>}
-    //       {(!isLoading && body == 'status') && <Status data={status} setData={setStatus}/>}
-    //       {(!isLoading && body == 'pericias') && <Pericias data={pericias} setData={setPericias}/>}
-    //       {(!isLoading && body == 'hpe') && <Habilidades data={hpe} setData={setHpe}/>}
-    //       {(!isLoading && body == 'inventario') && <Inventario data={inventario} setData={setInventario}/>}
-    //       {(!isLoading && body == 'rituais') && <Rituais data={rituais} setData={setRituais}/>}
-    //       {(!isLoading && body == 'dados') && <Dados data={dados} setData={setDados}/>}
-    //   <ToastContainer/>
-    // </Container>
   );
 }

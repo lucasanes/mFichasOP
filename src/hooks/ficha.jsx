@@ -5,6 +5,7 @@ const FichaContext = createContext({});
 function FichaProvider({ children }) {
 
   const [nome, setNome] = useState('');
+  const [blockPerm, setBlockPerm] = useState(false);
   const [dc, setDc] = useState({})
   // const [ultimaRota, setUltimaRota] = useState('');
 
@@ -14,7 +15,9 @@ function FichaProvider({ children }) {
         nome,
         setNome,
         dc,
-        setDc
+        setDc,
+        blockPerm,
+        setBlockPerm
         // ultimaRota, 
         // setUltimaRota
       }}

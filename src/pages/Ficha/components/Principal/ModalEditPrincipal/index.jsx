@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Body, Container, Footer, Header } from "./styles";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../components/Input'
 import { api } from "../../../../../services/api";
 import { useParams } from "react-router-dom";
@@ -68,6 +68,7 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
         }
       }))
       setModalClose()
+      toast.success("Alterado com sucesso!")
     }
 
   }
@@ -138,7 +139,7 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
           <Input type='number' max={999999} min={0} label={'Pontos de Prestígio'} valor={prestigio} setValor={setprestigio}/>
           <Input type='number' max={99} min={0} label={'Deslocamento'} valor={deslocamento} setValor={setdeslocamento}/>
           <Input label={'PE/Rod'} type='number' min={0} max={99} valor={peprod} setValor={setpeprod}/>
-          <Input opcional maxLength={50} label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
+          <Input maxLength={50} label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
 
         </Body>
 

@@ -23,11 +23,11 @@ export const Container = styled('div', {
     borderColor: 'Yellow'
   },
 
-  // variants: {
-  //   segundo: {
-  //     true: {
-  //       right: 45
-  //     }
-  //   }
-  // }
+  variants: {
+    buttonDisabled: {
+      true: {
+        display: 'none !important'
+      }
+    }
+  }
 });

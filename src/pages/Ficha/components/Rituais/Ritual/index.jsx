@@ -9,11 +9,13 @@ import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
 import { useAuth } from '../../../../../hooks/auth';
 import { useParams } from 'react-router-dom';
 import { api } from '../../../../../services/api';
+import { ModalEditRitual } from './ModalEditRitual';
 
 export function Ritual({data, setData, lista}) {
 
   const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
+  const [modalEditIsOpen, setModalEditIsOpen] = useState(false)
   const [modalDadoIsOpen, setModalDadoIsOpen] = useState(false)
   const [dadoData, setDadoData] = useState({})
 
@@ -58,6 +60,10 @@ export function Ritual({data, setData, lista}) {
   return (
     <Container elemento={data.elemento.toLowerCase()}>
 
+      <Modal isOpen={modalEditIsOpen} setClose={() => setModalEditIsOpen(false)}>
+        <ModalEditRitual setModalClose={() => setModalEditIsOpen(false)} data={data} lista={lista} />
+      </Modal>
+
       <Modal isOpen={modalDadoIsOpen} setClose={() => setModalDadoIsOpen(false)}>
         <ModalDadoRolado setModalEditIsOpenFalse={() => setModalDadoIsOpen(false)} data={dadoData} />
       </Modal>
@@ -65,7 +71,7 @@ export function Ritual({data, setData, lista}) {
       <Header1>
         <Button elemento={data.elemento.toLowerCase()} hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
-          <ButtonEditComponent segundo size={18}/>
+          <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} segundo size={18}/>
           <ButtonDeleteComponent onClick={itemDelete} size={18}/>
         </div>
       </Header1>

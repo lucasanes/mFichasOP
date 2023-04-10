@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Body, Container, Footer, Header } from "./styles";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../../components/Input'
 import { api } from "../../../../../../services/api";
 import { useParams } from "react-router-dom";
@@ -33,6 +33,7 @@ export function ModalEditProficiencia({data, lista, setModalClose}) {
       const proficienciaAEditar = lista.filter(proficiencia => proficiencia.id == data.id)[0]
       proficienciaAEditar.nome = nome
       setModalClose()
+      toast.success("Alterado com sucesso!")
     }
 
   }
@@ -53,7 +54,7 @@ export function ModalEditProficiencia({data, lista, setModalClose}) {
 
         <Body>
 
-          <Input required maxLength={100} label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input required maxLength={50} label={'Nome'} valor={nome} setValor={setnome}/>
 
         </Body>
 

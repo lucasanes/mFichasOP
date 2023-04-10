@@ -66,11 +66,10 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
       }
     })
 
-    console.log(response)
-
     if (response.data.success) {
       const dadosAtualizados = lista.filter(dado => dado.token != data.token)
       setData(dadosAtualizados)
+      toast.success("Alterado com sucesso!")
       setModalClose()
     }
 

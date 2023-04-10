@@ -12,6 +12,7 @@ import {Modal} from '../../../../components/Modals/Modal'
 import { ModalEditDefesas } from './ModalEditDefesas';
 import {ButtonEditComponent} from '../../../../components/ButtonEditComponent'
 import { ModalEditFoto } from './ModalEditFoto';
+import noportrait from '../../../../assets/imgs/noportrait.png'
 
 export function Status({data, setData}) {
 
@@ -161,7 +162,7 @@ export function Status({data, setData}) {
           <div className='header'>
             <DivImg>
               <Img>
-                <img src={fotoAtual} style={{filter: `brightness(${morto ? 0 : 1})`}}/>
+                <img src={fotoAtual ? fotoAtual : noportrait} style={{filter: `brightness(${morto ? 0 : 1})`}}/>
               </Img>
               <ButtonEditComponent className='editimg' onClick={() => setModalEditFotoIsOpen(true)}/>
             </DivImg>

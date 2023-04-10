@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Body, Container, Footer, Header } from "./styles";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../../components/Input'
 import { api } from "../../../../../../services/api";
 import { useParams } from "react-router-dom";
@@ -37,6 +37,7 @@ export function ModalEditHabilidade({lista, data, setModalClose}) {
       habilidadaAEditar.nome = nome
       habilidadaAEditar.descricao = descricao
       setModalClose()
+      toast.success("Alterado com sucesso!")
     }
 
   }
@@ -57,7 +58,7 @@ export function ModalEditHabilidade({lista, data, setModalClose}) {
 
         <Body>
 
-          <Input maxLength={100} required label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input maxLength={50} required label={'Nome'} valor={nome} setValor={setnome}/>
           <TextArea maxLength={5000} required menor label={'Descrição'} valor={descricao} setValor={setdescricao} />
 
         </Body>

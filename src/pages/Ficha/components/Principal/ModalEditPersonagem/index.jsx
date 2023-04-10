@@ -55,6 +55,7 @@ export function ModalEditPersonagem({data, setData, setModalClose}) {
         }
       }))
       setModalClose()
+      toast.success("Alterado com sucesso!")
     }
 
   }
