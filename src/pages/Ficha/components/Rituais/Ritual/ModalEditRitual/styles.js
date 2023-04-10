@@ -38,8 +38,7 @@ export const Header = styled('div', {
     color: '#ffffff90',
     fontSize: '2.5rem',
     transition: '0.2s',
-    width: '30px',
-    height: '25px',
+    padding: '0 10px 2px 10px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -75,13 +74,21 @@ export const Body = styled('div', {
 
   height: 'calc(100% - 130px)',
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   flexDirection: 'column',
   textAlign: 'center',
   color: '#ffffff90',
   padding: '2rem',
   gap: '2rem',
   overflowY: 'auto',
+
+  '.preview': {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '-1.5rem 0 -.5rem 0',
+    gap: '1rem'
+  },
 
   '&.div': {
     width: '100%',

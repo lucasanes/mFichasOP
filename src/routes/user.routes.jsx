@@ -1,9 +1,9 @@
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import { AppLayout } from '../layout/AppLayout';
 import { Home } from '../pages/Home';
-import { Fichas } from '../pages/Fichas';
 import { Ficha } from '../pages/Ficha';
 import { Main } from '../pages/Main';
+import { Inexistente } from '../pages/Inexistente';
 
 export function UserRoutes() {
   return (
@@ -12,6 +12,7 @@ export function UserRoutes() {
         <Route path="/" element={<Main/>}/>
         <Route path="/ficha/:id" element={<Ficha/>}/>
       </Route>
+      <Route path='*' element={<Inexistente/>} />
     </Routes>
   );
 }

@@ -33,6 +33,14 @@ export const Button = styled('button', {
     marginTop: '-1rem'
   },
   variants: {
+    semperm: {
+      true: {
+        '&:hover': {
+          border: '2px solid transparent !important',
+          cursor: 'default'
+        }
+      }
+    },
     isDano: {
       true: {
         textShadow: '#ff4b4b 2px 2px 3px',

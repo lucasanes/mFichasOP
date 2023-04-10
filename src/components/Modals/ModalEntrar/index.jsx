@@ -48,8 +48,8 @@ export function ModalEntrar({setModalClose, modalRecuperarSenha}) {
 
         <Body>
 
-          <Input label={'User/Email'} valor={user} setValor={setUser}/>
-          <Input isSenha={true} label={'Senha'} valor={senha} setValor={setSenha}/>
+          <Input name="username" autoComplete="username" label={'User/Email'} valor={user} setValor={setUser}/>
+          <Input name="senha" autoComplete="current-password" isSenha={true} label={'Senha'} valor={senha} setValor={setSenha}/>
 
           <div className="div">
             <Toggle defaultChecked={true} classNumber={1} span={'Manter Ativo'} onChange={switchManterAtivo}/>
@@ -67,7 +67,7 @@ export function ModalEntrar({setModalClose, modalRecuperarSenha}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
+      
 
     </Container>
   );

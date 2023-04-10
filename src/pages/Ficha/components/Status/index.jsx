@@ -13,10 +13,13 @@ import { ModalEditDefesas } from './ModalEditDefesas';
 import {ButtonEditComponent} from '../../../../components/ButtonEditComponent'
 import { ModalEditFoto } from './ModalEditFoto';
 import noportrait from '../../../../assets/imgs/noportrait.png'
+import { useFicha } from '../../../../hooks/ficha';
 
 export function Status({data, setData}) {
 
   const isFirstRender = useRef(true)
+
+  const {blockPerm} = useFicha()
 
   const [changinTimer, setChanginTimer] = useState(null)
 
@@ -75,7 +78,7 @@ export function Status({data, setData}) {
       setFotoAtual(foto.src);
     }
 
-  }, [pvA, pvMax, psA, psMax, peA, peMax])
+  }, [fotos, pvA, pvMax, psA, psMax, peA, peMax])
 
   async function updateFichaAPI() {
 
@@ -173,17 +176,17 @@ export function Status({data, setData}) {
               <div className='portrait-body'>
                 <div className='portrait-status'>
                   <h2>Status</h2>
-                  <PortraitButton onClick={() => setCombate(!combate)} hover={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
+                  <PortraitButton disabled={blockPerm} semperm={blockPerm} onClick={() => setCombate(!combate)} hover={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
                   {/* <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'aqua'} color={'aqua'}>Insano</PortraitButton>
                   <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'red'} color={'darkred'}>Morrendo</PortraitButton> */}
-                  <PortraitButton onClick={(e) => setMorto(!morto)}  hover={morto + 'red'} color={'red'}>Morto</PortraitButton>
+                  <PortraitButton disabled={blockPerm} semperm={blockPerm} onClick={(e) => setMorto(!morto)}  hover={morto + 'red'} color={'red'}>Morto</PortraitButton>
                 </div>
 
                 <div className='portrait-ocultar'>
                   <h2>Ocultar</h2>
-                  <PortraitButton onClick={() => setOpv(!opv)} hover={opv + 'red'} color={'red'}>Vida</PortraitButton>
-                  <PortraitButton onClick={() => setOps(!ops)} hover={ops + 'blue'} color={'blue'}>Sanidade</PortraitButton>
-                  <PortraitButton onClick={() => setOpe(!ope)} hover={ope + 'yellow'} color={'yellow'}>Esforço</PortraitButton>
+                  <PortraitButton disabled={blockPerm} semperm={blockPerm} onClick={() => setOpv(!opv)} hover={opv + 'red'} color={'red'}>Vida</PortraitButton>
+                  <PortraitButton disabled={blockPerm} semperm={blockPerm} onClick={() => setOps(!ops)} hover={ops + 'blue'} color={'blue'}>Sanidade</PortraitButton>
+                  <PortraitButton disabled={blockPerm} semperm={blockPerm} onClick={() => setOpe(!ope)} hover={ope + 'yellow'} color={'yellow'}>Esforço</PortraitButton>
                 </div>
               </div>
             </div>

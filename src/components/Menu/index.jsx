@@ -15,6 +15,7 @@ import { ModalRecuperarSenha } from '../Modals/ModalRecuperarSenha';
 import { useAuth } from '../../hooks/auth';
 import { ModalCadastrar } from '../Modals/ModalCadastrar';
 import { ModalConta } from '../Modals/ModalConta';
+import { ToastContainer } from 'react-toastify';
 
 export function Menu() {
 
@@ -79,7 +80,7 @@ export function Menu() {
 
       <Header>
 
-        <Link to={'/'} ><img src={icon} width={'60px'} /></Link>
+        <img src={icon} width={'60px'} />
 
         <button onClick={abrirMenu}>
           <Line1 hover={hover} />

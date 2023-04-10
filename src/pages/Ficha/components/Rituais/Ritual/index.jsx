@@ -10,8 +10,11 @@ import { useAuth } from '../../../../../hooks/auth';
 import { useParams } from 'react-router-dom';
 import { api } from '../../../../../services/api';
 import { ModalEditRitual } from './ModalEditRitual';
+import { useFicha } from '../../../../../hooks/ficha';
 
 export function Ritual({data, setData, lista}) {
+
+  const {blockPerm} = useFicha()
 
   const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
@@ -72,11 +75,11 @@ export function Ritual({data, setData, lista}) {
         <Button elemento={data.elemento.toLowerCase()} hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} segundo size={18}/>
-          <ButtonDeleteComponent onClick={itemDelete} size={18}/>
+          <ButtonDeleteComponent handleExecute={itemDelete} size={18}/>
         </div>
       </Header1>
       <hr/>
-      <Body ishover={hover.toString()} ref={contentRef}>
+      <Body semperm={blockPerm} ishover={hover.toString()} ref={contentRef}>
         <img width={100} src={data.foto} />
 
         <div className='infos'>
@@ -89,9 +92,9 @@ export function Ritual({data, setData, lista}) {
         </div>
        
         <div className='buttons'>
-          <button onClick={() => {setDadoData({nome: 'Normal', valor: data.dano, isDano: true}); setModalDadoIsOpen(true)}}>Normal</button>
-          <button onClick={() => {setDadoData({nome: 'Discente', valor: data.dano2, isDano: true}); setModalDadoIsOpen(true)}}>Discente</button>
-          <button onClick={() => {setDadoData({nome: 'Verdadeiro', valor: data.dano3, isDano: true}); setModalDadoIsOpen(true)}}>Verdadeiro</button>
+          <button disabled={blockPerm} onClick={() => {setDadoData({nome: 'Normal', valor: data.dano, isDano: true}); setModalDadoIsOpen(true)}}>Normal</button>
+          <button disabled={blockPerm} onClick={() => {setDadoData({nome: 'Discente', valor: data.dano2, isDano: true}); setModalDadoIsOpen(true)}}>Discente</button>
+          <button disabled={blockPerm} onClick={() => {setDadoData({nome: 'Verdadeiro', valor: data.dano3, isDano: true}); setModalDadoIsOpen(true)}}>Verdadeiro</button>
         </div>
         <p>{data.efeito}</p>
       </Body>

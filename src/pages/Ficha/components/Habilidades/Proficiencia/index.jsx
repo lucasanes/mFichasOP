@@ -47,7 +47,7 @@ export function Proficiencia({data, lista, setData}) {
         <span>{data.nome}</span>
         <div>
           <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} size={18}/>
-          <ButtonDeleteComponent onClick={itemDelete} size={18}/>
+          <ButtonDeleteComponent handleExecute={itemDelete} size={18}/>
         </div>
       </Header1>
     </Container>

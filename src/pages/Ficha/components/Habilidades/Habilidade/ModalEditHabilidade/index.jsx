@@ -58,7 +58,7 @@ export function ModalEditHabilidade({lista, data, setModalClose}) {
 
         <Body>
 
-          <Input maxLength={50} required label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input name="nome" maxLength={50} required label={'Nome'} valor={nome} setValor={setnome}/>
           <TextArea maxLength={5000} required menor label={'Descrição'} valor={descricao} setValor={setdescricao} />
 
         </Body>
@@ -72,7 +72,7 @@ export function ModalEditHabilidade({lista, data, setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
+      
 
     </Container>
   );

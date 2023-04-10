@@ -91,16 +91,16 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
 
         <Body>
 
-          <Input required minLength={3} maxLength={50} pattern={nomeRegex} label={'Nome'} valor={nome} setValor={setnome}/>
-          <Input label={'Idade'} type='number' max={9999} min={0} valor={idade} setValor={setidade}/>
-          <Input maxLength={50} label={'Nacionalidade'} valor={nacionalidade} setValor={setnacionalidade}/>
+          <Input required minLength={3} maxLength={50} pattern={nomeRegex} name="nome" label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input label={'Idade'} name="idade" type='number' max={9999} min={0} valor={idade} setValor={setidade}/>
+          <Input maxLength={50} name="nacionalidade" label={'Nacionalidade'} valor={nacionalidade} setValor={setnacionalidade}/>
           <datalist id="listaOrigens"><option value="Acadêmico" /><option value="Agente de Saúde" /><option value="Amnésico" /><option value="Artista" /><option value="Atleta" /><option value="Chef" /><option value="Crimisoso" /><option value="Cultusta Arrependido" /><option value="Desgarrado" /><option value="Engenheiro" /><option value="Executivo" /><option value="Investigador" /><option value="Lutador" /><option value="Magnata" /><option value="Mercenário" /><option value="Militar" /><option value="Operário" /><option value="Policial" /><option value="Religioso" /><option value="Sevidor Público" /><option value="Teórico da Conspiração" /><option value="T.I." /><option value="Trabalhador Rural" /><option value="Trambiqueiro" /><option value="Universitário" /><option value="Vítima" />
           </datalist>
-          <Input required maxLength={50} list={'listaOrigens'} label={'Origem'} valor={origem} setValor={setorigem}/>
-          <Input label={'NEX'} type='number' max={100} min={0} valor={nex} setValor={setnex}/>
+          <Input required name="origem" maxLength={50} list={'listaOrigens'} label={'Origem'} valor={origem} setValor={setorigem}/>
+          <Input label={'NEX'} type='number' name="nex" max={100} min={0} valor={nex} setValor={setnex}/>
           <datalist id="listaClasses"><option value="Mundano">Mundano</option><option value="Combatente">Combatente</option><option value="Especialista">Especialista</option><option value="Ocultista">Ocultista</option>
           </datalist>
-          <Input required maxLength={50} list={'listaClasses'} label={'Classe'} valor={classe} setValor={setclasse}/>
+          <Input required name="classe" maxLength={50} list={'listaClasses'} label={'Classe'} valor={classe} setValor={setclasse}/>
           <datalist id="listaTrilhas">
 
             {classe == 'Combatente' &&
@@ -133,13 +133,13 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
 
             }
           </datalist>
-          <Input maxLength={50} list={'listaTrilhas'} label={'Trilha'} valor={trilha} setValor={settrilha}/>
+          <Input maxLength={50} name="trilha" list={'listaTrilhas'} label={'Trilha'} valor={trilha} setValor={settrilha}/>
           <datalist id="listaPatentes"><option value="Recruta">Recruta</option><option value="Operador" >Operador</option><option value="Agente Especial" >Agente Especial</option><option value="Oficial de Operações" >Oficial de Operações</option><option value="Agente de Elite" >Agente de Elite</option></datalist>
-          <Input maxLength={50} list={'listaPatentes'} label={'Patente'} valor={patente} setValor={setpatente}/>
-          <Input type='number' max={999999} min={0} label={'Pontos de Prestígio'} valor={prestigio} setValor={setprestigio}/>
-          <Input type='number' max={99} min={0} label={'Deslocamento'} valor={deslocamento} setValor={setdeslocamento}/>
-          <Input label={'PE/Rod'} type='number' min={0} max={99} valor={peprod} setValor={setpeprod}/>
-          <Input maxLength={50} label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
+          <Input maxLength={50} name="patente" list={'listaPatentes'} label={'Patente'} valor={patente} setValor={setpatente}/>
+          <Input type='number' name="pp" max={999999} min={0} label={'Pontos de Prestígio'} valor={prestigio} setValor={setprestigio}/>
+          <Input type='number' name="deslocamento" max={99} min={0} label={'Deslocamento'} valor={deslocamento} setValor={setdeslocamento}/>
+          <Input label={'PE/Rod'} name="peprod" type='number' min={0} max={99} valor={peprod} setValor={setpeprod}/>
+          <Input maxLength={50} name="afinidade" label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
 
         </Body>
 
@@ -152,7 +152,6 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
 
     </Container>
   );

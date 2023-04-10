@@ -111,7 +111,7 @@ export function ModalEditAtributos({data, setData, setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
+      
 
     </Container>
   );

@@ -7,7 +7,7 @@ export function ButtonEditComponent({onClick, segundo = false, size = 22, ...res
   const {blockPerm} = useFicha()
 
   return (
-    <Container buttonDisabled={blockPerm.toString()} {...rest}>
+    <Container semperm={blockPerm.toString()} {...rest}>
       <button disabled={blockPerm} onClick={onClick}><MdOutlineModeEditOutline color='yellow' size={size}/></button>
     </Container>
   );

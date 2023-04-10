@@ -78,6 +78,16 @@ export const Container = styled('div', {
     marginLeft: '13.2rem'
   },
 
+  variants: {
+    semperm: {
+      true: {
+        'button:hover': {
+          color: 'white'
+        }
+      }
+    }
+  }
+
 })
 
 export const Img = styled('img', {

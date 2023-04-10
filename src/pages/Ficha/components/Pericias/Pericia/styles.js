@@ -46,6 +46,14 @@ export const Button = styled('button', {
   },
 
   variants: {
+    semperm: {
+      true: {
+        '&:hover': {
+          background: 'none !important',
+          cursor: 'default'
+        }
+      }
+    },
     level: {
       nt: {
         border: '2px solid #797979',

@@ -5,10 +5,12 @@ import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../../services/api';
+import {useFicha} from '../../hooks/ficha'
 
 export function Barrinha({ valorA, setValorA, setValorMax, valorMax, color, number, ...rest }) {
 
   const [big, setBig] = useState(false)
+  const {blockPerm} = useFicha()
 
   useEffect(() => {
 
@@ -41,12 +43,12 @@ export function Barrinha({ valorA, setValorA, setValorMax, valorMax, color, numb
   }, [valorA, valorMax])
 
   return (
-    <Container>
+    <Container semperm={blockPerm}>
       <Botoes>
         <Esquerda>
-          {big && <button onClick={() => { setValorA(0) }}><SlArrowLeft /> 0</button>}
-          <button onClick={() => { if (valorA > valorMax) { setValorA(valorMax) } else if (valorA > 5) { setValorA(valorA - 5) } else { setValorA(0) } }}><SlArrowLeft />- 5</button>
-          <button onClick={() => { if (valorA > valorMax) { setValorA(valorMax) } else if (valorA > 1) { setValorA(valorA - 1) } else { setValorA(0) } }}><SlArrowLeft />- 1</button>
+          {big && <button disabled={blockPerm} onClick={() => { setValorA(0) }}><SlArrowLeft /> 0</button>}
+          <button disabled={blockPerm} onClick={() => { if (valorA > valorMax) { setValorA(valorMax) } else if (valorA > 5) { setValorA(valorA - 5) } else { setValorA(0) } }}><SlArrowLeft />- 5</button>
+          <button disabled={blockPerm} onClick={() => { if (valorA > valorMax) { setValorA(valorMax) } else if (valorA > 1) { setValorA(valorA - 1) } else { setValorA(0) } }}><SlArrowLeft />- 1</button>
         </Esquerda>
         <InputBarrinha right setValor={setValorA} valor={valorA} valorMax={valorMax} />
         <span>/</span>
@@ -57,9 +59,9 @@ export function Barrinha({ valorA, setValorA, setValorMax, valorMax, color, numb
         }
         } />
         <Direita>
-          <button onClick={() => { if (valorA != valorMax && valorA < valorMax) { setValorA(valorA + 1) } else { setValorA(valorMax) } }}>+ 1<SlArrowRight /> </button>
-          <button onClick={() => { if (valorA != valorMax && valorA < valorMax - 5) { setValorA(valorA + 5) } else { setValorA(valorMax) } }}>+ 5<SlArrowRight /></button>
-          {big && <button onClick={() => { setValorA(valorMax) }}> {valorMax}<SlArrowRight /></button>}
+          <button disabled={blockPerm} onClick={() => { if (valorA != valorMax && valorA < valorMax) { setValorA(valorA + 1) } else { setValorA(valorMax) } }}>+ 1<SlArrowRight /> </button>
+          <button disabled={blockPerm} onClick={() => { if (valorA != valorMax && valorA < valorMax - 5) { setValorA(valorA + 5) } else { setValorA(valorMax) } }}>+ 5<SlArrowRight /></button>
+          {big && <button disabled={blockPerm} onClick={() => { setValorA(valorMax) }}> {valorMax}<SlArrowRight /></button>}
         </Direita>
 
       </Botoes>

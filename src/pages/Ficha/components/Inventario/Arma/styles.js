@@ -113,6 +113,14 @@ export const ButtonDados = styled('button', {
   transition: '.3s',
   
   variants: {
+    semperm: {
+      true: {
+        '&:hover': {
+          background: 'none',
+          cursor: 'default'
+        }
+      }
+    },
     isDano: {
       true: {
         border: '2px solid #ff4b4b',

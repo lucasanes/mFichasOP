@@ -4,12 +4,15 @@ import { FaDiceD20 } from 'react-icons/fa'
 import pericias from '../../../../../components/mappers/pericias/pericias'
 import {Modal} from '../../../../../components/Modals/Modal'
 import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
+import { useFicha } from '../../../../../hooks/ficha'
 
 export function Pericia({data}) {
 
   const [modalDadoRoladoIsOpen, setModalDadoRoladoIsOpen] = useState(false)
   const [dataDado, setDataDado] = useState({})
   const [level, setLevel] = useState('nt')
+
+  const {blockPerm} = useFicha()
 
   useEffect(() => {
 
@@ -56,7 +59,7 @@ export function Pericia({data}) {
 
       <span>{pericias(data.nome)}</span>
 
-      <Button onClick={() => {
+      <Button semperm={blockPerm} disabled={blockPerm} onClick={() => {
         setDataDado({
           nome: pericias(data.nome),
           valor: `${data.atributoChave}d20+${data.valor}`,

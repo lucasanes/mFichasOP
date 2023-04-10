@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useFicha } from '../../hooks/ficha';
 import {Body, Container} from './styles'
 import {api} from '../../services/api'
 import {useAuth} from '../../hooks/auth'
 import { Principal } from './components/Principal';
 import { Status } from './components/Status';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { Pericias } from './components/Pericias';
 import { Habilidades } from './components/Habilidades';
 import { Dados } from './components/Dados';
@@ -23,6 +23,8 @@ import 'swiper/css/scrollbar';
 import { MenuBottomFicha } from '../../components/MenuBottomFicha';
 
 export function Ficha() {
+
+  const navigate = useNavigate()
 
   const {setNome, setBlockPerm, setDc} = useFicha()
   const {token} = useAuth()
@@ -48,7 +50,13 @@ export function Ficha() {
 
         const response = await api.post("/", {query: 'fichas_info_get', sessid: token, token: id})
 
+        if (!response.data.success && response.data.msg != 'Sua sessão encerrou.') {
+          navigate('/')
+          return
+        }
+
         const ficha = response.data.ficha
+
         setBlockPerm(ficha.blockperm)
 
         const primeiroNome = ficha.nome.split(' ')[0]
@@ -217,8 +225,9 @@ export function Ficha() {
       }
 
     }
-    
-    fetchData()
+
+    if (token != null) 
+      fetchData()
 
     return () => {
       setNome('...')
@@ -251,7 +260,7 @@ export function Ficha() {
           <Dados data={dados} setData={setDados}/>
         </SwiperSlide>
       </>}
-      <ToastContainer/>
+      
       <MenuBottomFicha/>
     </Container>
   );

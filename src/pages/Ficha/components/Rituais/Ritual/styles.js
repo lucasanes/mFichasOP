@@ -120,6 +120,17 @@ export const Body = styled('div', {
 
   'button:hover': {
     background: '#7c7c7c50'
+  },
+
+  variants: {
+    semperm: {
+      true: {
+        'button:hover': {
+          background: 'none',
+          cursor: 'default'
+        }
+      }
+    }
   }
 
 });

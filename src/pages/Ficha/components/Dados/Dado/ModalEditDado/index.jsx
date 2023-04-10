@@ -91,8 +91,8 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
 
         <Body>
 
-          <Input autoFocus required maxLength={20} label={'Nome'} valor={nome} setValor={setnome}/>
-          <Input label={'Dado'} maxLength={50} valor={dado} setValor={setdado}/>
+          <Input name="nome" required maxLength={20} label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input name="dado" label={'Dado'} maxLength={50} valor={dado} setValor={setdado}/>
           <Toggle classNumber={1} span={"Rolar como dano?"} defaultChecked={data.dano == 1} onClick={() => {if (dano == 0) {setdano(1)} else {setdano(0)}}}/>     
 
         </Body>
@@ -102,12 +102,12 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
         <Footer>
 
           <button className="button" type="submit">Salvar</button>
-          <ButtonDeleteComponent onClick={itemDelete} size={25}/>
+          <ButtonDeleteComponent handleExecute={itemDelete} size={25}/>
 
         </Footer>
 
       </form>
-      <ToastContainer/>
+      
 
     </Container>
   );

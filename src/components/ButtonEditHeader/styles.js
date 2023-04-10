@@ -25,7 +25,7 @@ export const Container = styled('div', {
   },
 
   variants: {
-    buttonDisabled: {
+    semperm: {
       true: {
         display: 'none'
       }

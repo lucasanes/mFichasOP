@@ -43,8 +43,7 @@ export const Header = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '30px',
-    height: '25px'
+    padding: '0 10px 2px 10px',
   },
 
   'button:hover': {

@@ -9,8 +9,11 @@ import { ModalEditPericias } from './ModalEditPericias';
 import {AtributoButton} from '../../../../components/AtributoButton'
 import { ModalEditAtributos } from './ModalEditAtributos';
 import { ButtonEditComponent } from '../../../../components/ButtonEditComponent';
+import { useFicha } from '../../../../hooks/ficha';
 
 export function Pericias({data, setData}) {
+
+  const {blockPerm} = useFicha()
 
   const [todasPericias, setTodasPericias] = useState(false)
 
@@ -38,7 +41,7 @@ export function Pericias({data, setData}) {
       <Body>
 
         <DivAtributos>
-          <AtributoButton agi={data.atributos.agilidade} forca={data.atributos.forca} int={data.atributos.intelecto} pre={data.atributos.presenca} vig={data.atributos.vigor}/>
+          <AtributoButton blockPerm={blockPerm} agi={data.atributos.agilidade} forca={data.atributos.forca} int={data.atributos.intelecto} pre={data.atributos.presenca} vig={data.atributos.vigor}/>
           <ButtonEditComponent onClick={() => setModalEditAtributosIsOpen(true)} className='buttonedit'/>
         </DivAtributos>
 

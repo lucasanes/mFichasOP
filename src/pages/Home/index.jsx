@@ -38,8 +38,6 @@ export function Home() {
 
       </Body>
 
-      <ToastContainer/>
-
       {/* <button onClick={newCombate}>Enviar Socket</button> */}
 
     </Container>

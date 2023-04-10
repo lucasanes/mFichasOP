@@ -4,6 +4,8 @@ import { Item } from './Item';
 import { Arma } from './Arma';
 
 export function Inventario({data, setData}) {
+
+  console.log(data)
  
   return (
     <Container>

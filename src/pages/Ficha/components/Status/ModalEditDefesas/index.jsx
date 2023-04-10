@@ -152,7 +152,6 @@ export function ModalEditDefesas({data, setData, setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
 
     </Container>
   );

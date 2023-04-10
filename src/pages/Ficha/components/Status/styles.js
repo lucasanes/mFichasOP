@@ -168,6 +168,14 @@ export const PortraitButton = styled('button', {
   transition: '.2s',
 
   variants: {
+    semperm: {
+      true: {
+        '&:hover': {
+          background: 'none !important',
+          cursor: 'default'
+        }
+      }
+    },
     color: {
       red: {
         border: '1px solid #ff4343',

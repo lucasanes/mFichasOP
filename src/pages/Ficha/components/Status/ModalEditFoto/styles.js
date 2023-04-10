@@ -38,8 +38,7 @@ export const Header = styled('div', {
     color: '#ffffff90',
     fontSize: '2.5rem',
     transition: '0.2s',
-    width: '30px',
-    height: '25px',
+    padding: '0 10px 2px 10px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -75,7 +74,7 @@ export const Body = styled('div', {
 
   height: 'calc(100% - 130px)',
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   flexDirection: 'column',
   textAlign: 'center',
   color: '#ffffff90',
@@ -83,26 +82,12 @@ export const Body = styled('div', {
   gap: '2rem',
   overflowY: 'auto',
 
-  '&.div': {
-    width: '100%',
+  '.preview': {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
-
-    'button': {
-      whiteSpace: 'nowrap',
-      color: '#00fff7',
-      fontSize: '1.4rem',
-      background: 'none',
-      border: '2px solid #00fff7',
-      padding: '.5rem 1rem',
-      borderRadius: '.5rem',
-      transition: '.3s'
-    },
-  
-    'button:hover': {
-      background: '#00fff750',
-    }
+    justifyContent: 'center',
+    margin: '-1.5rem 0 -.5rem 0',
+    gap: '1rem'
   },
 
   variants: {

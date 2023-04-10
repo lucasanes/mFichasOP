@@ -11,27 +11,11 @@ export function ModalCadastrar({setModalClose}) {
 
   const {signIn} = useAuth()
 
-  const [isLoading, setIsLoading] = useState(true)
-
   const [nome, setNome] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [repetirSenha, setRepetirSenha] = useState('')
-
-  useEffect(() => {
-    setTimeout(() => {
-      setNome('')
-      setUsername('')
-      setEmail('')
-      setSenha('')
-      setRepetirSenha('')
-    }, 1000);
-
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1300);
-  }, [])
 
   async function handleLogin(e) {
 
@@ -62,15 +46,13 @@ export function ModalCadastrar({setModalClose}) {
 
         <hr />
 
-        {isLoading && <h2>Seja bem-vindo ao FichasOP!</h2>}
+        <Body>
 
-        <Body isLoading={isLoading}>
-
-          <Input label={'Nome'} valor={nome} setValor={setNome} minLength={2} maxLength={50}/>
-          <Input label={'Username'} valor={username} setValor={setUsername} minLength={2} maxLength={16}/>
-          <Input label={'Email'} valor={email} setValor={setEmail} minLength={5} maxLength={200}/>
-          <Input isSenha={true} label={'Senha'} valor={senha} setValor={setSenha} minLength={8} maxLength={50}/>
-          <Input isSenha={true} label={'Repetir Senha'} valor={repetirSenha} setValor={setRepetirSenha} minLength={8} maxLength={50}/>
+          <Input autoComplete="name" name="nome" label={'Nome'} valor={nome} setValor={setNome} minLength={2} maxLength={50}/>
+          <Input autoComplete="username" name="username" label={'Username'} valor={username} setValor={setUsername} minLength={2} maxLength={16}/>
+          <Input name="email" label={'Email'} valor={email} setValor={setEmail} minLength={5} maxLength={200}/>
+          <Input autoComplete="new-password" name="senha" isSenha={true} label={'Senha'} valor={senha} setValor={setSenha} minLength={8} maxLength={50}/>
+          <Input autoComplete="new-password" name="senha" isSenha={true} label={'Repetir Senha'} valor={repetirSenha} setValor={setRepetirSenha} minLength={8} maxLength={50}/>
 
         </Body>
 
@@ -83,8 +65,6 @@ export function ModalCadastrar({setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
-
     </Container>
   );
 }

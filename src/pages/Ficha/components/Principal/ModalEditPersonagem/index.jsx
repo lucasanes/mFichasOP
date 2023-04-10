@@ -96,7 +96,7 @@ export function ModalEditPersonagem({data, setData, setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
+      
 
     </Container>
   );

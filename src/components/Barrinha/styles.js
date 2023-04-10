@@ -5,7 +5,17 @@ export const Container = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
-  marginBottom: '1rem'
+  marginBottom: '1rem',
+
+  variants: {
+    semperm: {
+      true: {
+        'button': {
+          display: 'none'
+        },
+      }
+    }
+  }
 })
 
 export const Botoes = styled('div', {

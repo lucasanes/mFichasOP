@@ -31,7 +31,6 @@ export function MenuBottom() {
         }, 6000);
         }} color={'red'}><BiLockAlt className='lock' color='grey' size={50}/><TiBusinessCard color='#ff3b3b50' size={30}/>Sessões</Button2> 
 
-      <ToastContainer/>
     </Container>
   );
 }

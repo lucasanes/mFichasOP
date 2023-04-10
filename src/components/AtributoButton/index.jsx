@@ -7,7 +7,7 @@ import { ModalDadoRolado } from "../Modals/ModalDadoRolado"
 import { Container, Img } from "./styles"
 import AtributosImg from '../../assets/imgs/AtributosImg-Pequeno.png'
 
-export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
+export function AtributoButton({ blockPerm = false, agi, int, vig, pre, forca, ...rest }) {
 
   const [modalDadoRoladoIsOpen, setModalDadoRoladoIsOpen] = useState(false)
 
@@ -18,14 +18,14 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
   })
 
   return (
-    <Container>
+    <Container semperm={blockPerm}>
 
       <Modal isOpen={modalDadoRoladoIsOpen} setClose={() => setModalDadoRoladoIsOpen(false)}>
         <ModalDadoRolado setModalEditIsOpenFalse={() => setModalDadoRoladoIsOpen(false)} data={data} />
       </Modal>
 
       <div className="b1">  
-        <button onClick={() => {
+        <button disabled={blockPerm} onClick={() => {
           setModalDadoRoladoIsOpen(true);
 
           setData({
@@ -37,7 +37,7 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
       </div>
 
       <div className="b2">
-        <button onClick={() => {
+        <button disabled={blockPerm} onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
           setData({
@@ -49,7 +49,7 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
       </div>
 
       <div className="b3">
-        <button onClick={() => {
+        <button disabled={blockPerm} onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
           setData({
@@ -61,7 +61,7 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
       </div>
 
       <div className="b4">
-        <button onClick={() => {
+        <button disabled={blockPerm} onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
           setData({
@@ -73,7 +73,7 @@ export function AtributoButton({ agi, int, vig, pre, forca, ...rest }) {
       </div>
 
       <div className="b5">
-        <button onClick={() => {
+        <button disabled={blockPerm} onClick={() => {
           setModalDadoRoladoIsOpen(true)
 
           setData({

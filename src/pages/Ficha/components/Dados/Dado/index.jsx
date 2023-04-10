@@ -4,8 +4,12 @@ import { FaDiceD20 } from 'react-icons/fa'
 import {Modal} from '../../../../../components/Modals/Modal'
 import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
 import {ModalEditDado} from './ModalEditDado'
+import { useFicha } from '../../../../../hooks/ficha'
+import { ModalCreateDado } from './ModalCreateDado'
 
 export function Dado({data, lista, setData}) {
+
+  const {blockPerm} = useFicha()
 
   const [modalDadoRoladoIsOpen, setModalDadoRoladoIsOpen] = useState(false)
   const [modalEditDadoIsOpen, setModalEditDadoIsOpen] = useState(false)
@@ -36,7 +40,7 @@ export function Dado({data, lista, setData}) {
         <ModalEditDado data={data} setData={setData} lista={lista} setModalClose={() => setModalEditDadoIsOpen(false)}/>
       </Modal>
 
-      <Button isDano={data.dano == 0 ? 'false' : 'true'} onClick={() => {if (!modalEditDadoIsOpen){setModalDadoRoladoIsOpen(true)}}}><FaDiceD20 size={35} color={data.dano == 0 ? '#00fff2' : '#ff4b4b'}/>{data.nome} <br /> <span>{data.dado}</span></Button>
+      <Button disabled={blockPerm} semperm={blockPerm} isDano={data.dano == 0 ? 'false' : 'true'} onClick={() => {if (!modalEditDadoIsOpen){setModalDadoRoladoIsOpen(true)}}}><FaDiceD20 size={35} color={data.dano == 0 ? '#00fff2' : '#ff4b4b'}/>{data.nome} <br /> <span>{data.dado}</span></Button>
       
     </Container>
   );

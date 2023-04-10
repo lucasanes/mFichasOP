@@ -39,11 +39,13 @@ export function ModalConta({setModalClose}) {
 
     e.preventDefault()
 
-    const response = await api.post('/', {query: 'account_create', nome, login: username, email, senha, csenha: repetirSenha})
+    const response = await api.post('/', {query: 'account_user_update', nome, login: username, email, senha, csenha: repetirSenha})
+
+    console.log(response.data)
 
     if (response.data.success) {
       setModalClose()
-      toast.success('Conta criada com sucesso!')
+      toast.success('Conta editada com sucesso!')
     } else {
       toast.error(response.data.msg)
     }
@@ -73,7 +75,7 @@ export function ModalConta({setModalClose}) {
 
             <div className='div'>
               <InputStop label={'Nome atual'} valor={user.nome}/>
-              <Input label={'Novo nome'} valor={nome} setValor={setNome} />
+              <Input name="nome" label={'Novo nome'} valor={nome} setValor={setNome} />
             </div>
           </Card>
 
@@ -84,7 +86,7 @@ export function ModalConta({setModalClose}) {
 
             <div className='div'>
               <InputStop label={'Username atual'} valor={user.login}/>
-              <Input label={'Novo username'} valor={username} setValor={setUsername} />
+              <Input name="username" hoverBug label={'Novo username'} valor={username} setValor={setUsername} />
             </div>
           </Card>
 
@@ -95,7 +97,7 @@ export function ModalConta({setModalClose}) {
 
             <div className='div'>
               <InputStop label={'Email atual'} valor={user.email}/>
-              <Input label={'Novo email'} valor={email} setValor={setEmail} />
+              <Input hoverBug name="email" label={'Novo email'} valor={email} setValor={setEmail} />
             </div>
           </Card>
 
@@ -105,8 +107,8 @@ export function ModalConta({setModalClose}) {
             <hr />
 
             <div className='div'>
-              <Input isSenha={true} label={'Senha nova'} valor={senha} setValor={setSenha}/>
-              <Input isSenha={true} label={'Repetir senha'} valor={repetirSenha} setValor={setRepetirSenha}/>
+              <Input name="senha" hoverBug isSenha={true} label={'Senha nova'} valor={senha} setValor={setSenha}/>
+              <Input name="senha" isSenha={true} label={'Repetir senha'} valor={repetirSenha} setValor={setRepetirSenha}/>
             </div>
           </Card>
 
@@ -116,7 +118,7 @@ export function ModalConta({setModalClose}) {
             <hr />
 
             <div className='div'>
-              <Input isSenha={true} label={'Senha atual'} valor={senhaAtual} setValor={setSenhaAtual}/>
+              <Input name="senha" isSenha={true} label={'Senha atual'} valor={senhaAtual} setValor={setSenhaAtual}/>
             </div>
           </Card>
 
@@ -131,7 +133,6 @@ export function ModalConta({setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
 
     </Container>
   );

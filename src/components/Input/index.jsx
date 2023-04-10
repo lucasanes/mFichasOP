@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button, Container, ContainerInput, InputB, LabelContainer} from "./styles"
 import {AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
-export function Input({ isSenha = false, label, setValor, valor, opcional = false, ...rest }) {
+export function Input({hoverBug = false, isSenha = false, label, setValor, valor, opcional = false, ...rest }) {
 
   const [hover, sethover] = useState(false)
   const [isSenhaVisible, setIsSenhaVisible] = useState(false)
@@ -13,6 +13,12 @@ export function Input({ isSenha = false, label, setValor, valor, opcional = fals
     } else {
       if (!hover) {
         sethover(false)
+      }  
+      
+      if (hoverBug){
+        setTimeout(() => {
+          sethover(false)
+        }, 1000);
       }
     }
   }, [valor])
@@ -25,7 +31,7 @@ export function Input({ isSenha = false, label, setValor, valor, opcional = fals
       </LabelContainer>
 
       <ContainerInput>
-        <InputB autoComplete="on" value={valor} type={isSenhaVisible || !isSenha ? 'text' : 'password'} {...rest}
+        <InputB value={valor} type={isSenhaVisible || !isSenha ? 'text' : 'password'} {...rest}
           onChange={(event) => {
             if (event.target.type == 'number') {
               if (event.target.value == '') {

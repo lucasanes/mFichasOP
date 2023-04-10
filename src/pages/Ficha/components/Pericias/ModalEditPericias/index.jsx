@@ -262,7 +262,7 @@ export function ModalEditPericias({data, setData, setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
+      
 
     </Container>
   );

@@ -65,7 +65,7 @@ export function Poder({data, lista, setData}) {
         <Button hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} segundo size={18}/>
-          <ButtonDeleteComponent onClick={itemDelete} size={18}/>
+          <ButtonDeleteComponent handleExecute={itemDelete} size={18}/>
         </div>
       </Header1>
       <hr />

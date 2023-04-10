@@ -54,8 +54,7 @@ export function ModalRecuperarSenha({setModalClose}) {
         </Footer>
 
       </form>
-
-      <ToastContainer/>
+      
 
     </Container>
   );

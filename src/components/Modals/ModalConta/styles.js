@@ -51,8 +51,7 @@ export const Header = styled('div', {
     color: '#ffffff90',
     fontSize: '2.5rem',
     transition: '0.2s',
-    width: '30px',
-    height: '25px',
+    padding: '0 10px 2px 10px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -149,7 +148,7 @@ export const Card = styled('div', {
     justifyContent: 'center',
     flexDirection: 'column',
     gap: '2rem'
-  }
+  },
 
 });
 

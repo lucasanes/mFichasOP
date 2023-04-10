@@ -54,7 +54,7 @@ export function ModalEditProficiencia({data, lista, setModalClose}) {
 
         <Body>
 
-          <Input required maxLength={50} label={'Nome'} valor={nome} setValor={setnome}/>
+          <Input name="nome" required maxLength={50} label={'Nome'} valor={nome} setValor={setnome}/>
 
         </Body>
 
@@ -67,7 +67,6 @@ export function ModalEditProficiencia({data, lista, setModalClose}) {
         </Footer>
 
       </form>
-      <ToastContainer/>
 
     </Container>
   );

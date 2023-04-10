@@ -6,8 +6,11 @@ import { IoIosArrowForward, IoMdInformationCircleOutline } from 'react-icons/io'
 import {InputStop} from './InputStop'
 import {Modal} from '../../../../../components/Modals/Modal'
 import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
+import { useFicha } from '../../../../../hooks/ficha';
 
 export function Arma({data}) {
+
+  const {blockPerm} = useFicha()
 
   const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
@@ -83,15 +86,15 @@ export function Arma({data}) {
           </div>
 
           <div className='buttons'>
-            {data.ataque && <ButtonDados onClick={() => {
+            {data.ataque && <ButtonDados semperm={blockPerm} disabled={blockPerm} onClick={() => {
               setModalDadoRolado(true)
               setDadoData({nome: 'Teste', valor: data.ataque, isDano: false})
             }} isDano={'false'}><strong>Teste:</strong> {data.ataque}</ButtonDados>}
-            {data.dano && <ButtonDados onClick={() => {
+            {data.dano && <ButtonDados semperm={blockPerm} disabled={blockPerm} onClick={() => {
               setModalDadoRolado(true)
               setDadoData({nome:'Dano', valor: data.dano, isDano: true})
             }} isDano={'true'}><strong>Dano:</strong> {data.dano}</ButtonDados>}
-            {data.critico && <ButtonDados onClick={() => {
+            {data.critico && <ButtonDados semperm={blockPerm} disabled={blockPerm} onClick={() => {
               setModalDadoRolado(true)
               setDadoData({nome:'Crítico', valor: data.critico, isDano: true})
             }} isDano={'true'}><strong>Crítico:</strong> {data.margem} / {data.critico}</ButtonDados>}
