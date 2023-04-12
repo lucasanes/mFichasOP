@@ -4,12 +4,12 @@ import { api } from "../../../../services/api"
 import { Container, InputB, } from "./styles"
 import {useFicha} from '../../../../hooks/ficha'
 
-export function InputBarrinha({ setValor, valor, valorMax, right = false, ...rest }) {
+export function InputBarrinha({max = 10000, setValor, valor, valorMax, right = false, ...rest }) {
 
     const {blockPerm} = useFicha()
 
     function onlyNumbers(v) {
-        if (v.toString().length < 5) {
+        if (v < max) {
             if (v > valorMax) {
                 setValor(valor)
             } else {

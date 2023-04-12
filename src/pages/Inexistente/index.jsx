@@ -11,7 +11,7 @@ export function Inexistente() {
 
     setTimeout(() => {
       
-      navigate('/')
+      // navigate('/')
 
     }, 3000);
 
@@ -20,10 +20,10 @@ export function Inexistente() {
   return (
     <Container>
       <div>
-        <img width={'300px'} src={Error}/>
-        <h2>A página que você está procurando não foi encontrada.</h2>
-        <h3>Você pode ter digitado incorretamente o endereço ou estar sem acesso no momento.</h3>
-        <h4>Em alguns segundos você será redirecionado para a home do site...</h4>
+        <h1>A página que você está procurando não foi encontrada.</h1>
+        <h2>Você pode ter digitado incorretamente o endereço ou estar sem acesso no momento.</h2>
+        <h3>Em alguns segundos você será redirecionado para a home do site...</h3>
+        <img width={'700px'} src={Error}/>
       </div>
     </Container>
   );

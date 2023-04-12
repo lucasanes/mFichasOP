@@ -42,7 +42,7 @@ export function Menu() {
 
   window.addEventListener("click", (event) => {
 
-    if (event.clientY > 272) {
+    if (event.clientY > 290) {
       if (hover == 'aberto') {
         sethover('fechando')
         setTimeout(() => { sethover('fechado') }, 300)

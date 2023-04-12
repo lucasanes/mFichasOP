@@ -17,7 +17,7 @@ export function ButtonDeleteComponent({handleExecute, text = false, size = 22, .
         <ModalDeleteConfirm setModalClose={() => setModalIsOpen(false)} handleExecute={handleExecute} />
       </Modal>
 
-      <button onClick={() => setModalIsOpen(true)} disabled={blockPerm} {...rest}>{text && 'Deletar'} <FiTrash color='red' size={size}/></button>
+      <button type='button' onClick={() => setModalIsOpen(true)} disabled={blockPerm} {...rest}>{text && 'Deletar'} <FiTrash color='red' size={size}/></button>
     </Container>
   );
 }

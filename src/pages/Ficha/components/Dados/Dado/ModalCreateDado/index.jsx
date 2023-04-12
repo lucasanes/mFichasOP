@@ -8,7 +8,7 @@ import { useAuth } from "../../../../../../hooks/auth";
 import {Toggle} from '../../../../../../components/Toggle'
 import {ButtonDeleteComponent} from '../../../../../../components/ButtonDeleteComponent'
 
-export function ModalCreateDado({data, setData, setModalClose}) {
+export function ModalCreateDado({setData, setModalClose}) {
 
   const {id} = useParams()
   const {token} = useAuth()
@@ -43,6 +43,7 @@ export function ModalCreateDado({data, setData, setModalClose}) {
       if (response.data.success) {
         setData(prevState => [...prevState, {nome, dado, dano}])
         setModalClose()
+        toast.success("Criado com sucesso!")
       }
 
     } else {

@@ -2,7 +2,7 @@ import { Dialog } from "@headlessui/react";
 import { styled } from "../../../stitches.config";
 export const Container = styled(Dialog, {
   position: "relative",
-  zIndex: 20
+  zIndex: 10
 });
 
 export const ContentContainer = styled("div", {

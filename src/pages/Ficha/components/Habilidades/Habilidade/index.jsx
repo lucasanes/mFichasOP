@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ButtonDeleteComponent } from '../../../../../components/ButtonDeleteComponent';
 import { ButtonEditComponent } from '../../../../../components/ButtonEditComponent';
 import {Container, Header1, Button, Body} from './styles'
@@ -9,7 +9,7 @@ import { api } from '../../../../../services/api';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../../../../../hooks/auth';
 
-export function Habilidade({data, lista, setData}) {
+export function Habilidade({data, lista, setData, ...rest}) {
 
   const {id} = useParams()
   const {token} = useAuth()
@@ -39,9 +39,9 @@ export function Habilidade({data, lista, setData}) {
 
   }
 
-  function slideToggle(ref) {
+  function slideToggle() {
     
-    const content = ref.current;
+    const content = contentRef.current;
   
     if (hover) {
       content.style.transition = "height 0.3s ease-out";
@@ -50,19 +50,37 @@ export function Habilidade({data, lista, setData}) {
     } else {
       content.style.transition = "height 0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
+      setTimeout(() => {
+        content.style.height = `${content.scrollHeight}px`;
+      }, 300);
       sethover(true);
     }
   }
 
+  window.addEventListener('resize', () => {
+
+    const content = contentRef.current;
+
+    if (content) {
+    
+      if (content.style.height != '0px' && content.style.height != '') {
+        content.style.transition = "height 0.3s ease-in";
+        content.style.height = `${content.scrollHeight}px`;
+      }
+
+    }
+
+  })
+
   return (
-    <Container>
+    <Container {...rest}>
 
       <Modal isOpen={modalEditIsOpen} setClose={() => setModalEditIsOpen(false)}>
         <ModalEditHabilidade lista={lista} data={data} setModalClose={() => setModalEditIsOpen(false)} />
       </Modal>
 
       <Header1>
-        <Button hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
+        <Button hover={hover} onClick={() => {slideToggle()}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} segundo size={18}/>
           <ButtonDeleteComponent handleExecute={itemDelete} size={18}/>

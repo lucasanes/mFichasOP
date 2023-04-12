@@ -199,7 +199,7 @@ export function Status({data, setData}) {
           <h3>Esforço <span className='ocult'>{ope && '?'}</span></h3>
           <Barrinha color={'yellow'} number={3} valorA={peA} setValorA={setPeA} valorMax={peMax} setValorMax={setPeMax} />
           <h3>Munição</h3>
-          <Barrinha color={'orange'} number={4} valorA={municaoA} setValorA={setMunicaoA} valorMax={municaoMax} setValorMax={setMunicaoMax} />
+          <Barrinha max={31} color={'orange'} number={4} valorA={municaoA} setValorA={setMunicaoA} valorMax={municaoMax} setValorMax={setMunicaoMax} />
         </BodyStatus>
 
       </> : <>

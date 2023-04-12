@@ -4,7 +4,7 @@ export const GlobalStyles = globalCss({
   ":root": {
     fontSize: "62.5%",
   },
-
+  
   "*": {
     margin: 0,
     padding: 0,
@@ -13,12 +13,14 @@ export const GlobalStyles = globalCss({
     '::-webkit-scrollbar': {
       backgroundColor: '#373737',
       width: '7px',
+      position: 'fixed',
       borderTopRightRadius: '5px',
       borderBottomRightRadius: '5px'
     },
     '::-webkit-scrollbar-thumb': {
       backgroundColor: '#6b6b6b',
       borderRadius: '5px',
+      position: 'fixed',
     },
   },
 

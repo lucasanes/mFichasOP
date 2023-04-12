@@ -7,16 +7,27 @@ import {InputStop} from './InputStop'
 import {Modal} from '../../../../../components/Modals/Modal'
 import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
 import { useFicha } from '../../../../../hooks/ficha';
+import { api } from '../../../../../services/api';
+import { useAuth } from '../../../../../hooks/auth';
+import { useParams } from 'react-router-dom';
+import { ModalEditArma } from './ModalEditArma';
 
-export function Arma({data}) {
+export function Arma({lista, data, setData, ...rest}) {
 
   const {blockPerm} = useFicha()
+
+  const {token} = useAuth()
+  const {id} = useParams()
 
   const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
   const [modalDadoRolado, setModalDadoRolado] = useState(false)
+  const [modalEditIsOpen, setModalEditIsOpen] = useState(false)
   const [dadoData, setDadoData] = useState(false)
   const [mostrarComoItem, setMostrarComoItem] = useState(false)
+
+  const foto = new Image();
+  foto.src = data.foto;
 
   function slideToggle(ref, fechaabre) {
     
@@ -43,19 +54,59 @@ export function Arma({data}) {
     } else {
       content.style.transition = "0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
+      setTimeout(() => {
+        content.style.height = `${content.scrollHeight}px`;
+      }, 300);
       sethover(true);
     }
   }
 
+  window.addEventListener('resize', () => {
+
+    const content = contentRef.current;
+    
+    if (content) {
+      if (content.style.height != '0px' && content.style.height != '') {
+        content.style.transition = "height 0.3s ease-in";
+        content.style.height = `${content.scrollHeight}px`;
+      }
+    }
+
+  })
+
+  async function itemDelete() {
+
+    const response = await api.post('/', {
+      query: 'fichas_info_delete',
+      sessid: token,
+      token: id,
+      dados: {
+        armas: [{
+          id: data.id
+        }]
+      }
+    })
+
+    if (response.data.success) {
+      const itensAtualizados = lista.filter(item => item.id != data.id)
+      setData(itensAtualizados)
+    }
+
+  }
+  
   return (
-    <Container>
+    <Container {...rest}>
+
+      <Modal isOpen={modalEditIsOpen} setClose={() => setModalEditIsOpen(false)}>
+        <ModalEditArma data={data} lista={lista} setModalClose={() => setModalEditIsOpen(false)}/>
+      </Modal>
 
       <Modal isOpen={modalDadoRolado} setClose={() => setModalDadoRolado(false)}>
         <ModalDadoRolado data={dadoData} setModalEditIsOpenFalse={() => setModalDadoRolado(false)}/>
       </Modal>
 
       <Header1>
-        <Button hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.arma} -  {data.quantidade}</Button>
+        <Button hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonInfo 
           onClick={() => {
@@ -69,8 +120,8 @@ export function Arma({data}) {
             }
           }} 
           className='info'><IoMdInformationCircleOutline color='#00ffff' size={20}/></ButtonInfo>
-          <ButtonEditComponent segundo size={18}/>
-          <ButtonDeleteComponent size={18}/>
+          <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} segundo size={18}/>
+          <ButtonDeleteComponent handleExecute={itemDelete} size={18}/>
         </div>
       </Header1>
       <hr/>
@@ -103,15 +154,14 @@ export function Arma({data}) {
         </>:<>
 
           <div className='infos'>
-            <InputStop label={'Categoria:'} valor={data.prestigio}/>
-            <InputStop label={'Espaços:'} valor={data.espaco}/>
+            <InputStop label={'Categoria:'} key={data.prestigio + 'a'} valor={data.prestigio}/>
+            <InputStop label={'Espaços:'} key={data.espaco + 'b'} valor={data.espaco}/>
           </div>
 
           <p>{data.descricao ? data.descricao : 'Sem descrição...'}</p>
 
           <img 
-          // onClick={() => setModalImgIsOpen(true)}
-          width={'100%'} src={'https://cdn.discordapp.com/attachments/1080822648130519110/1093745238629171280/Bilhete_Adrian.png'}/>
+          width={'75%'} src={foto.src}/>
 
         </>}
 

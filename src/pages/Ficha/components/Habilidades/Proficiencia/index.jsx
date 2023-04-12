@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import { useAuth } from '../../../../../hooks/auth';
 import { api } from '../../../../../services/api';
 
-export function Proficiencia({data, lista, setData}) {
+export function Proficiencia({data, lista, setData, ...rest}) {
 
   const {id} = useParams()
   const {token} = useAuth()
@@ -37,7 +37,7 @@ export function Proficiencia({data, lista, setData}) {
   }
 
   return (
-    <Container>
+    <Container {...rest}>
 
       <Modal isOpen={modalEditIsOpen} setClose={() => setModalEditIsOpen(false)}>
         <ModalEditProficiencia data={data} lista={lista} setModalClose={() => setModalEditIsOpen(false)}/>

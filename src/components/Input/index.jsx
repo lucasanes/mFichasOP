@@ -33,17 +33,24 @@ export function Input({hoverBug = false, isSenha = false, label, setValor, valor
       <ContainerInput>
         <InputB value={valor} type={isSenhaVisible || !isSenha ? 'text' : 'password'} {...rest}
           onChange={(event) => {
-            if (event.target.type == 'number') {
-              if (event.target.value == '') {
-                setValor(0)
-                return
-              }
-              if ((parseInt(event.target.value) <= parseInt(event.target.max) && parseInt(event.target.value) >= parseInt(event.target.min))) {
-                setValor(parseInt(event.target.value))
-              }
-            } else {
+            // if (event.target.type == 'number') {
+              // if (event.target.value == '') {
+              //   setValor(0)
+              //   return
+              // }
+              // if (event.target.min) {
+              //   console.log(parseFloat(event.target.min), event.target.value)
+              //   if ((parseFloat(event.target.value) <= parseFloat(event.target.max) && parseFloat(event.target.value) >= parseFloat(event.target.min))) {
+              //     setValor(parseFloat(event.target.value))
+              //   }
+              // } else {
+              //   if ((parseFloat(event.target.value) <= parseFloat(event.target.max))) {
+              //     setValor(parseFloat(event.target.value))
+              //   }
+              // }
+            // } else {
               setValor(event.target.value)
-            }
+            // }
           }}
           onFocus={() => {
             sethover(true)

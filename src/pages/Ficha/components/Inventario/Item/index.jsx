@@ -6,12 +6,23 @@ import { IoIosArrowForward } from 'react-icons/io'
 import {InputStop} from './InputStop'
 import {Modal} from '../../../../../components/Modals/Modal'
 import {ModalDadoRolado} from '../../../../../components/Modals/ModalDadoRolado'
+import { api } from '../../../../../services/api';
+import { useParams } from 'react-router-dom';
+import { useAuth } from '../../../../../hooks/auth';
+import { ModalEditItem } from './ModalEditItem';
 
-export function Item({data}) {
+export function Item({lista, data, setData, ...rest}) {
+
+  const {id} = useParams()
+  const {token} = useAuth()
+
+  const [modalEditIsOpen, setModalEditIsOpen] = useState(false)
 
   const [hover, sethover] = useState(false)
   const contentRef = useRef(null)
-  const [modalImgIsOpen, setModalImgIsOpen] = useState(false)
+
+  const foto = new Image();
+  foto.src = data.foto;
 
   function slideToggle(ref) {
     
@@ -24,22 +35,58 @@ export function Item({data}) {
     } else {
       content.style.transition = "0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
+      setTimeout(() => {
+        content.style.height = `${content.scrollHeight}px`;
+      }, 300);
       sethover(true);
     }
   }
 
-  return (
-    <Container>
+  async function itemDelete() {
 
-      <Modal isOpen={modalImgIsOpen} setClose={() => setModalImgIsOpen(false)}>
-        <img onClick={() => setModalImgIsOpen(false)} width={'100%'} src='https://cdn.discordapp.com/attachments/1080822648130519110/1093745238629171280/Bilhete_Adrian.png'/>
+    const response = await api.post('/', {
+      query: 'fichas_info_delete',
+      sessid: token,
+      token: id,
+      dados: {
+        itens: [{
+          id: data.id
+        }]
+      }
+    })
+
+    if (response.data.success) {
+      const itensAtualizados = lista.filter(item => item.id != data.id)
+      setData(itensAtualizados)
+    }
+
+  }
+
+  window.addEventListener('resize', () => {
+
+    const content = contentRef.current;
+    
+    if (content) {
+      if (content.style.height != '0px' && content.style.height != '') {
+        content.style.transition = "height 0.3s ease-in";
+        content.style.height = `${content.scrollHeight}px`;
+      }
+    }
+
+  })
+
+  return (
+    <Container {...rest}>
+
+      <Modal isOpen={modalEditIsOpen} setClose={() => setModalEditIsOpen(false)}>
+        <ModalEditItem data={data} lista={lista} setModalClose={() => setModalEditIsOpen(false)}/>
       </Modal>
 
       <Header1>
-        <Button hover={hover.toString()} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome} -  {data.quantidade}</Button>
+        <Button hover={hover.toString()} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome} -  {data.quantidade}x</Button>
         <div>
-          <ButtonEditComponent segundo size={18}/>
-          <ButtonDeleteComponent size={18}/>
+          <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} segundo size={18}/>
+          <ButtonDeleteComponent handleExecute={itemDelete} size={18}/>
         </div>
       </Header1>
 
@@ -55,8 +102,7 @@ export function Item({data}) {
         <p>{data.descricao ? data.descricao : 'Sem descrição...'}</p>
 
         <img 
-        // onClick={() => setModalImgIsOpen(true)}
-        width={'100%'} src={'https://cdn.discordapp.com/attachments/1080822648130519110/1093745238629171280/Bilhete_Adrian.png'}/>
+        width={'75%'} src={foto.src}/>
       </Body>
     </Container>
   );

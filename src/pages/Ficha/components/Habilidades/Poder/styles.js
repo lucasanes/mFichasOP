@@ -58,6 +58,7 @@ export const Button = styled('button', {
   border: 'none',
   display: 'flex',
   alignItems: 'center',
+  width: '100%',
   fontWeight: 700,
   overflow: 'hidden',
   color: '#b8b8b8',

@@ -51,21 +51,4 @@ export const Header = styled('div', {
     padding: '.8rem 1rem .4rem 1rem',
   },
 
-  button: {
-    position: 'fixed',
-    right: 15,
-    background: 'none',
-    border: '1px solid transparent',
-    borderRadius: '5px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '.2rem',
-    transition: '.3s'
-  },
-
-  'button:hover': {
-    borderColor: 'Yellow'
-  }
-
 });

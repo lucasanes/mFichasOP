@@ -39,16 +39,19 @@ export function ModalConta({setModalClose}) {
 
     e.preventDefault()
 
-    const response = await api.post('/', {query: 'account_user_update', nome, login: username, email, senha, csenha: repetirSenha})
+    toast.error("Recurso em desenvolvimento!")
+    setModalClose()
 
-    console.log(response.data)
+    // const response = await api.post('/', {query: 'account_user_update', nome, login: username, email, senha, csenha: repetirSenha})
 
-    if (response.data.success) {
-      setModalClose()
-      toast.success('Conta editada com sucesso!')
-    } else {
-      toast.error(response.data.msg)
-    }
+    // console.log(response.data)
+
+    // if (response.data.success) {
+    //   setModalClose()
+    //   toast.success('Conta editada com sucesso!')
+    // } else {
+    //   toast.error(response.data.msg)
+    // }
 
   }
 
@@ -128,7 +131,7 @@ export function ModalConta({setModalClose}) {
 
         <Footer>
 
-          <button type="submit">Cadastrar</button>
+          <button type="submit">Atualizar</button>
 
         </Footer>
 

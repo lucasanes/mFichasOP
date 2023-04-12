@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import { useAuth } from '../../../../../hooks/auth';
 import { api } from '../../../../../services/api';
 
-export function Poder({data, lista, setData}) {
+export function Poder({data, lista, setData, ...rest}) {
 
   const {id} = useParams()
   const {token} = useAuth()
@@ -50,12 +50,27 @@ export function Poder({data, lista, setData}) {
     } else {
       content.style.transition = "height 0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
+      setTimeout(() => {
+        content.style.height = `${content.scrollHeight}px`;
+      }, 300);
       sethover(true);
     }
   }
 
+  window.addEventListener('resize', () => {
+
+    const content = contentRef.current;
+    if (content) {
+      if (content.style.height != '0px' && content.style.height != '') {
+        content.style.transition = "height 0.3s ease-in";
+        content.style.height = `${content.scrollHeight}px`;
+      }
+    }
+
+  })
+
   return (
-    <Container>
+    <Container {...rest}>
 
       <Modal isOpen={modalEditIsOpen} setClose={() => setModalEditIsOpen(false)}>
         <ModalEditPoder data={data} lista={lista} setModalClose={() => setModalEditIsOpen(false)} />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Body, Container, Footer, Header } from "./styles";
 import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../../components/Input'
@@ -13,6 +13,8 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
   const {id} = useParams()
   const {token} = useAuth()
 
+  const deleting = useRef(null)
+
   const [nome, setnome] = useState(data.nome)
   const [dado, setdado] = useState(data.dado)
   const [dano, setdano] = useState(data.dano)
@@ -23,37 +25,44 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
 
     e.preventDefault()
 
-    if (dado.match(pattern)) {
+    if (deleting.current != true) {
 
-      const response = await api.post('/', {
-        query: 'fichas_info_update',
-        sessid: token,
-        token: id,
-        dados: {
-          dices: [{
-            token: data.token,
-            nome,
-            dado,
-            dano
-          }]
+      if (dado.match(pattern)) {
+
+        const response = await api.post('/', {
+          query: 'fichas_info_update',
+          sessid: token,
+          token: id,
+          dados: {
+            dices: [{
+              token: data.token,
+              nome,
+              dado,
+              dano
+            }]
+          }
+        })
+
+        if (response.data.success) {
+          const dadoAEditar = lista.filter(dado => dado.token == data.token)[0]
+          dadoAEditar.nome = nome
+          dadoAEditar.dado = dado
+          dadoAEditar.dano = dano
+          toast.success("Alterado com sucesso!")
+          setModalClose()
         }
-      })
 
-      if (response.data.success) {
-        const dadoAEditar = lista.filter(dado => dado.token == data.token)[0]
-        dadoAEditar.nome = nome
-        dadoAEditar.dado = dado
-        dadoAEditar.dano = dano
-        setModalClose()
+      } else {
+        toast.error('Dado inválido.')
       }
 
-    } else {
-      toast.error('Dado inválido.')
     }
 
   }
 
   async function itemDelete() {
+
+    deleting.current = true
 
     const response = await api.post('/', {
       query: 'fichas_info_delete',
@@ -69,7 +78,6 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
     if (response.data.success) {
       const dadosAtualizados = lista.filter(dado => dado.token != data.token)
       setData(dadosAtualizados)
-      toast.success("Alterado com sucesso!")
       setModalClose()
     }
 

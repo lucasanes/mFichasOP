@@ -22,11 +22,11 @@ export const Container = styled("div", {
     variants: {
         hover: {
             aberto: {
-                height: "282px",
+                height: "290px",
                 zIndex: 10,
             },
             fechando: {
-                height: '282px',
+                height: '290px',
                 zIndex: 10,
             },
             fechado: {
@@ -76,7 +76,7 @@ export const Body = styled("div", {
 
     ul: {
         display: 'flex',
-        gap: '1.5rem',
+        gap: '2rem',
         padding: '1.8rem 3rem',
         flexDirection: "column",
         marginLeft: '-1rem',
@@ -95,7 +95,7 @@ export const Body = styled("div", {
     variants: {
         hover: {
             aberto: {
-                height: "210px",
+                height: "290px",
                 transition: '.5s',
             }
         },
@@ -107,11 +107,12 @@ export const Button = styled('button', {
     background: "none",
     color: "white",
     border: "none",
+    width: '100%',
 
     display: "flex",
     alignItems: "flex-end",
     color: 'grey',
-    justifyContent: "center",
+    justifyContent: "left",
     fontSize: "1.8rem",
     gap: "1rem",
     fontFamily: 'Nerko One',
@@ -123,6 +124,7 @@ export const Button = styled('button', {
 
 export const ButtonLink = styled(Link, {
     background: "none",
+    width: '100%',
     color: "grey",
     border: "none",
     textDecoration: 'none',
@@ -132,7 +134,7 @@ export const ButtonLink = styled(Link, {
 
     display: "flex",
     alignContent: "center",
-    justifyContent: "center",
+    justifyContent: "left",
     fontSize: "1.8rem",
     letterSpacing: '1px',
     gap: "1rem",

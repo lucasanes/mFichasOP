@@ -34,17 +34,17 @@ export function ModalEditRitual({data, lista, setModalClose}) {
     e.preventDefault()
 
     if (!dano.match(pattern)) {
-      toast.error('Dano "Normal" inválido.')
+      toast.error('Dado "Normal" inválido.')
       return
     }
 
     if (!dano.match(pattern)) {
-      toast.error('Dano "Discente" inválido.')
+      toast.error('Dado "Discente" inválido.')
       return
     }
 
     if (!dano.match(pattern)) {
-      toast.error('Dano "Verdadeiro" inválido.')
+      toast.error('Dado "Verdadeiro" inválido.')
       return
     }
 
@@ -112,8 +112,11 @@ export function ModalEditRitual({data, lista, setModalClose}) {
 
         <Body>
 
+          <datalist id="listaElementos"><option value="Conhecimento" /><option value="Sangue" /><option value="Energia" /><option value="Medo" /><option value="Morte" />
+          </datalist>
+
           <Input required maxLength={50} name="nome" label={'Nome'} valor={nome} setValor={setnome}/>
-          <Input required maxLength={50} name="elemento" label={'Elemento'} valor={elemento} setValor={setelemento}/>
+          <Input list={'listaElementos'} required maxLength={50} name="elemento" label={'Elemento'} valor={elemento} setValor={setelemento}/>
           <Input maxLength={15} name="circulo" label={'Círculo'} valor={circulo} setValor={setcirculo}/>
           <Input maxLength={30} name="alcance" label={'Alcance'} valor={alcance} setValor={setalcance}/>
           <Input maxLength={30} name="execucao" label={'Execução'} valor={conjuracao} setValor={setconjuracao}/>

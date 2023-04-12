@@ -1,5 +1,5 @@
 import {styled} from '../../stitches.config';
-import Energia from '../../assets/imgs/404.png'
+import Fundo from '../../assets/imgs/Fundo_Energia.png'
 
 export const Container = styled('div', {
 
@@ -8,47 +8,51 @@ export const Container = styled('div', {
   display: 'flex',
   alignItems: 'center',
   padding: '1rem',
-  background: 'rgb(20,20,20)',
+  position: 'relative',
+  background: `url(${Fundo})`,
   color: '#ffffff',
 
   div: {
     width: '100%',
     padding: '3rem 2rem',
+    background: 'rgb(0,0,0, 0.75)',
     height: '100%',
     display: 'flex',
+    overflow: 'hidden',
+    position: 'relative',
     alignItems: 'center',
     flexDirection: 'column',
+    fontFamily: 'Rajdhani',
     border: '3px solid #ffffff',
     borderRadius: '1rem',
     boxShadow: '5px 5px 10px #ffffff'
   },
 
   img: {
-    margin: '0 -2rem'
+    margin: '-2rem',
+    borderBottom: '3px solid #ffffff',
+    boxShadow: '0px 20px 10px #ffffff90',
+    position: 'absolute',
+    bottom: 0
   },
 
   h1: {
-    fontSize: '8rem',
-    textShadow: '2px 2px 5px #ffffff'
+    fontSize: '3rem',
+    marginTop: '3rem',  
+    textShadow: '3px 3px 10px #6f00ff'
   },
 
   h2: {
-    fontSize: '3rem',
-    marginTop: '3rem',
-    textShadow: '0px 0px 2px #ffffff'
+    marginTop: '2rem',
+    fontSize: '2rem',
+    paddingRight: '10rem',
+    textShadow: '3px 3px 10px #6f00ff'
   },
 
   h3: {
     marginTop: '2rem',
-    fontSize: '2rem',
-    paddingRight: '10rem',
-    textShadow: '0px 0px 2px #ffffff'
-  },
-
-  h4: {
-    marginTop: '2rem',
     fontSize: '1.6rem',
     textDecoration: 'underline',
-    textShadow: '0px 0px 2px #ffffff'
+    textShadow: '3px 3px 10px #6f00ff'
   },
 });

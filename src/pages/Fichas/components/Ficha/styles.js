@@ -28,6 +28,7 @@ export const HeaderButtons = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  gap: '.5rem',
 
   a: {
     background: 'none',
@@ -40,8 +41,43 @@ export const HeaderButtons = styled('div', {
     transition: '.3s'
   },
 
+  '.padding': {
+    padding: '.25rem'
+  },
+
   'a:hover': {
     border: '1px solid cyan'
+  }
+
+});
+
+export const Button = styled('button', {
+
+  width: '28px',
+  height: '28px',
+  background: 'none',
+  border: '1px solid transparent',
+  paddingRight: '.1rem',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: '5px',
+  transition: '.3s',
+
+  variants: {
+    public: {
+      true: {
+        '&:hover': {
+          border: '1px solid #00ff88'
+        }
+      },
+      false: {
+        padding: '.22rem',
+        '&:hover': {
+          border: '1px solid #c31437'
+        },
+      }
+    }
   }
 
 });

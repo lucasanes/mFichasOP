@@ -28,7 +28,7 @@ export const Container = styled('div', {
 
 export const Button = styled('button', {
 
-  minWidth: '12rem',
+  minWidth: '14rem',
   background: 'none',
   display: 'flex',
   alignItems: 'center',

@@ -40,7 +40,7 @@ export const Header = styled("div", {
         letterSpacing: '.2rem',
         whiteSpace: 'nowrap',
         textAlign: 'center',
-        paddingRight: '5.5rem',
+        paddingRight: '7.5rem',
         fontSize: '3rem',
         textShadow: "1px 1px 10px #00d5ff4d",
     },

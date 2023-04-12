@@ -175,7 +175,7 @@ export function Ficha() {
           {id: 28, nome: 'vontade', valor: ficha.vontade, atributoChave: ficha.presenca}
         ]})
 
-        setInventario({itens: ficha.itens, armas: ficha.armas})
+        setInventario({peso: ficha.peso_inv, itens: ficha.itens, armas: ficha.armas})
 
         setDados(ficha.dices)
 
