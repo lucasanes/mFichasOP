@@ -3,6 +3,7 @@ import { Body, Container, Footer, Header } from "./styles";
 import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../../components/Input'
 import {InputImg} from '../../../../../../components/InputImg'
+import {Preview} from '../../../../../../components/Preview'
 import {TextArea} from '../../../../../../components/TextArea'
 import { api } from "../../../../../../services/api";
 import { useParams } from "react-router-dom";
@@ -127,10 +128,6 @@ export function ModalEditRitual({data, lista, setModalClose}) {
           <Input maxLength={50} name="dado" label={'Discente'} valor={dano2} setValor={setdano2}/>
           <Input maxLength={50} name="dado" label={'Verdadeiro'} valor={dano3} setValor={setdano3}/>
           <InputImg maxLength={255} label={'Foto'} valor={foto} setValor={setfoto}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto} width={'50px'}/>
-          </div>
           <TextArea label={'Descrição'} valor={efeito} setValor={setefeito}/>
 
         </Body>

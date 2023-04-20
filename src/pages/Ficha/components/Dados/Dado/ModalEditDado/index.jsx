@@ -27,33 +27,32 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
 
     if (deleting.current != true) {
 
-      if (dado.match(pattern)) {
-
-        const response = await api.post('/', {
-          query: 'fichas_info_update',
-          sessid: token,
-          token: id,
-          dados: {
-            dices: [{
-              token: data.token,
-              nome,
-              dado,
-              dano
-            }]
-          }
-        })
-
-        if (response.data.success) {
-          const dadoAEditar = lista.filter(dado => dado.token == data.token)[0]
-          dadoAEditar.nome = nome
-          dadoAEditar.dado = dado
-          dadoAEditar.dano = dano
-          toast.success("Alterado com sucesso!")
-          setModalClose()
-        }
-
-      } else {
+      if (!dado.match(pattern)) {
         toast.error('Dado inválido.')
+        return
+      }
+
+      const response = await api.post('/', {
+        query: 'fichas_info_update',
+        sessid: token,
+        token: id,
+        dados: {
+          dices: [{
+            token: data.token,
+            nome,
+            dado,
+            dano
+          }]
+        }
+      })
+
+      if (response.data.success) {
+        const dadoAEditar = lista.filter(dado => dado.token == data.token)[0]
+        dadoAEditar.nome = nome
+        dadoAEditar.dado = dado
+        dadoAEditar.dano = dano
+        toast.success("Alterado com sucesso!")
+        setModalClose()
       }
 
     }

@@ -66,6 +66,20 @@ export const Header1 = styled('div', {
 
 });
 
+export const Img = styled('div', {
+  
+  width: '100px',
+
+  img: {
+    width: '100px',
+    height: '100px',
+    border: '2px solid white',
+    borderRadius: '20px',
+    margin: '1rem 0',
+    objectFit: 'cover'
+  },
+});
+
 export const Body = styled('div', {
 
   height: 0,
@@ -74,14 +88,6 @@ export const Body = styled('div', {
   alignItems: 'center',
   flexDirection: 'column',
   padding: '0 1rem',
-
-  img: {
-    margin: '1rem 0',
-    marginBottom: '2rem',
-    border: '2px solid white',
-    padding: '.5rem',
-    borderRadius: '20px'
-  },
 
   '.buttons': {
     display: 'flex',

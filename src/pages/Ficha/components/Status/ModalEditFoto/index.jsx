@@ -78,30 +78,10 @@ export function ModalEditFoto({data, setData, setModalClose}) {
         <Body>
 
           <InputImg id={1} maxLength={255} label={'Normal'} valor={foto} setValor={setfoto}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto} width={'50px'}/>
-          </div>
           <InputImg id={2} maxLength={255} label={'Ferido'} valor={foto_ferido} setValor={setfoto_ferido}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto_ferido} width={'50px'}/>
-          </div>
           <InputImg id={3} maxLength={255} label={'Insano'} valor={foto_insano} setValor={setfoto_insano}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto_insano} width={'50px'}/>
-          </div>
           <InputImg id={4} maxLength={255} label={'Insano e Ferido'} valor={foto_insanoeferido} setValor={setfoto_insanoeferido}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto_insanoeferido} width={'50px'}/>
-          </div>
           <InputImg id={5} maxLength={255} label={'Morrendo'} valor={foto_morrendo} setValor={setfoto_morrendo}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto_morrendo} width={'50px'}/>
-          </div>
 
         </Body>
 

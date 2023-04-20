@@ -1,4 +1,4 @@
-import {Body, Button, Card, Container, Header, HeaderButtons} from './styles'
+import {Body, Button, Card, Container, Header, HeaderButtons, Img} from './styles'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
 import { Link, useLocation, useParams } from 'react-router-dom';
@@ -56,7 +56,9 @@ export function Ficha({data}) {
       </Header>
 
       <Body>
-        <img src={data.foto}/>
+        <Img>
+          <img src={data.foto}/>
+        </Img>
 
         <div className='grid'>
           <Card>

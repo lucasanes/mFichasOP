@@ -2,11 +2,20 @@ import { styled } from '../../stitches.config';
 
 export const Container = styled('div', {
 
-  width: '100%',
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  position: 'relative',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: '2rem',
+
+  '.container': {
+
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+
+  }
 
 })
 

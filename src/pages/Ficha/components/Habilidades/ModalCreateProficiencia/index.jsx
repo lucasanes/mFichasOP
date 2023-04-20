@@ -29,7 +29,7 @@ export function ModalCreateProficiencia({setData, setModalClose}) {
     })
 
     if (response.data.success) {
-      setData(prev => [...prev, response.data.proficiencia])
+      setData(prev => [...prev, response.data.dados.proficiencias[0]])
       setModalClose()
       toast.success("Criado com sucesso!")
     }

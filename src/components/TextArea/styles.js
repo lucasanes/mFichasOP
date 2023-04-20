@@ -41,7 +41,7 @@ export const LabelContainer = styled('label', {
 
     position: 'absolute',
     width: 'fit-content',
-    top: '-1.75rem',
+    top: '-1.4rem',
     textAlign: 'center',
     zIndex: '1',
     fontFamily: 'Cormorant Garamond',
@@ -54,7 +54,7 @@ export const LabelContainer = styled('label', {
     variants: {
         active: {
             true: {
-                transform: 'translateY(-0.5rem)',
+                transform: 'translateY(-0.25rem)',
                 padding: '0px 1rem',
             },
         },

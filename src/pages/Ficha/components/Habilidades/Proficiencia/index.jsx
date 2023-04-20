@@ -29,6 +29,8 @@ export function Proficiencia({data, lista, setData, ...rest}) {
       }
     })
 
+    console.log(response)
+
     if (response.data.success) {
       const proficienciasAtualizadas = lista.filter(proficiencia => proficiencia.id != data.id)
       setData(proficienciasAtualizadas)

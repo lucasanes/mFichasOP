@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import {Input} from '../../../../../../components/Input'
 import {InputImg} from '../../../../../../components/InputImg'
 import {TextArea} from '../../../../../../components/TextArea'
+import {Preview} from '../../../../../../components/Preview'
 import { api } from "../../../../../../services/api";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../../../../../hooks/auth";
@@ -72,7 +73,7 @@ export function ModalCreateRitual({setData, setModalClose}) {
     })
 
     if (response.data.success) {
-      setData(prev => [...prev, response.data.ritual])
+      setData(prev => [...prev, response.data.dados.rituais[0]])
       setModalClose()
       toast.success("Criado com sucesso!")
     }
@@ -95,8 +96,11 @@ export function ModalCreateRitual({setData, setModalClose}) {
 
         <Body>
 
+          <datalist id="listaElementos"><option value="Conhecimento" /><option value="Sangue" /><option value="Energia" /><option value="Medo" /><option value="Morte" />
+          </datalist>
+
           <Input required maxLength={50} name="nome" label={'Nome'} valor={nome} setValor={setnome}/>
-          <Input required maxLength={50} name="elemento" label={'Elemento'} valor={elemento} setValor={setelemento}/>
+          <Input list={'listaElementos'} required maxLength={50} name="elemento" label={'Elemento'} valor={elemento} setValor={setelemento}/>
           <Input maxLength={15} name="circulo" label={'Círculo'} valor={circulo} setValor={setcirculo}/>
           <Input maxLength={30} name="alcance" label={'Alcance'} valor={alcance} setValor={setalcance}/>
           <Input maxLength={30} name="execucao" label={'Execução'} valor={conjuracao} setValor={setconjuracao}/>
@@ -107,10 +111,7 @@ export function ModalCreateRitual({setData, setModalClose}) {
           <Input maxLength={50} name="dado" label={'Discente'} valor={dano2} setValor={setdano2}/>
           <Input maxLength={50} name="dado" label={'Verdadeiro'} valor={dano3} setValor={setdano3}/>
           <InputImg maxLength={255} label={'Foto'} valor={foto} setValor={setfoto}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto} width={'50px'}/>
-          </div>
+
           <TextArea label={'Descrição'} valor={efeito} setValor={setefeito}/>
 
         </Body>

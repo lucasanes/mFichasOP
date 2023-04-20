@@ -7,6 +7,7 @@ import {TextArea} from '../../../../../../components/TextArea'
 import { api } from "../../../../../../services/api";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../../../../../hooks/auth";
+import { Preview } from "../../../../../../components/Preview";
 
 export function ModalEditItem({data, lista, setModalClose}) {
 
@@ -79,10 +80,6 @@ export function ModalEditItem({data, lista, setModalClose}) {
           <Input required min={-10} max={30} step={'0.1'} type='number' name="espaco" label={'Espaços'} valor={espaco} setValor={setespaco}/>
           <Input required min={0} max={30} type='number' name="quantidade" label={'Quantidade'} valor={quantidade} setValor={setquantidade}/>
           <InputImg maxLength={255} label={'Foto'} valor={foto} setValor={setfoto}/>
-          <div className="preview">
-            <span>Preview:</span>
-            <img src={foto} width={'50px'}/>
-          </div>
           <TextArea maxLength={300} label={'Descrição'} valor={descricao} setValor={setdescricao}/>
 
         </Body>

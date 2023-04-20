@@ -82,6 +82,20 @@ export const Button = styled('button', {
 
 });
 
+export const Img = styled('div', {
+  
+  width: '100px',
+  
+  img: {
+    width: '100px',
+    height: '100px',
+    border: '1px solid white',
+    borderRadius: '2rem',
+    objectFit: 'cover'
+  }
+
+});
+
 export const Body = styled('div', {
 
   padding: '1rem',
@@ -103,12 +117,6 @@ export const Body = styled('div', {
       gridTemplateColumns: '1fr 1fr'
     }
   },
-
-  img: {
-    width: '100px',
-    border: '1px solid white',
-    borderRadius: '2rem'
-  }
 
 });
 

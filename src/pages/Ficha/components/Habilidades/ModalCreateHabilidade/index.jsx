@@ -34,9 +34,9 @@ export function ModalCreateHabilidade({setDataHabilidade, setDataPoder, setModal
           }]
         }
       })
-
+      
       if (response.data.success) {
-        setDataHabilidade(prev => [...prev, response.data.habilidade])
+        setDataHabilidade(prev => [...prev, response.data.dados.habilidades[0]])
         setModalClose()
         toast.success("Criado com sucesso!")
       }
@@ -56,7 +56,7 @@ export function ModalCreateHabilidade({setDataHabilidade, setDataPoder, setModal
       })
 
       if (response.data.success) {
-        setDataPoder(prev => [...prev, response.data.habilidade])
+        setDataPoder(prev => [...prev, response.data.dados.poderes[0]])
         setModalClose()
         toast.success("Criado com sucesso!")
       }

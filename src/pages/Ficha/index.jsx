@@ -55,6 +55,8 @@ export function Ficha() {
           return
         }
 
+        const response2 = await api.post('/', {query: 'etc_dices_get', sessid: token, token: id})
+
         const ficha = response.data.ficha
 
         setBlockPerm(ficha.blockperm)
@@ -177,7 +179,7 @@ export function Ficha() {
 
         setInventario({peso: ficha.peso_inv, itens: ficha.itens, armas: ficha.armas})
 
-        setDados(ficha.dices)
+        setDados(response2.data.dados.dices)
 
         setHpe({habilidades: ficha.habilidades, poderes: ficha.poderes, proficiencias: ficha.proficiencias})
 
@@ -226,8 +228,13 @@ export function Ficha() {
 
     }
 
-    if (token != null) 
+    if (localStorage.getItem('@fichasop:token')) {
+      if (token) {
+        fetchData()
+      }
+    } else {
       fetchData()
+    }
 
     return () => {
       setNome('...')

@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Item } from './Item';
 import { Arma } from './Arma';
 import { ButtonCreateHeader } from '../../../../components/ButtonCreateHeader';
+import { Modal } from '../../../../components/Modals/Modal';
+import { ModalCreateArma } from './ModalCreateArma';
+import { ModalCreateItem } from './ModalCreateItem';
 
 export function Inventario({data, setData}) {
 
@@ -34,11 +37,17 @@ export function Inventario({data, setData}) {
     setItens(ordenarPor('nome', data.itens))
 
   }, [data.armas, data.itens])
-
-  console.log(data)
  
   return (
     <Container>
+
+      <Modal isOpen={modalCreateArmaIsOpen} setClose={() => setModalCreateArmaIsOpen(false)}>
+        <ModalCreateArma setData={setArmas} setModalClose={() => setModalCreateArmaIsOpen(false)}/>
+      </Modal>
+
+      <Modal isOpen={modalCreateItemIsOpen} setClose={() => setModalCreateItemIsOpen(false)}>
+        <ModalCreateItem setData={setItens} setModalClose={() => setModalCreateItemIsOpen(false)}/>
+      </Modal>
 
       <Header>
         <Button hover={miniBody == 'armas'} onClick={() => setMiniBody('armas')}>Armas</Button>

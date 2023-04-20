@@ -89,7 +89,10 @@ export const Body = styled('div', {
   },
 
   img: {
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    marginTop: '1rem',
+    maxHeight: '300px',
+    objectFit: 'contain'
   },
 
   p: {

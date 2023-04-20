@@ -83,13 +83,12 @@ export const Body = styled('div', {
   overflowY: 'auto',
   overflowX: 'hidden',
 
-  variants: {
-    isLoading: {
-      true: {
-        opacity: 0
-      }
-    }
-  }
+  '.div': {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
 
 });
 

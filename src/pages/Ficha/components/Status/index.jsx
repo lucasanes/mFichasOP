@@ -138,7 +138,17 @@ export function Status({data, setData}) {
 
     subtimer()
 
+    
+
   }, [pvA, pvMax, psA, psMax, peA, peMax, municaoA, municaoMax, combate, morto, opv, ops, ope])
+
+  useEffect(() => {
+
+    return () => {
+      updateFichaAPI()
+    }
+
+  }, [])
 
   return (
     <Container>
@@ -165,7 +175,7 @@ export function Status({data, setData}) {
           <div className='header'>
             <DivImg>
               <Img>
-                <img src={fotoAtual ? fotoAtual : noportrait} style={{filter: `brightness(${morto ? 0 : 1})`}}/>
+                <img src={fotoAtual ? fotoAtual : noportrait} style={{filter: `brightness(${morto ? 0.1 : 1}) grayscale(${morto ? 1 : 0})`}}/>
               </Img>
               <ButtonEditComponent className='editimg' onClick={() => setModalEditFotoIsOpen(true)}/>
             </DivImg>

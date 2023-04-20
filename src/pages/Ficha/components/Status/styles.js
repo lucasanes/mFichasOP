@@ -152,6 +152,7 @@ export const Img = styled('div', {
     width: '180px',
     height: '180px',
     borderRadius: '100%',
+    objectFit: 'cover',
     transition: '1s',
   },
 

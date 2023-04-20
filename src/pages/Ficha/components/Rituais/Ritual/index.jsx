@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { ButtonDeleteComponent } from '../../../../../components/ButtonDeleteComponent';
 import { ButtonEditComponent } from '../../../../../components/ButtonEditComponent';
-import {Container, Header1, Button, Body} from './styles'
+import {Container, Header1, Button, Body, Img} from './styles'
 import { IoIosArrowForward } from 'react-icons/io'
 import {InputStop} from './InputStop'
 import {Modal} from '../../../../../components/Modals/Modal'
@@ -80,7 +80,9 @@ export function Ritual({data, setData, lista}) {
       </Header1>
       <hr/>
       <Body semperm={blockPerm} ishover={hover.toString()} ref={contentRef}>
-        <img width={100} src={data.foto} />
+        <Img>
+          <img src={data.foto} />
+        </Img>
 
         <div className='infos'>
           <InputStop label={'Elemento:'} valor={data.elemento + ' - ' + data.circulo}/>

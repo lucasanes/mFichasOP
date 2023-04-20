@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import { Body, Card, Container, Footer, Header } from "./styles";
 import {Input} from '../../Input'
+import {InputImg} from '../../InputImg'
 import { Toggle } from "../../Toggle";
 import { useAuth } from "../../../hooks/auth";
 import { api } from "../../../services/api";
@@ -18,6 +19,7 @@ export function ModalConta({setModalClose}) {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [repetirSenha, setRepetirSenha] = useState('')
+  const [marca, setMarca] = useState('')
   const [senhaAtual, setSenhaAtual] = useState('')
 
   useEffect(() => {
@@ -110,8 +112,18 @@ export function ModalConta({setModalClose}) {
             <hr />
 
             <div className='div'>
-              <Input name="senha" hoverBug isSenha={true} label={'Senha nova'} valor={senha} setValor={setSenha}/>
+              <Input name="senha" hoverBug isSenha={true} label={'Nova Senha'} valor={senha} setValor={setSenha}/>
               <Input name="senha" isSenha={true} label={'Repetir senha'} valor={repetirSenha} setValor={setRepetirSenha}/>
+            </div>
+          </Card>
+
+          <Card>
+            <h1>Alterar Marca</h1>
+
+            <hr />
+
+            <div className='div'>
+              <InputImg label={'Nova marca'} valor={marca} setValor={setMarca}/>
             </div>
           </Card>
 

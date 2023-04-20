@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Container, InputB, LabelContainer } from "./styles"
 
-export function TextArea({ menor = false, label, valor, setValor, ...rest }) {
+export function TextArea({ menor = true, label, valor, setValor, ...rest }) {
 
     const [focus, setFocus] = useState(false)
 
