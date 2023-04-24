@@ -8,6 +8,7 @@ import { Preview } from "../Preview";
 export function InputImg({ id, label, setValor, valor, ...rest }) {
 
   const [hover, sethover] = useState(false)
+  const [erro, seterro] = useState('')
   const [file, setFile] = useState(undefined)
   const [msg, setMsg] = useState('Enviar Foto')
 
@@ -38,10 +39,11 @@ export function InputImg({ id, label, setValor, valor, ...rest }) {
     if (response.data.success) {
       setMsg('Enviado!')
       setValor(response.data.url)
+      seterro('')
     } else {
       progress.style.width = '0%'
       setMsg('Erro!')
-      toast.error(response.data.msg)
+      seterro(response.data.msg)
     }
 
   }
@@ -89,6 +91,7 @@ export function InputImg({ id, label, setValor, valor, ...rest }) {
         </ContainerInput>
 
       </div>
+      {erro && <span className="span">{erro}</span>}
       <Preview foto={valor}/>
     </Container>
   )

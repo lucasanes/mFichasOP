@@ -50,25 +50,7 @@ export const Header = styled('div', {
     opacity: 0.5,
   },
 
-  '@md': {
-    h1: {
-      fontSize: '2.2rem'
-    },
-    
-    button: {
-      fontSize: '3rem',
-    },
-  },
-
-  '@lg': {
-    h1: {
-      fontSize: '2.5rem'
-    },
-    
-    button: {
-      fontSize: '3.3rem',
-    },
-  },  
+   
 
 });
 

@@ -207,7 +207,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
       return largest;
     }
     
-    let resultado = 0, faces = 0, print= "", critico = false, index = 0, saida = {}, negativo = false, rolagens = [];
+    let resultado = 0, faces = 0, print= "", critico = false, index = 0, saida = {}, negativo = false, rolagens = [], dados = [];
     
     dado_bruto = dado_bruto.replaceAll("-", "+-");
     let dado_fragmentado = dado_bruto.split("+");
@@ -235,6 +235,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
             saida[index]["dado"] = "d" + faces;
             for (let i = 0; i < quantidade; i++) {
               saida[index]["rolagens"] = i + 1;
+              saida[index]["dados"] = i + 1;
               saida[index]["resultados"][i] = Math.floor(Math.random() * (faces)) + 1;
               resultado += parseInt(saida[index]["resultados"][i]);
               print += (print ? '+' : "") + saida[index]["resultados"][i];
@@ -257,6 +258,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
             }
 
             saida[index]["rolagens"] = quantidade;
+            saida[index]["dados"] = quantidade;
             saida[index]["dado"] = "d" + faces;
             saida[index]["melhor"] = best(saida[index]["resultados"]);
             saida[index]["pior"] = worst(saida[index]["resultados"]);
@@ -277,6 +279,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
 
     for (let i = 0; i < index; i++) {
       rolagens.push(saida[i])
+      dados.push(saida[i])
     }
 
     saida["dano"] = dano;
@@ -285,6 +288,7 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
     saida["margem"] = margem;
     saida["print"] = print;
     saida["rolagens"] = rolagens
+    saida["dados"] = dados
     
     setDado(saida)
 
@@ -297,17 +301,15 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
 
       const dadoRolado = rolarDado(DadoDinamico(data.valor, dc), data.isDano, data.margem)
 
-      console.log(dadoRolado)
-
       const response = await api.post('/', {
         query: 'etc_dices_submit',
         sessid: token,
         token: id,
         nome: pericias(data.nome) != null ? pericias(data.nome) : data.nome,
-        dado: JSON.stringify(dadoRolado),
+        dado: dadoRolado,
       })
 
-      console.log(response)
+      console.log(response.data)
 
     }
 

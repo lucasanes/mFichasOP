@@ -46,9 +46,26 @@ export function Ritual({data, setData, lista}) {
 
   }
 
+  let timeout;
+
+  function iniciador(ref) {
+    timeout = setTimeout(doSomething(ref), 300);
+  }
+  
+  function finalizador() {
+    clearTimeout(timeout);
+  }
+  
+  function doSomething(ref) {
+    const content = ref.current;
+    content.style.height = `${content.scrollHeight}px`;
+  }
+
   function slideToggle(ref) {
     
     const content = ref.current;
+    
+    finalizador(ref)
   
     if (hover) {
       content.style.transition = "0.3s ease-out";
@@ -57,6 +74,7 @@ export function Ritual({data, setData, lista}) {
     } else {
       content.style.transition = "0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
+      iniciador(ref)
       sethover(true);
     }
   }

@@ -39,20 +39,35 @@ export function Habilidade({data, lista, setData, ...rest}) {
 
   }
 
-  function slideToggle() {
+  let timeout;
+
+  function iniciador(ref) {
+    timeout = setTimeout(doSomething(ref), 300);
+  }
+  
+  function finalizador() {
+    clearTimeout(timeout);
+  }
+  
+  function doSomething(ref) {
+    const content = ref.current;
+    content.style.height = `${content.scrollHeight}px`;
+  }
+
+  function slideToggle(ref) {
     
-    const content = contentRef.current;
+    const content = ref.current;
+    
+    finalizador(ref)
   
     if (hover) {
-      content.style.transition = "height 0.3s ease-out";
+      content.style.transition = "0.3s ease-out";
       content.style.height = "0";
       sethover(false);
     } else {
-      content.style.transition = "height 0.3s ease-in";
+      content.style.transition = "0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
-      setTimeout(() => {
-        content.style.height = `${content.scrollHeight}px`;
-      }, 300);
+      iniciador(ref)
       sethover(true);
     }
   }
@@ -80,7 +95,7 @@ export function Habilidade({data, lista, setData, ...rest}) {
       </Modal>
 
       <Header1>
-        <Button hover={hover} onClick={() => {slideToggle()}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
+        <Button hover={hover} onClick={() => {slideToggle(contentRef)}}><IoIosArrowForward color='white' size={20}/>{data.nome}</Button>
         <div>
           <ButtonEditComponent onClick={() => setModalEditIsOpen(true)} segundo size={18}/>
           <ButtonDeleteComponent handleExecute={itemDelete} size={18}/>

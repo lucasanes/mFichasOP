@@ -9,10 +9,10 @@ export const Container = styled('div', {
   position: 'relative',
 
   button: {
-    width: 'fit-content',
+    width: '60px',
     height: 'fit-content',
     fontSize: "3.3rem",
-    padding: '1rem 2rem 3rem 2rem',
+    padding: '1rem 0 3rem 0',
     background: "none",
     border: 'none',
     display: 'flex',

@@ -33,6 +33,7 @@ export const Container = styled('div', {
 
 export const Header = styled('div', {
 
+  height: '62px',
   display: 'flex',
   alignItems: 'baseline',
   justifyContent: 'space-between',
@@ -61,25 +62,7 @@ export const Header = styled('div', {
     opacity: 0.5,
   },
 
-  '@md': {
-    h1: {
-      fontSize: '2.2rem'
-    },
-    
-    button: {
-      fontSize: '3rem',
-    },
-  },
-
-  '@lg': {
-    h1: {
-      fontSize: '2.5rem'
-    },
-    
-    button: {
-      fontSize: '3.3rem',
-    },
-  },  
+   
 
 });
 
@@ -142,7 +125,9 @@ export const Footer = styled('div', {
     border: '2px solid #00ff88',
     color: '#00ff88',
     width: '90%',
-    padding: '.7rem',
+    fontFamily: 'Acme',
+    fontSize: '2rem',
+    padding: '.4rem',
     transition: '.3s',
     borderRadius: '5px'
   },

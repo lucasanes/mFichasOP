@@ -133,6 +133,14 @@ export const ButtonDados = styled('button', {
           background: '#ff4b4b50'
         }
       },
+      true2: {
+        border: '2px solid #d92b2b',
+        color: '#d92b2b',
+
+        '&:hover': {
+          background: '#d92b2b50'
+        }
+      },
       false: {
         border: '2px solid #00c5c5',
         color: '#00c5c5',

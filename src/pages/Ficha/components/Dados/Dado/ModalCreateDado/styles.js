@@ -48,25 +48,7 @@ export const Header = styled('div', {
     opacity: 0.5,
   },
 
-  '@md': {
-    h1: {
-      fontSize: '2.2rem'
-    },
-    
-    button: {
-      fontSize: '3rem',
-    },
-  },
-
-  '@lg': {
-    h1: {
-      fontSize: '2.5rem'
-    },
-    
-    button: {
-      fontSize: '3.3rem',
-    },
-  },  
+   
 
 });
 
@@ -119,6 +101,7 @@ export const Card = styled('div', {
 
 export const Footer = styled('div', {
 
+  height: '62px',
   padding: '1.5rem',
   display: 'flex',
   alignItems: 'center',
@@ -128,10 +111,12 @@ export const Footer = styled('div', {
   '.button': {
     background: 'none',
     borderRadius: '5px',
+    fontFamily: 'Acme',
+  fontSize: '2rem',
     border: '2px solid #00ff88',
     color: '#00ff88',
     width: '90%',
-    padding: '.7rem',
+    padding: '.4rem',
     transition: '.3s'
   },
 

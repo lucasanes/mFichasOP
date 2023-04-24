@@ -29,23 +29,52 @@ export function Arma({lista, data, setData, ...rest}) {
   const foto = new Image();
   foto.src = data.foto;
 
+  let timeout1;
+  let timeout2;
+
+  function iniciador1(ref) {
+    timeout1 = setTimeout(doSomething1(), 290);
+  }
+
+  function iniciador2(ref) {
+    timeout2 = setTimeout(doSomething2(ref), 300);
+  }
+  
+  function finalizador() {
+    clearTimeout(timeout1);
+    clearTimeout(timeout2);
+  }
+  
+  function doSomething1() {
+    setMostrarComoItem(!mostrarComoItem);
+  }
+
+  function doSomething2(ref) {
+    const content = ref.current;
+    content.style.transition = "0.3s ease-in";
+    content.style.height = `${content.scrollHeight}px`;
+  }
+
   function slideToggle(ref, fechaabre) {
     
     const content = ref.current;
 
     if (fechaabre) {
+      finalizador()
       content.style.transition = "0.3s ease-out";
       content.style.height = "0";
+      setTimeout(() => setMostrarComoItem(!mostrarComoItem), 290);
       setTimeout(() => {
-        setMostrarComoItem(!mostrarComoItem);
-      }, 290);
-      setTimeout(() => {
+        const content = ref.current;
         content.style.transition = "0.3s ease-in";
         content.style.height = `${content.scrollHeight}px`;
+        iniciador2(ref)
       }, 300);
       sethover(true);
       return
     }
+
+    finalizador()
 
     if (hover) {
       content.style.transition = "0.3s ease-out";
@@ -54,9 +83,7 @@ export function Arma({lista, data, setData, ...rest}) {
     } else {
       content.style.transition = "0.3s ease-in";
       content.style.height = `${content.scrollHeight}px`;
-      setTimeout(() => {
-        content.style.height = `${content.scrollHeight}px`;
-      }, 300);
+      iniciador2(ref)
       sethover(true);
     }
   }
@@ -148,7 +175,7 @@ export function Arma({lista, data, setData, ...rest}) {
             {data.critico && <ButtonDados semperm={blockPerm} disabled={blockPerm} onClick={() => {
               setModalDadoRolado(true)
               setDadoData({nome:'Crítico', valor: data.critico, isDano: true})
-            }} isDano={'true'}><strong>Crítico:</strong> {data.margem} / {data.critico}</ButtonDados>}
+            }} isDano={'true2'}><strong>Crítico:</strong> {data.margem} / {data.critico}</ButtonDados>}
           </div>
         
         </>:<>

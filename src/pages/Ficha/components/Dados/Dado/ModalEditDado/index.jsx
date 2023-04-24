@@ -34,13 +34,16 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
       const response = await api.post('/', {
         query: 'etc_dices_update',
         sessid: token,
-        token: data.token,
-        nome,
-        dado,
-        dano,
+        token: id,
+        dados: {
+          dices: [{
+            token: data.token,
+            nome,
+            dado,
+            dano,
+          }]
+        }
       })
-
-      console.log(response)
 
       if (response.data.success) {
         const dadoAEditar = lista.filter(dado => dado.token == data.token)[0]

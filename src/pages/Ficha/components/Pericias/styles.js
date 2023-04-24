@@ -28,11 +28,13 @@ export const Body = styled('div', {
     alignItems: 'center',
     justifyContent: 'left',
     padding: '.5rem 1rem',
+    paddingTop: '.3rem',
     transition: '.3s',
     gap: '1rem',
+    fontFamily: 'Source Sans Pro',
 
     svg: {
-      marginBottom: '2px'
+      marginTop: '2px'
     },
 
     '&:hover': {
@@ -47,6 +49,15 @@ export const Body = styled('div', {
       }
     }
   }
+
+});
+
+export const PericiasBody = styled('div', {
+
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gap: '2rem',
+  overflow: 'hidden',
 
 });
 

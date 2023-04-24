@@ -24,6 +24,7 @@ export const Body = styled('div', {
 
   maxHeight: 'calc(100% - 60px)',
   display: 'flex',
+  justifyContent: 'center',
   gap: '2rem',
   padding: '2rem',
   overflowY: 'auto',

@@ -62,25 +62,7 @@ export const Header = styled('div', {
     opacity: 0.5,
   },
 
-  '@md': {
-    h1: {
-      fontSize: '2.2rem'
-    },
-    
-    button: {
-      fontSize: '3rem',
-    },
-  },
-
-  '@lg': {
-    h1: {
-      fontSize: '2.5rem'
-    },
-    
-    button: {
-      fontSize: '3.3rem',
-    },
-  },  
+   
 
 });
 
@@ -90,7 +72,7 @@ export const Button = styled('button', {
   border: '2px solid #00ff88',
   color: '#00ff88',
   width: '90%',
-  padding: '.7rem',
+  padding: '.4rem',
   transition: '.3s',
   borderRadius: '5px',
 
@@ -135,6 +117,8 @@ export const Body = styled('div', {
       color: '#00fff7',
       fontSize: '1.4rem',
       background: 'none',
+      fontFamily: 'Acme',
+  fontSize: '2rem',
       border: '2px solid #00fff7',
       padding: '.5rem 1rem',
       borderRadius: '.5rem',

@@ -15,6 +15,12 @@ export const Container = styled('div', {
     justifyContent: 'center',
     position: 'relative',
 
+  },
+
+  '.span': {
+    color: 'Crimson',
+    marginTop: '-1rem',
+    marginLeft: '1rem'
   }
 
 })
