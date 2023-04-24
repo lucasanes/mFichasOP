@@ -41,7 +41,7 @@ export function ModalRecuperarSenha({setModalClose}) {
 
         <Body>
 
-          <Input label={'Email'} valor={email} setValor={setEmail}/>
+          <Input required minLength={5} maxLength={200} label={'Email'} valor={email} setValor={setEmail}/>
 
         </Body>
 

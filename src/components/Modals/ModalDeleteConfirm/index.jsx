@@ -9,8 +9,6 @@ import { IoClose } from 'react-icons/io5'
 
 export function ModalDeleteConfirm({handleExecute, setModalClose}) {
 
-  console.log(handleExecute)
-
   return (
     <Container>
 

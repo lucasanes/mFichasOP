@@ -10,7 +10,7 @@ import { InputStop } from "../../InputStop";
 
 export function ModalConta({setModalClose}) {
 
-  const {user} = useAuth()
+  const {user, token, signIn} = useAuth()
 
   const [isLoading, setIsLoading] = useState(true)
 
@@ -41,19 +41,15 @@ export function ModalConta({setModalClose}) {
 
     e.preventDefault()
 
-    toast.error("Recurso em desenvolvimento!")
-    setModalClose()
+    const response = await api.post('/', {query: 'account_user_update', sessid: token, nome, login: username, email, senha, csenha: repetirSenha, asenha: senhaAtual})
 
-    // const response = await api.post('/', {query: 'account_user_update', nome, login: username, email, senha, csenha: repetirSenha})
-
-    // console.log(response.data)
-
-    // if (response.data.success) {
-    //   setModalClose()
-    //   toast.success('Conta editada com sucesso!')
-    // } else {
-    //   toast.error(response.data.msg)
-    // }
+    if (response.data.success) {
+      signIn({username: username ? username : user.login, senha: senha ? senha : senhaAtual, manterAtivo: true})
+      setModalClose()
+      toast.success('Conta editada com sucesso!')
+    } else {
+      toast.error(response.data.msg)
+    }
 
   }
 
@@ -80,7 +76,7 @@ export function ModalConta({setModalClose}) {
 
             <div className='div'>
               <InputStop label={'Nome atual'} valor={user.nome}/>
-              <Input name="nome" label={'Novo nome'} valor={nome} setValor={setNome} />
+              <Input minLength={2} maxLength={50} name="nome" label={'Novo nome'} valor={nome} setValor={setNome} />
             </div>
           </Card>
 
@@ -91,7 +87,7 @@ export function ModalConta({setModalClose}) {
 
             <div className='div'>
               <InputStop label={'Username atual'} valor={user.login}/>
-              <Input name="username" hoverBug label={'Novo username'} valor={username} setValor={setUsername} />
+              <Input minLength={2} maxLength={16} name="username" hoverBug label={'Novo username'} valor={username} setValor={setUsername} />
             </div>
           </Card>
 
@@ -102,7 +98,7 @@ export function ModalConta({setModalClose}) {
 
             <div className='div'>
               <InputStop label={'Email atual'} valor={user.email}/>
-              <Input hoverBug name="email" label={'Novo email'} valor={email} setValor={setEmail} />
+              <Input minLength={5} maxLength={200} hoverBug name="email" label={'Novo email'} valor={email} setValor={setEmail} />
             </div>
           </Card>
 
@@ -112,8 +108,8 @@ export function ModalConta({setModalClose}) {
             <hr />
 
             <div className='div'>
-              <Input name="senha" hoverBug isSenha={true} label={'Nova Senha'} valor={senha} setValor={setSenha}/>
-              <Input name="senha" isSenha={true} label={'Repetir senha'} valor={repetirSenha} setValor={setRepetirSenha}/>
+              <Input minLength={8} maxLength={50} name="senha" hoverBug isSenha={true} label={'Nova Senha'} valor={senha} setValor={setSenha}/>
+              <Input minLength={8} maxLength={50} name="senha" isSenha={true} label={'Repetir senha'} valor={repetirSenha} setValor={setRepetirSenha}/>
             </div>
           </Card>
 
@@ -123,7 +119,7 @@ export function ModalConta({setModalClose}) {
             <hr />
 
             <div className='div'>
-              <InputImg label={'Nova marca'} valor={marca} setValor={setMarca}/>
+              <InputImg maxLength={255} label={'Nova marca'} valor={marca} setValor={setMarca}/>
             </div>
           </Card>
 
@@ -133,7 +129,7 @@ export function ModalConta({setModalClose}) {
             <hr />
 
             <div className='div'>
-              <Input name="senha" isSenha={true} label={'Senha atual'} valor={senhaAtual} setValor={setSenhaAtual}/>
+              <Input required minLength={8} maxLength={50} name="senha" isSenha={true} label={'Senha atual'} valor={senhaAtual} setValor={setSenhaAtual}/>
             </div>
           </Card>
 

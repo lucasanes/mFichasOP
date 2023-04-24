@@ -105,10 +105,10 @@ export function ModalCreateArma({setData, setModalClose}) {
           <Input required maxLength={30} name="alcance" label={'Alcance'} valor={alcance} setValor={setalcance}/>
           <Input maxLength={30} name="recarga" label={'Recarga'} valor={recarga} setValor={setrecarga}/>
           <Input maxLength={30} name="especial" label={'Especial'} valor={especial} setValor={setespecial}/>
-          <Input maxLength={30} name="ataque" label={'Teste'} valor={ataque} setValor={setataque}/>
-          <Input maxLength={30} name="dano" label={'Dano'} valor={dano} setValor={setdano}/>
+          <Input maxLength={30} isDado name="ataque" label={'Teste'} valor={ataque} setValor={setataque}/>
+          <Input maxLength={30} isDado name="dano" label={'Dano'} valor={dano} setValor={setdano}/>
           <Input min={1} max={20} type='number' name="margem" label={'Margem Crítico'} valor={margem} setValor={setmargem}/>
-          <Input maxLength={30} name="critico" label={'Dano Crítico'} valor={critico} setValor={setcritico}/>
+          <Input maxLength={30} isDado name="critico" label={'Dano Crítico'} valor={critico} setValor={setcritico}/>
           <Input required min={-10} max={30} type='number' name="categoria" label={'Categoria'} valor={prestigio} setValor={setprestigio}/>
           <Input required min={-10} max={30} step={'0.1'} type='number' name="espaco" label={'Espaços'} valor={espaco} setValor={setespaco}/>
           <Input required max={30} type='number' name="quantidade" label={'Quantidade'} valor={quantidade} setValor={setquantidade}/>

@@ -48,8 +48,8 @@ export function ModalEntrar({setModalClose, modalRecuperarSenha}) {
 
         <Body>
 
-          <Input name="username" autoComplete="username" label={'User/Email'} valor={user} setValor={setUser}/>
-          <Input name="senha" autoComplete="current-password" isSenha={true} label={'Senha'} valor={senha} setValor={setSenha}/>
+          <Input required minLength={2} maxLength={200} name="username" autoComplete="username" label={'User/Email'} valor={user} setValor={setUser}/>
+          <Input minLength={8} maxLength={50} required name="senha" autoComplete="current-password" isSenha={true} label={'Senha'} valor={senha} setValor={setSenha}/>
 
           <div className="div">
             <Toggle defaultChecked={true} classNumber={1} span={'Manter Ativo'} onChange={switchManterAtivo}/>

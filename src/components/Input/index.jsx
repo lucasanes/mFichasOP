@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from "react"
 import { Button, Container, ContainerInput, InputB, LabelContainer} from "./styles"
 import {AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
-export function Input({hoverBug = false, isSenha = false, label, setValor, valor, opcional = false, ...rest }) {
+export function Input({isDado = false, hoverBug = false, isSenha = false, label, setValor, valor, opcional = false, ...rest }) {
 
   const [hover, sethover] = useState(false)
   const [isSenhaVisible, setIsSenhaVisible] = useState(false)
+  const [erro, setErro] = useState(false)
 
   useEffect(() => {
     if (valor != null && valor.toString().length > 0) {
@@ -21,7 +22,15 @@ export function Input({hoverBug = false, isSenha = false, label, setValor, valor
         }, 1000);
       }
     }
+    
+    if (isDado && !valor.match(pattern)) {
+      setErro(true)
+    } else if (isDado && valor.match(pattern)) {
+      setErro(false)
+    }
   }, [valor])
+
+  let pattern = /^([+-]?((100|\d{1,2}|\/[ADCEFGINOPRTV]{3,4}\/)?((d)(100|[1-9]\d?|\/[ADCEFGINOPRTV]{3,4}\/))?)|(\d{0,3}|1000))([+-]((100|\d{1,2}|\/[ADCEFGINOPRTV]{3,4}\/)?((d)(100|[1-9]\d?|\/[ADCEFGINOPRTV]{3,4}\/))?)|([+-]\d{0,3}|1000)?)*$/g;
 
   return (
     <Container>
@@ -30,7 +39,7 @@ export function Input({hoverBug = false, isSenha = false, label, setValor, valor
         {label}
       </LabelContainer>
 
-      <ContainerInput>
+      <ContainerInput dadoErro={erro.toString()}>
         <InputB value={valor} type={isSenhaVisible || !isSenha ? 'text' : 'password'} {...rest}
           onChange={(event) => {
             // if (event.target.type == 'number') {
@@ -64,7 +73,8 @@ export function Input({hoverBug = false, isSenha = false, label, setValor, valor
       </ContainerInput>
       {isSenha &&
       <Button type='button' onClick={() => setIsSenhaVisible(!isSenhaVisible)}>{isSenhaVisible ? <AiOutlineEyeInvisible color="cyan"/> : <AiOutlineEye color="cyan"/>}</Button>} 
-      {(opcional && valor == null || opcional && String(valor).length == 0) && <span>(Opcional)</span>}
+      {(isDado && erro) && <span>Inválido!</span>}
+      {/* {(opcional && valor == null || opcional && String(valor).length == 0) && <span>(Opcional)</span>} */}
     </Container>
   )
 }

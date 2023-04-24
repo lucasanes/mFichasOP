@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <FichaProvider>
       <Routes/>
       <GlobalStyles/>
-      <ToastContainer bodyStyle={{zIndex: 50}} style={{zIndex: 50}} toastStyle={{zIndex: 50}}/>
+      <ToastContainer autoClose={3000}/>
     </FichaProvider>
   </AuthProvider>
 )

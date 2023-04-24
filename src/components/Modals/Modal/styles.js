@@ -3,7 +3,6 @@ import { keyframes, styled } from "../../../stitches.config";
 
 export const Container = styled(Dialog, {
   position: "relative",
-  zIndex: 10
 });
 
 export const ContentContainer = styled("div", {

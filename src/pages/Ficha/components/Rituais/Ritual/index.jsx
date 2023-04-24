@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 import { api } from '../../../../../services/api';
 import { ModalEditRitual } from './ModalEditRitual';
 import { useFicha } from '../../../../../hooks/ficha';
+import noritual from '../../../../../assets/imgs/noritual.webp'
 
 export function Ritual({data, setData, lista}) {
 
@@ -81,7 +82,7 @@ export function Ritual({data, setData, lista}) {
       <hr/>
       <Body semperm={blockPerm} ishover={hover.toString()} ref={contentRef}>
         <Img>
-          <img src={data.foto} />
+          <img src={data.foto ? data.foto : noritual} />
         </Img>
 
         <div className='infos'>

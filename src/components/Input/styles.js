@@ -38,7 +38,15 @@ export const ContainerInput = styled('div', {
   borderRadius: '1rem',
   display: 'block',
   background: 'transparent',
-  zIndex: 3
+  zIndex: 3,
+
+  variants: {
+    dadoErro: {
+      true: {
+        border: 'solid 0.2rem #f83c3c'
+      }
+    }
+  }
 })
 
 export const InputB = styled('input', {

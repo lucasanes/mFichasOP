@@ -74,8 +74,8 @@ export function Status({data, setData}) {
       setFotoAtual(foto_insano.src);
     } else if (fotos.foto_ferido != null && (pvA < (status.pvMax / 2))) {   
       setFotoAtual(foto_ferido.src);
-    }  else {
-      setFotoAtual(foto.src);
+    } else {
+      setFotoAtual(fotos.foto ? foto.src : noportrait);
     }
 
   }, [fotos, pvA, pvMax, psA, psMax, peA, peMax])
@@ -137,8 +137,6 @@ export function Status({data, setData}) {
     }))
 
     subtimer()
-
-    
 
   }, [pvA, pvMax, psA, psMax, peA, peMax, municaoA, municaoMax, combate, morto, opv, ops, ope])
 

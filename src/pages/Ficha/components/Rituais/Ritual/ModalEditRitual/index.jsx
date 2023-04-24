@@ -124,9 +124,9 @@ export function ModalEditRitual({data, lista, setModalClose}) {
           <Input maxLength={30} name="duracao" label={'Duração'} valor={duracao} setValor={setduracao}/>
           <Input maxLength={30} name="alvo" label={'Alvo'} valor={alvo} setValor={setalvo}/>
           <Input maxLength={50} name="resistencia" label={'Resistência'} valor={resistencia} setValor={setresistencia}/>
-          <Input maxLength={50} name="dado" label={'Normal'} valor={dano} setValor={setdano}/>
-          <Input maxLength={50} name="dado" label={'Discente'} valor={dano2} setValor={setdano2}/>
-          <Input maxLength={50} name="dado" label={'Verdadeiro'} valor={dano3} setValor={setdano3}/>
+          <Input maxLength={50} isDado name="dado" label={'Normal'} valor={dano} setValor={setdano}/>
+          <Input maxLength={50} isDado name="dado" label={'Discente'} valor={dano2} setValor={setdano2}/>
+          <Input maxLength={50} isDado name="dado" label={'Verdadeiro'} valor={dano3} setValor={setdano3}/>
           <InputImg maxLength={255} label={'Foto'} valor={foto} setValor={setfoto}/>
           <TextArea label={'Descrição'} valor={efeito} setValor={setefeito}/>
 

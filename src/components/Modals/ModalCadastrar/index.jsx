@@ -48,11 +48,11 @@ export function ModalCadastrar({setModalClose}) {
 
         <Body>
 
-          <Input autoComplete="name" name="nome" label={'Nome'} valor={nome} setValor={setNome} minLength={2} maxLength={50}/>
-          <Input autoComplete="username" name="username" label={'Username'} valor={username} setValor={setUsername} minLength={2} maxLength={16}/>
-          <Input name="email" label={'Email'} valor={email} setValor={setEmail} minLength={5} maxLength={200}/>
-          <Input autoComplete="new-password" name="senha" isSenha={true} label={'Senha'} valor={senha} setValor={setSenha} minLength={8} maxLength={50}/>
-          <Input autoComplete="new-password" name="senha" isSenha={true} label={'Repetir Senha'} valor={repetirSenha} setValor={setRepetirSenha} minLength={8} maxLength={50}/>
+          <Input required autoComplete="name" name="nome" label={'Nome'} valor={nome} setValor={setNome} minLength={2} maxLength={50}/>
+          <Input required autoComplete="username" name="username" label={'Username'} valor={username} setValor={setUsername} minLength={2} maxLength={16}/>
+          <Input required name="email" label={'Email'} valor={email} setValor={setEmail} minLength={5} maxLength={200}/>
+          <Input required autoComplete="new-password" name="senha" isSenha={true} label={'Senha'} valor={senha} setValor={setSenha} minLength={8} maxLength={50}/>
+          <Input required autoComplete="new-password" name="senha" isSenha={true} label={'Repetir Senha'} valor={repetirSenha} setValor={setRepetirSenha} minLength={8} maxLength={50}/>
 
         </Body>
 

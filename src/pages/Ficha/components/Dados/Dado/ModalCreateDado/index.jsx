@@ -39,10 +39,8 @@ export function ModalCreateDado({setData, setModalClose}) {
       global
     })
 
-    console.log(response.data)
-
     if (response.data.success) {
-      setData(prevState => [...prevState, response.data.dices[0]])
+      setData(prevState => [...prevState, response.data.dados.dices[0]])
       setModalClose()
       toast.success("Criado com sucesso!")
     }
@@ -66,7 +64,7 @@ export function ModalCreateDado({setData, setModalClose}) {
         <Body>
 
           <Input name="nome" required maxLength={20} label={'Nome'} valor={nome} setValor={setnome}/>
-          <Input name="dado" label={'Dado'} maxLength={50} valor={dado} setValor={setdado}/>
+          <Input name="dado" isDado label={'Dado'} maxLength={50} valor={dado} setValor={setdado}/>
           <div className="div">
             <Toggle classNumber={1} span={"Rolar como dano?"} onClick={() => {if (dano == 0) {setdano(1)} else {setdano(0)}}}/>     
             <Toggle end classNumber={2} span={"Global?"} onClick={() => {if (global == 0) {setglobal(1)} else {setglobal(0)}}}/>     

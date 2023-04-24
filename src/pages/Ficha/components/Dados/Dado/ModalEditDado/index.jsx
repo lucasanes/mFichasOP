@@ -28,23 +28,19 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
     if (deleting.current != true) {
 
       if (!dado.match(pattern)) {
-        toast.error('Dado inválido.')
         return
       }
 
       const response = await api.post('/', {
-        query: 'fichas_info_update',
+        query: 'etc_dices_update',
         sessid: token,
-        token: id,
-        dados: {
-          dices: [{
-            token: data.token,
-            nome,
-            dado,
-            dano
-          }]
-        }
+        token: data.token,
+        nome,
+        dado,
+        dano,
       })
+
+      console.log(response)
 
       if (response.data.success) {
         const dadoAEditar = lista.filter(dado => dado.token == data.token)[0]
@@ -99,7 +95,7 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
         <Body>
 
           <Input name="nome" required maxLength={20} label={'Nome'} valor={nome} setValor={setnome}/>
-          <Input name="dado" label={'Dado'} maxLength={50} valor={dado} setValor={setdado}/>
+          <Input name="dado" isDado label={'Dado'} maxLength={50} valor={dado} setValor={setdado}/>
           <Toggle classNumber={1} span={"Rolar como dano?"} defaultChecked={data.dano == 1} onClick={() => {if (dano == 0) {setdano(1)} else {setdano(0)}}}/>     
 
         </Body>

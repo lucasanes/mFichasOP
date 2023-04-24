@@ -6,6 +6,7 @@ import {AiOutlineEye, AiOutlineEyeInvisible, AiOutlineUser } from 'react-icons/a
 import { toast } from 'react-toastify';
 import {api} from '../../../../services/api'
 import {useAuth} from '../../../../hooks/auth'
+import noportrait from '../../../../assets/imgs/noportrait.png'
 import { useState } from 'react';
 
 export function Ficha({data}) {
@@ -57,7 +58,7 @@ export function Ficha({data}) {
 
       <Body>
         <Img>
-          <img src={data.foto}/>
+          <img src={data.foto ? data.foto : noportrait}/>
         </Img>
 
         <div className='grid'>
