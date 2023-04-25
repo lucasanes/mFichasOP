@@ -115,7 +115,8 @@ export function Ficha() {
             morto: ficha.morrendo,
             opv: ficha.opv,
             ops: ficha.osan,
-            ope: ficha.ope
+            ope: ficha.ope,
+            sessao: ficha.missao
           },
           defesas: {
             passiva: ficha.passiva,

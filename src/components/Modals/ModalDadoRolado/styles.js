@@ -46,7 +46,7 @@ export const Header = styled('div', {
   h1: {
     fontSize: '2.2rem',
     textAlign: 'left',
-    fontFamily: 'Arvo',
+    fontFamily: 'El Messiri',
     textTransform: 'capitalize',
     margin: '1rem 0'
   },

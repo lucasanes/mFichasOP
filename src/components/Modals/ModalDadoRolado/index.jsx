@@ -301,15 +301,19 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
 
       const dadoRolado = rolarDado(DadoDinamico(data.valor, dc), data.isDano, data.margem)
 
-      const response = await api.post('/', {
-        query: 'etc_dices_submit',
-        sessid: token,
-        token: id,
-        nome: pericias(data.nome) != null ? pericias(data.nome) : data.nome,
-        dado: dadoRolado,
-      })
+      if (token && id) {
 
-      console.log(response.data)
+        const response = await api.post('/', {
+          query: 'etc_dices_submit',
+          sessid: token,
+          token: id,
+          nome: pericias(data.nome) != null ? pericias(data.nome) : data.nome,
+          dado: dadoRolado,
+        })
+
+        console.log(response.data)
+
+      }
 
     }
 

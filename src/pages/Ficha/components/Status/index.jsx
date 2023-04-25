@@ -184,7 +184,7 @@ export function Status({data, setData}) {
               <div className='portrait-body'>
                 <div className='portrait-status'>
                   <h2>Status</h2>
-                  <PortraitButton disabled={blockPerm} semperm={blockPerm} onClick={() => setCombate(!combate)} hover={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
+                  <PortraitButton disabled={blockPerm || (data.sessao == null)} semperm={blockPerm || (data.sessao == null)} onClick={() => setCombate(!combate)} hover={combate + 'yellow'} color={'yellow'}>Combate</PortraitButton>
                   {/* <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'aqua'} color={'aqua'}>Insano</PortraitButton>
                   <PortraitButton onClick={() => setMorto(!morto)}  hover={morto + 'red'} color={'darkred'}>Morrendo</PortraitButton> */}
                   <PortraitButton disabled={blockPerm} semperm={blockPerm} onClick={(e) => setMorto(!morto)}  hover={morto + 'red'} color={'red'}>Morto</PortraitButton>
