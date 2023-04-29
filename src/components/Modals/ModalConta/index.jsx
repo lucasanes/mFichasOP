@@ -19,7 +19,7 @@ export function ModalConta({setModalClose}) {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [repetirSenha, setRepetirSenha] = useState('')
-  const [marca, setMarca] = useState('')
+  const [marca, setMarca] = useState(user.marca)
   const [senhaAtual, setSenhaAtual] = useState('')
 
   useEffect(() => {
@@ -41,14 +41,52 @@ export function ModalConta({setModalClose}) {
 
     e.preventDefault()
 
-    const response = await api.post('/', {query: 'account_user_update', sessid: token, nome, login: username, email, senha, csenha: repetirSenha, asenha: senhaAtual})
+    if ((user.marca !== marca) && marca != '') {
 
-    if (response.data.success) {
-      signIn({username: username ? username : user.login, senha: senha ? senha : senhaAtual, manterAtivo: true})
-      setModalClose()
-      toast.success('Conta editada com sucesso!')
+      const response2 = await api.post('/', {query: 'account_user_marca', sessid: token, marca})
+
+      console.log(response2.data)
+
+      if (response2.data.success) {
+        setModalClose()
+        signIn({username: user.login, senha: senhaAtual, manterAtivo: true})
+      } else {
+        toast.error(response2.data.msg)
+      }
+      
+    }
+
+    if (nome != '' || username != '' || email != '' || senha != '') {
+
+      const response = await api.post('/', {query: 'account_user_update', sessid: token, nome, login: username, email, senha, csenha: repetirSenha, asenha: senhaAtual})
+
+      if ((user.marca !== marca) && marca != '') {
+        const response2 = await api.post('/', {query: 'account_user_marca', sessid: token, marca})  
+        
+        if (!response2.data.success) {
+          toast.error(response2.data.msg)
+        }
+      }
+
+      if (response.data.success) {
+        signIn({username: username ? username : email ? email : user.login, senha: senha ? senha : senhaAtual, manterAtivo: true})
+        setModalClose()
+        toast.success('Conta editada com sucesso!')
+      } else {
+        toast.error(response.data.msg)
+      }
+
+    } else if ((user.marca !== marca) && marca != '') {
+      const response2 = await api.post('/', {query: 'account_user_marca', sessid: token, marca})
+
+      if (response2.data.success) {
+        setModalClose()
+        signIn({username: user.login, senha: senhaAtual, manterAtivo: true})
+      } else {
+        toast.error(response2.data.msg)
+      }
     } else {
-      toast.error(response.data.msg)
+      toast.error('Você precisa preencher algo para ser alterado.')
     }
 
   }
@@ -119,7 +157,7 @@ export function ModalConta({setModalClose}) {
             <hr />
 
             <div className='div'>
-              <InputImg maxLength={255} label={'Nova marca'} valor={marca} setValor={setMarca}/>
+              <InputImg name='marca' maxLength={255} label={'Marca'} valor={marca} setValor={setMarca}/>
             </div>
           </Card>
 

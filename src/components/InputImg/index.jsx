@@ -21,6 +21,9 @@ export function InputImg({ id, label, setValor, valor, ...rest }) {
       if (!hover) {
         sethover(false)
       }
+      setMsg('Enviar foto')
+      setFile(undefined)
+      seterro('')
     }
   }, [valor])
 

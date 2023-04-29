@@ -6,6 +6,7 @@ export const Container = styled('div', {
   justifyContent: 'center',
   margin: '-1.5rem 0 -.5rem 0',
   gap: '1rem',
+  marginLeft: '1rem',
 
   img: {
     maxWidth: '75px',
