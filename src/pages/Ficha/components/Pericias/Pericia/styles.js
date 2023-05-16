@@ -6,6 +6,7 @@ export const Container = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  gap: '3rem',
 
   span: {
     color: 'white',
@@ -14,6 +15,10 @@ export const Container = styled('div', {
     fontSize: '2rem',
     paddingTop: '.5rem',
     textOverflow: 'ellipsis'
+  },
+
+  '.area': {
+    color: '#0097ce'
   },
 
   '.plus': {
@@ -55,6 +60,18 @@ export const Button = styled('button', {
       }
     },
     level: {
+      ntt: {
+        border: '2px solid #00d5ff',
+        color: '#00d5ff',
+
+        '.plus': {
+          color: '#00d5ff',
+        },
+
+        '&:hover': {
+          background: '#00d5ff50'
+        }
+      },
       nt: {
         border: '2px solid #797979',
         color: '#797979',

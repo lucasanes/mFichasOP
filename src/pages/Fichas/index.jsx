@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
 import { Ficha } from './components/Ficha';
-import {Body, Container} from './styles'
+import {Body, Button, Container} from './styles'
 
 // import { io } from 'socket.io-client';
 // const socket = io('http://localhost:8080')
@@ -51,6 +51,7 @@ export function Fichas() {
     <Container isLoading={isLoading}>
 
       <Body isLoading={isLoading}>
+        <Button to={'/criar-ficha'}>Criar Ficha</Button>
         {fichas.map((ficha) => <Ficha key={ficha.token} data={ficha}/>)}
       </Body>
 

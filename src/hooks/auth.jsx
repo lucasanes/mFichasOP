@@ -69,8 +69,6 @@ function AuthProvider({ children }) {
 
           const response = await api.post('/', { query: 'account_user_get', sessid: token});
 
-          console.log(response.data)
-
           const tokenIsValid = response.data.success
           const user = response.data.conta
 

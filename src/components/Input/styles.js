@@ -61,6 +61,15 @@ export const InputB = styled('input', {
   outline: 'solid 0.2rem white',
   color: 'transparent',
   caretColor: 'white',
+
+  variants: {
+    labelmenor: {
+      true: {
+        padding: '.7rem',
+        fontSize: '1.8rem'
+      }
+    }
+  }
 })
 
 export const LabelContainer = styled('label', {
@@ -86,8 +95,23 @@ export const LabelContainer = styled('label', {
         transform: 'translateX(1rem) translateY(-2.7rem)',
         padding: '0px 10px',
         zIndex: 4
+      },
+
+      labelmenortrue: {
+        fontSize: '1.8rem',
+        transform: 'translateX(.6rem) translateY(-2.2rem)',
+        padding: '0px 10px',
+        zIndex: 4
       }
     },
+
+    labelmenor: {
+      true: {
+        fontSize: '2rem',
+        bottom: '20%',
+        height: 'fit-content'
+      }
+    }
   },
 
 })

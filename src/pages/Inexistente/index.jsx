@@ -11,7 +11,7 @@ export function Inexistente() {
 
     setTimeout(() => {
       
-      // navigate('/')
+      navigate('/')
 
     }, 3000);
 

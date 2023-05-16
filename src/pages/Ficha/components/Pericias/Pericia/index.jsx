@@ -16,13 +16,15 @@ export function Pericia({data}) {
 
   useEffect(() => {
 
-    if (data.valor < 5) {
+    if (data.grau == 0 && data.bonus == 0) {
       setLevel('nt')
-    } else if (data.valor >= 5 && data.valor < 10) {
+    } else if (data.grau == 0 && data.bonus > 0) {
+      setLevel('ntt')
+    } else if (data.grau == 1) {
       setLevel('t')
-    } else if (data.valor >= 10 && data.valor < 15) {
+    } else if (data.grau == 2) {
       setLevel('v')
-    } else if (data.valor >= 15){
+    } else if (data.grau == 3){
       setLevel('e')
     }
 
@@ -57,16 +59,16 @@ export function Pericia({data}) {
         <ModalDadoRolado data={dataDado} setModalEditIsOpenFalse={() => setModalDadoRoladoIsOpen(false)}/>
       </Modal>
 
-      <span>{pericias(data.nome)}</span>
+      <span>{pericias(data.nome) ? pericias(data.nome) : data.nome} <span className='area'>{data.ramo && '('+ data.ramo +')'}</span></span>
 
       <Button semperm={blockPerm} disabled={blockPerm} onClick={() => {
         setDataDado({
-          nome: pericias(data.nome),
-          valor: `${data.atributoChave}d20+${data.valor}`,
+          nome: pericias(data.nome) ? pericias(data.nome) : data.nome,
+          valor: `${data.atributoChave}d20+${data.bonus}`,
           isDano: false
         })
         setModalDadoRoladoIsOpen(true)
-      }} level={level}>{data.atributoChave <= 0 && data.atributoChave >= -3 && '-'}{(data.atributoChave < -3 || data.atributoChave > 3) && data.atributoChave}{dados} <span className='plus'>+</span>{data.valor}</Button>
+      }} level={level}>{data.atributoChave <= 0 && data.atributoChave >= -3 && '-'}{(data.atributoChave < -3 || data.atributoChave > 3) && data.atributoChave}{dados} <span className='plus'>+</span>{data.bonus}</Button>
     </Container>
   );
 }

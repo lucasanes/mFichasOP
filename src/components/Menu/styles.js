@@ -144,7 +144,7 @@ export const ButtonLink = styled(Link, {
 export const Line1 = styled('div', {
     width: '3rem',
     height: '2px',
-    background: 'white',
+    background: '#ffffff',
     transition: '.3s',
 
     variants: {
@@ -159,7 +159,7 @@ export const Line1 = styled('div', {
 export const Line2 = styled('div', {
     width: '3rem',
     height: '2px',
-    background: 'white',
+    background: '#ffffff',
     transition: '.2s',
 
     variants: {
@@ -174,7 +174,7 @@ export const Line2 = styled('div', {
 export const Line3 = styled('div', {
     width: '3rem',
     height: '2px',
-    background: 'white',
+    background: '#ffffff',
     transition: '.3s',
 
     variants: {

@@ -83,31 +83,6 @@ export const Body = styled('div', {
 
 });
 
-export const Card = styled('div', {
-
-  width: '100%',
-  border: '2px solid grey',
-  borderRadius: '5px',
-
-  h1: {
-    textAlign: 'left',
-    fontSize: '2rem',
-    padding: '1rem',
-    fontFamily: 'El Messiri',
-    height: '45px'
-  },
-
-  '.div': {
-    padding: '2rem 1rem',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    gap: '2rem'
-  }
-
-});
-
 export const Footer = styled('div', {
 
   padding: '1.5rem',
@@ -123,12 +98,41 @@ export const Footer = styled('div', {
     width: '90%',
     padding: '.4rem',
     fontFamily: 'Acme',
-  fontSize: '2rem',
+    fontSize: '2rem',
     transition: '.3s'
   },
 
   'button:hover': {
     background: '#00ff8850'
+  }
+
+});
+
+export const Card = styled('div', {
+
+  border: '2px solid #ffffff90',
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  borderRadius: '1rem',
+  
+  h1: {
+    color: '#fff',
+    width: '100%',
+    textAlign: 'center',
+    padding: '1rem'
+  },
+
+  hr: {
+    margin: 0,
+  },
+
+  '.body': {
+    width: '100%',
+    padding: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1.5rem'
   }
 
 });

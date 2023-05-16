@@ -14,13 +14,11 @@ export function AppLayout() {
 
   return (
     <Container>
-      {!location.pathname.startsWith('/ficha/') ? <Menu/> : <MenuFicha/>}
+      {!location.pathname.startsWith('/ficha/') && !location.pathname.startsWith('/criar-ficha') ? <Menu/> : <MenuFicha/>}
 
       <ContentWrapper auth={location.pathname.startsWith('/ficha/') ? 'trueficha' : (token != undefined && token != null) ? 'true' : 'false'}>
         <Outlet/>
       </ContentWrapper>
-
-      {/* {(token != null && token != undefined && !location.pathname.startsWith('/ficha/')) && <MenuBottom/>} */}
     </Container>
   );
 }

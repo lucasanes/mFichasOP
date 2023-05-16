@@ -147,36 +147,38 @@ export function Ficha() {
             forca: ficha.forca,
             intelecto: ficha.inteligencia
           },
-          pericias: [
-          {id: 1, nome: 'acrobacia', valor: ficha.acrobacias, atributoChave: ficha.agilidade},
-          {id: 2, nome: 'adestramento', valor: ficha.adestramento, atributoChave: ficha.presenca},
-          {id: 3, nome: 'arte', valor: ficha.artes, atributoChave: ficha.presenca},
-          {id: 4, nome: 'atletismo', valor: ficha.atletismo, atributoChave: ficha.forca},
-          {id: 5, nome: 'atualidade', valor: ficha.atualidades, atributoChave: ficha.inteligencia},
-          {id: 6, nome: 'ciencia', valor: ficha.ciencia, atributoChave: ficha.inteligencia},
-          {id: 7, nome: 'crime', valor: ficha.crime, atributoChave: ficha.agilidade},
-          {id: 8, nome: 'diplomacia', valor: ficha.diplomacia, atributoChave: ficha.presenca},
-          {id: 9, nome: 'enganacao', valor: ficha.enganacao, atributoChave: ficha.presenca},
-          {id: 10, nome: 'fortitude', valor: ficha.fortitude, atributoChave: ficha.vigor},
-          {id: 11, nome: 'furtividade', valor: ficha.furtividade, atributoChave: ficha.agilidade},
-          {id: 12, nome: 'iniciativa', valor: ficha.iniciativa, atributoChave: ficha.agilidade},
-          {id: 13, nome: 'intimidacao', valor: ficha.intimidacao, atributoChave: ficha.presenca},
-          {id: 14, nome: 'intuicao', valor: ficha.intuicao, atributoChave: ficha.inteligencia},
-          {id: 15, nome: 'investigacao', valor: ficha.investigacao, atributoChave: ficha.inteligencia},
-          {id: 16, nome: 'luta', valor: ficha.luta, atributoChave: ficha.forca},
-          {id: 17, nome: 'medicina', valor: ficha.medicina, atributoChave: ficha.inteligencia},
-          {id: 18, nome: 'ocultismo', valor: ficha.ocultismo, atributoChave: ficha.inteligencia},
-          {id: 19, nome: 'percepcao', valor: ficha.percepcao, atributoChave: ficha.presenca},
-          {id: 20, nome: 'pilotagem', valor: ficha.pilotagem, atributoChave: ficha.agilidade},
-          {id: 21, nome: 'pontaria', valor: ficha.pontaria, atributoChave: ficha.agilidade},
-          {id: 22, nome: 'profissao', valor: ficha.profissao, atributoChave: ficha.inteligencia},
-          {id: 23, nome: 'reflexo', valor: ficha.reflexos, atributoChave: ficha.agilidade},
-          {id: 24, nome: 'religiao', valor: ficha.religiao, atributoChave: ficha.presenca},
-          {id: 25, nome: 'sobrevivencia', valor: ficha.sobrevivencia, atributoChave: ficha.inteligencia},
-          {id: 26, nome: 'tatica', valor: ficha.tatica, atributoChave: ficha.inteligencia},
-          {id: 27, nome: 'tecnologia', valor: ficha.tecnologia, atributoChave: ficha.inteligencia},
-          {id: 28, nome: 'vontade', valor: ficha.vontade, atributoChave: ficha.presenca}
-        ]})
+          pericias: ficha.pericias
+        //   [
+        //   {id: 1, nome: 'acrobacia', valor: ficha.acrobacias, atributoChave: ficha.agilidade},
+        //   {id: 2, nome: 'adestramento', valor: ficha.adestramento, atributoChave: ficha.presenca},
+        //   {id: 3, nome: 'arte', valor: ficha.artes, atributoChave: ficha.presenca},
+        //   {id: 4, nome: 'atletismo', valor: ficha.atletismo, atributoChave: ficha.forca},
+        //   {id: 5, nome: 'atualidade', valor: ficha.atualidades, atributoChave: ficha.inteligencia},
+        //   {id: 6, nome: 'ciencia', valor: ficha.ciencia, atributoChave: ficha.inteligencia},
+        //   {id: 7, nome: 'crime', valor: ficha.crime, atributoChave: ficha.agilidade},
+        //   {id: 8, nome: 'diplomacia', valor: ficha.diplomacia, atributoChave: ficha.presenca},
+        //   {id: 9, nome: 'enganacao', valor: ficha.enganacao, atributoChave: ficha.presenca},
+        //   {id: 10, nome: 'fortitude', valor: ficha.fortitude, atributoChave: ficha.vigor},
+        //   {id: 11, nome: 'furtividade', valor: ficha.furtividade, atributoChave: ficha.agilidade},
+        //   {id: 12, nome: 'iniciativa', valor: ficha.iniciativa, atributoChave: ficha.agilidade},
+        //   {id: 13, nome: 'intimidacao', valor: ficha.intimidacao, atributoChave: ficha.presenca},
+        //   {id: 14, nome: 'intuicao', valor: ficha.intuicao, atributoChave: ficha.inteligencia},
+        //   {id: 15, nome: 'investigacao', valor: ficha.investigacao, atributoChave: ficha.inteligencia},
+        //   {id: 16, nome: 'luta', valor: ficha.luta, atributoChave: ficha.forca},
+        //   {id: 17, nome: 'medicina', valor: ficha.medicina, atributoChave: ficha.inteligencia},
+        //   {id: 18, nome: 'ocultismo', valor: ficha.ocultismo, atributoChave: ficha.inteligencia},
+        //   {id: 19, nome: 'percepcao', valor: ficha.percepcao, atributoChave: ficha.presenca},
+        //   {id: 20, nome: 'pilotagem', valor: ficha.pilotagem, atributoChave: ficha.agilidade},
+        //   {id: 21, nome: 'pontaria', valor: ficha.pontaria, atributoChave: ficha.agilidade},
+        //   {id: 22, nome: 'profissao', valor: ficha.profissao, atributoChave: ficha.inteligencia},
+        //   {id: 23, nome: 'reflexo', valor: ficha.reflexos, atributoChave: ficha.agilidade},
+        //   {id: 24, nome: 'religiao', valor: ficha.religiao, atributoChave: ficha.presenca},
+        //   {id: 25, nome: 'sobrevivencia', valor: ficha.sobrevivencia, atributoChave: ficha.inteligencia},
+        //   {id: 26, nome: 'tatica', valor: ficha.tatica, atributoChave: ficha.inteligencia},
+        //   {id: 27, nome: 'tecnologia', valor: ficha.tecnologia, atributoChave: ficha.inteligencia},
+        //   {id: 28, nome: 'vontade', valor: ficha.vontade, atributoChave: ficha.presenca}
+        // ]
+      })
 
         setInventario({peso: ficha.peso_inv, itens: ficha.itens, armas: ficha.armas})
 

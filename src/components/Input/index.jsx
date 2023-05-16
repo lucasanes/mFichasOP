@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { Button, Container, ContainerInput, InputB, LabelContainer} from "./styles"
 import {AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
-export function Input({isDado = false, hoverBug = false, isSenha = false, label, setValor, valor, opcional = false, ...rest }) {
+export function Input({isDado = false, hoverBug = false, isSenha = false, label, labelmenor = false, setValor, valor, opcional = false, ...rest }) {
 
   const [hover, sethover] = useState(false)
   const [isSenhaVisible, setIsSenhaVisible] = useState(false)
@@ -35,12 +35,12 @@ export function Input({isDado = false, hoverBug = false, isSenha = false, label,
   return (
     <Container>
       
-      <LabelContainer hover={hover}>
+      <LabelContainer labelmenor={labelmenor} hover={labelmenor && hover ? 'labelmenortrue' : hover}>
         {label}
       </LabelContainer>
 
       <ContainerInput dadoErro={erro.toString()}>
-        <InputB value={valor} type={isSenhaVisible || !isSenha ? 'text' : 'password'} {...rest}
+        <InputB labelmenor={labelmenor} value={valor} type={isSenhaVisible || !isSenha ? 'text' : 'password'} {...rest}
           onChange={(event) => {
             // if (event.target.type == 'number') {
               // if (event.target.value == '') {

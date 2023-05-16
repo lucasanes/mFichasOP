@@ -139,7 +139,9 @@ export function ModalEditPrincipal({data, setData, setModalClose}) {
           <Input type='number' name="pp" max={999999} min={0} label={'Pontos de Prestígio'} valor={prestigio} setValor={setprestigio}/>
           <Input type='number' name="deslocamento" max={99} min={0} label={'Deslocamento'} valor={deslocamento} setValor={setdeslocamento}/>
           <Input label={'PE/Rod'} name="peprod" type='number' min={0} max={99} valor={peprod} setValor={setpeprod}/>
-          <Input maxLength={50} name="afinidade" label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
+          <datalist id="listaAfinidades"><option value="Energia">Energia</option><option value="Morte">Morte</option><option value="Sangue">Sangue</option><option value="Conhecimento">Conhecimento</option><option value="Medo">Medo</option>
+          </datalist>
+          <Input maxLength={50} list={'listaAfinidades'} name="afinidade" label={'Afinidade'} valor={afinidade} setValor={setafinidade}/>
 
         </Body>
 

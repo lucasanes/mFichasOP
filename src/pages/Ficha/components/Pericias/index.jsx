@@ -71,10 +71,10 @@ export function Pericias({data, setData}) {
         </button>
 
         <PericiasBody ref={contentRef}>
-          {!todasPericias ? data.pericias.map((pericia) => (pericia.valor > 0) && 
-          <Pericia key={pericia.id} data={pericia}/>) 
+          {!todasPericias ? data.pericias.map((pericia) => (pericia.bonus > 0) && 
+          <Pericia key={pericia.nome} data={pericia}/>) 
           : data.pericias.map((pericia) => 
-          <Pericia key={pericia.id} data={pericia}/>)}  
+          <Pericia key={pericia.nome} data={pericia}/>)}  
         </PericiasBody>
         
         

@@ -4,6 +4,7 @@ import { Home } from '../pages/Home';
 import { Ficha } from '../pages/Ficha';
 import { Main } from '../pages/Main';
 import { Inexistente } from '../pages/Inexistente';
+import { CriarFicha } from '../pages/CriarFicha';
 
 export function UserRoutes() {
   return (
@@ -11,6 +12,7 @@ export function UserRoutes() {
       <Route path='/' element={<AppLayout/>}>
         <Route path="/" element={<Main/>}/>
         <Route path="/ficha/:id" element={<Ficha/>}/>
+        <Route path="/criar-ficha" element={<CriarFicha/>}/>
       </Route>
       <Route path='*' element={<Inexistente/>} />
     </Routes>
