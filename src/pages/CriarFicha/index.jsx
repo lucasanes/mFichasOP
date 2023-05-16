@@ -95,8 +95,6 @@ export function CriarFicha() {
       somape: somape,
     })
 
-    console.log(response.data)
-
     if (response.data.success) {
       navigate('/')
       setTimeout(() => {
