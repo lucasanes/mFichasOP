@@ -45,7 +45,7 @@ export const Button = styled('button', {
         color: '#ffff50'
       },
       red: {
-        color: '#ff3b3b50'
+        color: '#dc3545'
       },
       blue: {
         color: '#004edf'

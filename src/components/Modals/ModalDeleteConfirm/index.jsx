@@ -25,7 +25,7 @@ export function ModalDeleteConfirm({handleExecute, setModalClose}) {
 
         <Body>
 
-          <h2>Ao Desvincular, não será possível reverter.</h2>
+          <h2>Ao deletar/desvincular, não será possível reverter.</h2>
 
         </Body>
 

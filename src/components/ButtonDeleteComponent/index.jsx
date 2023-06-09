@@ -1,6 +1,6 @@
 import { useFicha } from '../../hooks/ficha';
 import {Container} from './styles'
-import {FiTrash} from 'react-icons/fi'
+import {BiTrash} from 'react-icons/bi'
 import {Modal} from '../../components/Modals/Modal'
 import {ModalDeleteConfirm} from '../../components/Modals/ModalDeleteConfirm'
 import { useState } from 'react';
@@ -17,7 +17,7 @@ export function ButtonDeleteComponent({handleExecute, text = false, size = 22, .
         <ModalDeleteConfirm setModalClose={() => setModalIsOpen(false)} handleExecute={handleExecute} />
       </Modal>
 
-      <button type='button' onClick={() => setModalIsOpen(true)} disabled={blockPerm} {...rest}>{text && 'Deletar'} <FiTrash color='red' size={size}/></button>
+      <button type='button' onClick={() => setModalIsOpen(true)} disabled={blockPerm} {...rest}>{text && 'Deletar'} <BiTrash color='red' size={size}/></button>
     </Container>
   );
 }

@@ -6,13 +6,13 @@ export const Container = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: '3rem',
+  gap: '2rem',
 
   span: {
     color: 'white',
     fontFamily: 'Special Elite',
     textTransform: 'capitalize',
-    fontSize: '2rem',
+    fontSize: '1.9rem',
     paddingTop: '.5rem',
     textOverflow: 'ellipsis'
   },

@@ -50,7 +50,7 @@ function AuthProvider({ children }) {
       window.location.replace('/')
     }
     
-    setData({});
+    setData({user: null, token: null})
     
   }
 
@@ -82,6 +82,8 @@ function AuthProvider({ children }) {
       }
 
       fetchData()
+    } else {
+      setData({user: null, token: null})
     }
   }, []);
 

@@ -1,6 +1,7 @@
 import {Container} from './styles'
 import {Home} from '../Home'
 import {Fichas} from '../Fichas'
+import {Sessoes} from '../Sessoes'
 import {MenuBottom} from '../../components/MenuBottom'
 import { SwiperSlide } from 'swiper/react';
 import { ToastContainer } from 'react-toastify';
@@ -10,7 +11,7 @@ export function Main() {
   document.title = 'mFichasOP'
 
   return (
-    <Container>
+    <Container grabCursor threshold={10}>
 
       <SwiperSlide>
         <Home/>
@@ -18,6 +19,10 @@ export function Main() {
 
       <SwiperSlide>
         <Fichas/>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <Sessoes/>
       </SwiperSlide>
 
       <MenuBottom/> 

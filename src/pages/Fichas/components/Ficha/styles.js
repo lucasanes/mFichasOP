@@ -18,7 +18,8 @@ export const Header = styled('div', {
   h1: {
     color: '#0050a6',
     fontSize: '2.2rem',
-    fontFamily: 'Special Elite'
+    fontFamily: 'Special Elite',
+    textTransform: 'capitalize'
   }
 
 });
