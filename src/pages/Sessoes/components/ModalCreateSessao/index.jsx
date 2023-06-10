@@ -26,11 +26,11 @@ export function ModalCreateSessao({setSessoes, setModalClose}) {
       
     // })
     
-    if (response.data.success) {
-      setSessoes(prev => [...prev, {token: 1, nome, descricao}])
+    //if (response.data.success) {
+      setSessoes(prev => [...prev, {token: uuid(), nome, descricao}])
       setModalClose()
       toast.success("Criado com sucesso!")
-    }
+    //}
 
   }
 
