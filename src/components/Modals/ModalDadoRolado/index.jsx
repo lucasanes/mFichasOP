@@ -311,8 +311,6 @@ export function ModalDadoRolado({ setModalEditIsOpenFalse, data }) {
           dado: dadoRolado,
         })
 
-        console.log(response.data)
-
       }
 
     }

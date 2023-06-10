@@ -1,6 +1,6 @@
 import {Body, Button, Container, Header} from './styles'
 import { ToastContainer, toast } from 'react-toastify';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ButtonCreateHeader } from '../../../../components/ButtonCreateHeader';
 import { Modal } from '../../../../components/Modals/Modal';
 import { Iniciativa } from './Iniciativa';

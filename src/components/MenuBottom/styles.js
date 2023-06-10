@@ -45,7 +45,7 @@ export const Button = styled('button', {
         color: '#ffff50'
       },
       red: {
-        color: '#dc3545'
+        color: '#dc354550'
       },
       blue: {
         color: '#004edf'
@@ -55,6 +55,14 @@ export const Button = styled('button', {
       true: {
         background: '#ffffff10',
         cursor: 'default'
+      }
+    },
+    lock: {
+      true: {
+        '&:hover': {
+          background: 'none',
+          cursor: 'default'
+        }
       }
     }
   }

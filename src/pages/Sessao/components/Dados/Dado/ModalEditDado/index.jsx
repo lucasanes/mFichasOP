@@ -63,7 +63,7 @@ export function ModalEditDado({lista, data, setData, setModalClose}) {
     deleting.current = true
 
     const response = await api.post('/', {
-      query: 'fichas_info_delete',
+      query: 'etc_dices_delete',
       sessid: token,
       token: id,
       dados: {

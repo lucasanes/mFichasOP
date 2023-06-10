@@ -21,9 +21,9 @@ export function Main() {
         <Fichas/>
       </SwiperSlide>
 
-      <SwiperSlide>
+      {/* <SwiperSlide>
         <Sessoes/>
-      </SwiperSlide>
+      </SwiperSlide> */}
 
       <MenuBottom/> 
 

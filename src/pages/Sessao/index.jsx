@@ -66,7 +66,7 @@ export function Sessao() {
 
         setIniciativas([{token: uuid(), posicao: 1, nome: 'Theo', iniciativa: 20, dano: 6}, {token: uuid(), posicao: 2, nome: 'Luis', iniciativa: 18, dano: 12}])
 
-        setDados(response2.data.dados.dices)
+        setDados(response2.data.dados.dices.filter(dado => dado.token_pai == id || dado.token_pai == ''))
 
         setAnotacoes([{token: uuid(), nome: 'Sanidade', descricao: 'Ver alguem morrendo: 2d6'}])
 

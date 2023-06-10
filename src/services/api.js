@@ -11,16 +11,20 @@ api.interceptors.response.use(
       window.location.reload()
     }
 
-    if (response.data.msg == 'Sem permissão.') {
-      setTimeout(() => {
-        toast.error('Esta ficha está privada.')
-      }, 1000);
-    }
+    if (response.data.data.query != undefined && response.data.data.query == 'fichas_info_get') {
 
-    if (response.data.msg == 'Ficha não encontrada.') {
-      setTimeout(() => {
-        toast.error('Ficha não encontrada.')
-      }, 1000);
+      if (response.data.msg == 'Sem permissão.') {
+        setTimeout(() => {
+          toast.error('Esta ficha está privada.')
+        }, 1000);
+      }
+
+      if (response.data.msg == 'Ficha não encontrada.') {
+        setTimeout(() => {
+          toast.error('Ficha não encontrada.')
+        }, 1000);
+      }
+
     }
 
     return response;

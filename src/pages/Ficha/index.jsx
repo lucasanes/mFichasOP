@@ -152,7 +152,7 @@ export function Ficha() {
 
         setInventario({peso: ficha.peso_inv, itens: ficha.itens, armas: ficha.armas})
 
-        setDados(response2.data.dados.dices)
+        setDados(response2.data.dados.dices.filter(dado => dado.token_pai == id || dado.token_pai == ''))
 
         setHpe({habilidades: ficha.habilidades, poderes: ficha.poderes, proficiencias: ficha.proficiencias})
 

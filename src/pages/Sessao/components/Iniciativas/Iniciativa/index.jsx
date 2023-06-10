@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {Button, Container} from './styles'
 import {BiTrash} from 'react-icons/bi'
 import { HiBarsArrowDown, HiBarsArrowUp } from 'react-icons/hi2'
@@ -8,7 +8,6 @@ export function Iniciativa({lista, setLista, data, setPrecisaSalvar}) {
   const [nome, setnome] = useState(data.nome)
   const [ini, setini] = useState(data.iniciativa)
   const [dano, setdano] = useState(data.dano)
-
 
   async function handleDelete() {
 
@@ -73,9 +72,18 @@ export function Iniciativa({lista, setLista, data, setPrecisaSalvar}) {
     <Container>
       <Button onClick={handleUp} color={'aqua'}><HiBarsArrowUp color='#00f7ff' size={20}/></Button>
       <span>{data.posicao}</span>
-      <input className='no' value={nome} onChange={(e) => {e.target.value.length < 30 && setnome(e.target.value)}}/>
-      <input className='in' type='number' value={ini} onChange={(e) => {e.target.value < 100 &&setini(e.target.value)}}/>
-      <input className='da' type='number' value={dano} onChange={(e) => {e.target.value < 10000 && setdano(e.target.value)}}/>
+      <input className='no' value={nome} onChange={(e) => {
+        e.target.value.length < 30 && setnome(e.target.value);
+        setPrecisaSalvar(true)
+      }}/>
+      <input className='in' type='number' value={ini} onChange={(e) => {
+        e.target.value < 100 && setini(e.target.value);
+        setPrecisaSalvar(true)
+      }}/>
+      <input className='da' type='number' value={dano} onChange={(e) => {
+        e.target.value < 10000 && setdano(e.target.value);
+        setPrecisaSalvar(true)
+      }}/>
       <Button onClick={handleDown} color={'aqua'}><HiBarsArrowDown color='#00f7ff' size={20}/></Button>
       <Button onClick={handleDelete} color={'red'}><BiTrash size={17} color='#ff0000'/></Button>
     </Container>

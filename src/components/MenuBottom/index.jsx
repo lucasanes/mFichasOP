@@ -21,7 +21,7 @@ export function MenuBottom() {
     <Container>
       <Button active={active == 0} color={'yellow'} onClick={() => swiper.slideTo(0)}><BsHouse color='#ffff50' size={30}/>Início</Button>
       <Button active={active == 1} color={'blue'} onClick={() => swiper.slideTo(1)}><AiOutlineUser color='#004edf' size={30}/>Fichas</Button>
-      <Button active={active == 2} color={'red'} onClick={() => swiper.slideTo(2)}><TiBusinessCard color='#dc3545' size={30}/>Sessões</Button> 
+      <Button lock={true} disabled={true} color={'red'} onClick={() => swiper.slideTo(2)}><BiLockAlt className='lock' size={50} color='#999999ff'/><TiBusinessCard color='#dc354550' size={30}/>Sessões</Button> 
 
     </Container>
   );
